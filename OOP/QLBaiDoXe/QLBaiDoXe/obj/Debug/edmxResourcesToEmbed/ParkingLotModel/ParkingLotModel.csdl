@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ParkingLotModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="AccountID" />
+    </Key>
+    <Property Name="AccountID" Type="Int32" Nullable="false" />
+    <Property Name="StaffID" Type="Int32" Nullable="false" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="AccountName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AccountPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Role" Relationship="Self.Accounts_RoleID_FK" FromRole="Accounts" ToRole="Roles" />
+    <NavigationProperty Name="Staff" Relationship="Self.Accounts_StaffID_FK" FromRole="Accounts" ToRole="Staff" />
+  </EntityType>
+  <EntityType Name="FinancialReport">
+    <Key>
+      <PropertyRef Name="FinancialReportID" />
+    </Key>
+    <Property Name="FinancialReportID" Type="Int32" Nullable="false" />
+    <Property Name="FinancialReportMonth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Income" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Expenditure" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ParkingCard">
+    <Key>
+      <PropertyRef Name="ParkingCardID" />
+    </Key>
+    <Property Name="ParkingCardID" Type="Int32" Nullable="false" />
+    <Property Name="CardState" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Vehicles" Relationship="Self.Vehicles_CardID_FK" FromRole="ParkingCards" ToRole="Vehicles" />
+  </EntityType>
+  <EntityType Name="Receipt">
+    <Key>
+      <PropertyRef Name="ReceiptID" />
+    </Key>
+    <Property Name="ReceiptID" Type="Int32" Nullable="false" />
+    <Property Name="VehicleID" Type="Int32" Nullable="false" />
+    <Property Name="StaffID" Type="Int32" Nullable="false" />
+    <Property Name="TimePaid" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ParkingFee" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Staff" Relationship="Self.Receipts_StaffID_FK" FromRole="Receipts" ToRole="Staff" />
+    <NavigationProperty Name="Vehicle" Relationship="Self.Receipts_VehicleID_FK" FromRole="Receipts" ToRole="Vehicles" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="RoleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Accounts" Relationship="Self.Accounts_RoleID_FK" FromRole="Roles" ToRole="Accounts" />
+    <NavigationProperty Name="Staffs" Relationship="Self.Staff_RoleID_FK" FromRole="Roles" ToRole="Staff" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="StaffID" />
+    </Key>
+    <Property Name="StaffID" Type="Int32" Nullable="false" />
+    <Property Name="CivilID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StaffName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StaffAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Wage" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Accounts" Relationship="Self.Accounts_StaffID_FK" FromRole="Staff" ToRole="Accounts" />
+    <NavigationProperty Name="Receipts" Relationship="Self.Receipts_StaffID_FK" FromRole="Staff" ToRole="Receipts" />
+    <NavigationProperty Name="Role" Relationship="Self.Staff_RoleID_FK" FromRole="Staff" ToRole="Roles" />
+    <NavigationProperty Name="Timekeeps" Relationship="Self.Timekeeps_StaffID_FK" FromRole="Staff" ToRole="Timekeeps" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Timekeep">
+    <Key>
+      <PropertyRef Name="TimekeepID" />
+    </Key>
+    <Property Name="TimekeepID" Type="Int32" Nullable="false" />
+    <Property Name="StaffID" Type="Int32" Nullable="false" />
+    <Property Name="LoginTime" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="LogoutTime" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Staff" Relationship="Self.Timekeeps_StaffID_FK" FromRole="Timekeeps" ToRole="Staff" />
+  </EntityType>
+  <EntityType Name="Vehicle">
+    <Key>
+      <PropertyRef Name="VehicleID" />
+    </Key>
+    <Property Name="VehicleID" Type="Int32" Nullable="false" />
+    <Property Name="VehicleTypeID" Type="Int32" Nullable="false" />
+    <Property Name="ParkingCardID" Type="Int32" Nullable="false" />
+    <Property Name="TimeStartedParking" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TimeEndedParking" Type="DateTime" Precision="0" />
+    <Property Name="VehicleState" Type="Int32" Nullable="false" />
+    <Property Name="VehicleImage" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ParkingCard" Relationship="Self.Vehicles_CardID_FK" FromRole="Vehicles" ToRole="ParkingCards" />
+    <NavigationProperty Name="Receipts" Relationship="Self.Receipts_VehicleID_FK" FromRole="Vehicles" ToRole="Receipts" />
+    <NavigationProperty Name="VehicleType" Relationship="Self.Vehicles_VehicleTypeID_FK" FromRole="Vehicles" ToRole="VehicleTypes" />
+  </EntityType>
+  <EntityType Name="VehicleType">
+    <Key>
+      <PropertyRef Name="VehicleTypeID" />
+    </Key>
+    <Property Name="VehicleTypeID" Type="Int32" Nullable="false" />
+    <Property Name="VehicleTypeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ParkingFee" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Vehicles" Relationship="Self.Vehicles_VehicleTypeID_FK" FromRole="VehicleTypes" ToRole="Vehicles" />
+  </EntityType>
+  <Association Name="Accounts_RoleID_FK">
+    <End Role="Roles" Type="Self.Role" Multiplicity="1" />
+    <End Role="Accounts" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="Accounts">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Accounts_StaffID_FK">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Accounts" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="StaffID" />
+      </Principal>
+      <Dependent Role="Accounts">
+        <PropertyRef Name="StaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Vehicles_CardID_FK">
+    <End Role="ParkingCards" Type="Self.ParkingCard" Multiplicity="1" />
+    <End Role="Vehicles" Type="Self.Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ParkingCards">
+        <PropertyRef Name="ParkingCardID" />
+      </Principal>
+      <Dependent Role="Vehicles">
+        <PropertyRef Name="ParkingCardID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Receipts_StaffID_FK">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Receipts" Type="Self.Receipt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="StaffID" />
+      </Principal>
+      <Dependent Role="Receipts">
+        <PropertyRef Name="StaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Receipts_VehicleID_FK">
+    <End Role="Vehicles" Type="Self.Vehicle" Multiplicity="1" />
+    <End Role="Receipts" Type="Self.Receipt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicles">
+        <PropertyRef Name="VehicleID" />
+      </Principal>
+      <Dependent Role="Receipts">
+        <PropertyRef Name="VehicleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Staff_RoleID_FK">
+    <End Role="Roles" Type="Self.Role" Multiplicity="1" />
+    <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Timekeeps_StaffID_FK">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Timekeeps" Type="Self.Timekeep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="StaffID" />
+      </Principal>
+      <Dependent Role="Timekeeps">
+        <PropertyRef Name="StaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Vehicles_VehicleTypeID_FK">
+    <End Role="VehicleTypes" Type="Self.VehicleType" Multiplicity="1" />
+    <End Role="Vehicles" Type="Self.Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleTypes">
+        <PropertyRef Name="VehicleTypeID" />
+      </Principal>
+      <Dependent Role="Vehicles">
+        <PropertyRef Name="VehicleTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ParkingLotEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
+    <EntitySet Name="FinancialReports" EntityType="Self.FinancialReport" />
+    <EntitySet Name="ParkingCards" EntityType="Self.ParkingCard" />
+    <EntitySet Name="Receipts" EntityType="Self.Receipt" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="Staffs" EntityType="Self.Staff" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Timekeeps" EntityType="Self.Timekeep" />
+    <EntitySet Name="Vehicles" EntityType="Self.Vehicle" />
+    <EntitySet Name="VehicleTypes" EntityType="Self.VehicleType" />
+    <AssociationSet Name="Accounts_RoleID_FK" Association="Self.Accounts_RoleID_FK">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Accounts" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="Accounts_StaffID_FK" Association="Self.Accounts_StaffID_FK">
+      <End Role="Staff" EntitySet="Staffs" />
+      <End Role="Accounts" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="Vehicles_CardID_FK" Association="Self.Vehicles_CardID_FK">
+      <End Role="ParkingCards" EntitySet="ParkingCards" />
+      <End Role="Vehicles" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="Receipts_StaffID_FK" Association="Self.Receipts_StaffID_FK">
+      <End Role="Staff" EntitySet="Staffs" />
+      <End Role="Receipts" EntitySet="Receipts" />
+    </AssociationSet>
+    <AssociationSet Name="Receipts_VehicleID_FK" Association="Self.Receipts_VehicleID_FK">
+      <End Role="Vehicles" EntitySet="Vehicles" />
+      <End Role="Receipts" EntitySet="Receipts" />
+    </AssociationSet>
+    <AssociationSet Name="Staff_RoleID_FK" Association="Self.Staff_RoleID_FK">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Staff" EntitySet="Staffs" />
+    </AssociationSet>
+    <AssociationSet Name="Timekeeps_StaffID_FK" Association="Self.Timekeeps_StaffID_FK">
+      <End Role="Staff" EntitySet="Staffs" />
+      <End Role="Timekeeps" EntitySet="Timekeeps" />
+    </AssociationSet>
+    <AssociationSet Name="Vehicles_VehicleTypeID_FK" Association="Self.Vehicles_VehicleTypeID_FK">
+      <End Role="VehicleTypes" EntitySet="VehicleTypes" />
+      <End Role="Vehicles" EntitySet="Vehicles" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(ParkingLotModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(ParkingLotModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>
