@@ -36,3 +36,6 @@ C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technol
 C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.exe
 C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.pdb
 C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.csproj.AssemblyReference.cache
+C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\Simple Styles.baml
+C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\admin.g.cs
+C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\admin.baml

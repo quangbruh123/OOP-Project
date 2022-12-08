@@ -33,7 +33,7 @@
         <DatePicker materialDesign:HintAssist.Hint="Từ ngày" HorizontalAlignment="Left" Height="23" Margin="211.734,102.385,0,0" VerticalAlignment="Top" Width="130.267" RenderTransformOrigin="0.651,0.512" FontSize="12"/>
         <DatePicker materialDesign:HintAssist.Hint="Đến ngày" HorizontalAlignment="Left" Height="23" Margin="375.566,102.385,0,0" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.651,0.512" FontSize="12"/>
         <TextBox materialDesign:HintAssist.Hint="Biển số" HorizontalAlignment="Left" Height="23" Margin="297.795,135.054,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="205.771"/>
-        <Button Content="Tìm kiếm" HorizontalAlignment="Left" Height="25.6" Margin="70.667,176.934,0,0" VerticalAlignment="Top" Width="115.733" Foreground="White"/>
+        <Button Content="Tìm kiếm" HorizontalAlignment="Left" Height="28.066" Margin="70.667,176.934,0,0" VerticalAlignment="Top" Width="115.733" Foreground="White"/>
         <DataGrid x:Name="dataGrid" CanUserAddRows="False" SelectionUnit="Cell" SelectionMode="Extended" HorizontalAlignment="Left" Height="394.6" Margin="66.167,274.8,0,0" VerticalAlignment="Top" Width="447.299"/>
         <Rectangle Fill="#FFD7D7D7" HorizontalAlignment="Left" Height="351.3" Margin="581,86.4,0,0" RadiusY="15" RadiusX="15" VerticalAlignment="Top" Width="643.4"/>
         <Rectangle Fill="White" HorizontalAlignment="Left" Height="219.5" Margin="580,458.9,0,0" RadiusY="15" RadiusX="15" VerticalAlignment="Top" Width="644.4"/>
