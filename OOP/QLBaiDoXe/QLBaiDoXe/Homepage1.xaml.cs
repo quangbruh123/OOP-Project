@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace QLBaiDoXe
 {
     /// <summary>
-    /// Interaction logic for Homepage.xaml
+    /// Interaction logic for Homepage1.xaml
     /// </summary>
-    public partial class Homepage : Window
+    public partial class Homepage1 : Window
     {
-        public Homepage()
+        public Homepage1()
         {
             InitializeComponent();
         }

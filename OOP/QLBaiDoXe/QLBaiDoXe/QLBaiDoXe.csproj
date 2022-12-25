@@ -94,7 +94,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Homepage.xaml">
+    <Page Include="Homepage1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -115,8 +115,8 @@
     <Compile Include="DS_NhanVien.xaml.cs">
       <DependentUpon>DS_NhanVien.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Homepage.xaml.cs">
-      <DependentUpon>Homepage.xaml</DependentUpon>
+    <Compile Include="Homepage1.xaml.cs">
+      <DependentUpon>Homepage1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
