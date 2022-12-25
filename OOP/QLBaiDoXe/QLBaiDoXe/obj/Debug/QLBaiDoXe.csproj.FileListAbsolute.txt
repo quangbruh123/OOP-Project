@@ -36,47 +36,6 @@ C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technol
 C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.exe
 C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.pdb
 C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.csproj.AssemblyReference.cache
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\QLBaiDoXe.exe.config
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\QLBaiDoXe.exe
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\QLBaiDoXe.pdb
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\ControlzEx.dll
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\EntityFramework.dll
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\EntityFramework.SqlServer.dll
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\HandyControl.dll
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\MahApps.Metro.dll
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\MaterialDesignColors.dll
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\MaterialDesignThemes.MahApps.dll
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\MaterialDesignThemes.Wpf.dll
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\Microsoft.Xaml.Behaviors.dll
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\ControlzEx.pdb
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\ControlzEx.xml
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\EntityFramework.xml
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\EntityFramework.SqlServer.xml
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\HandyControl.pdb
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\HandyControl.xml
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\MahApps.Metro.pdb
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\MahApps.Metro.xml
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\MaterialDesignColors.pdb
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\MaterialDesignThemes.MahApps.pdb
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\MaterialDesignThemes.Wpf.pdb
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\MaterialDesignThemes.Wpf.xml
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\Microsoft.Xaml.Behaviors.pdb
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\Microsoft.Xaml.Behaviors.xml
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.csproj.AssemblyReference.cache
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.csproj.SuggestedBindingRedirects.cache
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\Homepage.g.cs
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\Login.g.cs
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\App.g.cs
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe_Content.g.cs
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe_MarkupCompile.cache
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe_MarkupCompile.lref
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\App.baml
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\Homepage.baml
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\Login.baml
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.g.resources
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.Properties.Resources.resources
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.csproj.GenerateResource.cache
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.csproj.CoreCompileInputs.cache
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.csproj.CopyComplete
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.exe
-F:\Study\UIT\Year 3\OOP Software Developing Methodology\Main Project\UI\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.pdb
+C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\Simple Styles.baml
+C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\admin.g.cs
+C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\admin.baml
