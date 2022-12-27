@@ -37,7 +37,7 @@
             <BeginStoryboard Storyboard="{StaticResource CW_FoToLo}"/>
         </EventTrigger>
     </Window.Triggers>
-    <Grid>
+    <Grid Margin="0,0,0,0">
         <Grid x:Name="Login" HorizontalAlignment="Left" Margin="-37,0,0,0" VerticalAlignment="Center" Width="601" Visibility="Visible">
             <Rectangle HorizontalAlignment="Left" Height="420.4" VerticalAlignment="Center" Width="292.2" Fill="#FFFFA03F" Opacity="0.5" RadiusX="10" RadiusY="10"/>
             <TextBlock HorizontalAlignment="Left" Height="72" Text="Login" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" FontSize="40" Foreground="#FFFFA03F" Margin="335,65,0,0"/>

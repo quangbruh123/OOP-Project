@@ -3,38 +3,38 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:QLBaiDoXe"
         mc:Ignorable="d"
         Title="admin" Height="720" Width="1280">
     <Grid Background="#80FFA03F">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="235*"/>
-            <ColumnDefinition Width="1039*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="14*"/>
-            <RowDefinition Height="101*"/>
-        </Grid.RowDefinitions>
+        <Grid Margin="10,0,1042.357,0">
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="670.4" Margin="10,5.668,-10,0" VerticalAlignment="Top" Width="221.243" RadiusX="20" RadiusY="20" d:IsLocked="True"/>
+            <Image Margin="33.658,24.966,162.788,639.483" Source="Resources/icon-g9c96c190e_1280.png" Stretch="Fill"/>
+            <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="76.3,24.966,0,0" TextWrapping="Wrap" Text="Nguyễn Văn A" VerticalAlignment="Top" Width="126.8" FontSize="16" RenderTransformOrigin="0.505,0.341" FontWeight="Medium"/>
+            <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="76.3,47.742,0,0" TextWrapping="Wrap" Text="Admin" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="#7F000000"/>
+            <TextBlock HorizontalAlignment="Left" Height="22.334" Margin="24.667,80.817,0,0" TextWrapping="Wrap" Text="Nhân viên" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="#7F000000" FontWeight="SemiBold" FontSize="14"/>
+            <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="70.243,108.151,0,0" TextWrapping="Wrap" Text="Danh sách" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="Black" FontSize="17"/>
+            <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="70.243,150.868,0,0" TextWrapping="Wrap" Text="Chấm công" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="Black" FontSize="17"/>
+            <TextBlock HorizontalAlignment="Left" Height="22.334" Margin="20.343,191.485,0,0" TextWrapping="Wrap" Text="Thống kê" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="#7F000000" FontWeight="SemiBold" FontSize="14"/>
+            <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="70.243,221.816,0,0" TextWrapping="Wrap" Text="Doanh thu" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="Black" FontSize="17"/>
+            <Image Margin="31.6,104.528,163.788,554.915" Source="Image1.png" Stretch="Fill"/>
+            <Image Margin="32.6,149.868,162.788,513.198" Source="Resources/icons8-calendar-100.png" Stretch="Fill"/>
+            <Image Margin="32.6,218.819,163.788,446.021" Source="Resources/icons8-combo-chart-100.png" Stretch="Fill" RenderTransformOrigin="0.453,1.479"/>
+            <TextBlock HorizontalAlignment="Left" Height="22.334" Margin="20.343,267.818,0,0" TextWrapping="Wrap" Text="Thay đổi" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="#7F000000" FontWeight="SemiBold" FontSize="14"/>
+            <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="70.243,300.814,0,0" TextWrapping="Wrap" Text="Giá gửi xe" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="Black" FontSize="17"/>
+            <Image Margin="33.103,300.814,163.788,363.846" Source="Resources/icons8-banknotes-100.png" Stretch="Fill"/>
+            <Button Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,99.14,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17"/>
+            <Button Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,143.098,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17"/>
+            <Button Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,213.151,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17"/>
+            <Button Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,293.151,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17"/>
+            <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="70.243,356.214,0,0" TextWrapping="Wrap" Text="Đăng xuất" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="#FFFF6363" FontSize="17"/>
+            <Button
+                Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,348.551,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17" Padding="0,4">
+                <materialDesign:PackIcon Kind="LogoutVariant" Height="29.6" Width="32.067" Foreground="#FFFF6F6F" Margin="0,0,148,0"/>
 
-        <Rectangle Fill="White" HorizontalAlignment="Left" Height="670.4" Margin="10,5.668,0,0" VerticalAlignment="Top" Width="221.243" RadiusX="20" RadiusY="20" Grid.RowSpan="2"/>
-        <Image Margin="29.1,30.166,172.77,19.883" Source="Resources/icon-g9c96c190e_1280.png" Stretch="Fill"/>
-        <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="76.3,24.966,0,0" TextWrapping="Wrap" Text="Nguyễn Văn A" VerticalAlignment="Top" Width="126.8" FontSize="16" RenderTransformOrigin="0.505,0.341" FontWeight="Medium"/>
-        <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="76.3,47.742,0,0" TextWrapping="Wrap" Text="Admin" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="#7F000000"/>
-        <TextBlock HorizontalAlignment="Left" Height="22.334" Margin="20,10,0,0" TextWrapping="Wrap" Text="Nhân viên" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="#7F000000" Grid.Row="1" FontWeight="SemiBold" FontSize="14"/>
-        <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="69.9,40.951,0,0" TextWrapping="Wrap" Text="Danh sách" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="Black" Grid.Row="1" FontSize="17"/>
-        <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="69.9,83.668,0,0" TextWrapping="Wrap" Text="Chấm công" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="Black" Grid.Row="1" FontSize="17"/>
-        <TextBlock HorizontalAlignment="Left" Height="22.334" Margin="20,124.285,0,0" TextWrapping="Wrap" Text="Thống kê" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="#7F000000" Grid.Row="1" FontWeight="SemiBold" FontSize="14"/>
-        <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="69.9,154.616,0,0" TextWrapping="Wrap" Text="Doanh thu" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="Black" Grid.Row="1" FontSize="17"/>
-        <Image Margin="37.8,37.325,172.77,534.118" Source="Image1.png" Stretch="Fill" Grid.Row="1"/>
-        <Image Margin="39.163,82.283,172.77,492.419" Grid.Row="1" Source="Resources/icons8-calendar-100.png" Stretch="Fill"/>
-        <Image Margin="37.8,152.298,172.77,423.475" Grid.Row="1" Source="Resources/icons8-combo-chart-100.png" Stretch="Fill"/>
-        <TextBlock HorizontalAlignment="Left" Height="22.334" Margin="20,200.618,0,0" TextWrapping="Wrap" Text="Thay đổi" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="#7F000000" Grid.Row="1" FontWeight="SemiBold" FontSize="14"/>
-        <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="69.9,233.614,0,0" TextWrapping="Wrap" Text="Giá gửi xe" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="Black" Grid.Row="1" FontSize="17"/>
-        <Image Margin="36.144,233.614,172.77,340.646" Grid.Row="1" Source="Resources/icons8-banknotes-100.png" Stretch="Fill"/>
-        <Button Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20,31.94,0,0" Grid.Row="1" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17"/>
-        <Button Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20,75.898,0,0" Grid.Row="1" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17" d:IsLocked="True"/>
-        <Button Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20,145.951,0,0" Grid.Row="1" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17" d:IsLocked="True"/>
-        <Button Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20,225.951,0,0" Grid.Row="1" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17" d:IsLocked="True"/>
+            </Button>
+        </Grid>
 
     </Grid>
 </Window>

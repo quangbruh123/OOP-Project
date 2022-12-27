@@ -19,42 +19,40 @@
             <Rectangle Fill="White" RadiusX="15" RadiusY="15" Margin="0,0,0,10" d:IsLocked="True"/>
             <Rectangle Fill="#FFD7D7D7" HorizontalAlignment="Left" Height="221.396" RadiusY="15" RadiusX="15" VerticalAlignment="Top" Width="313.3" Margin="29.8,30.4,0,0"/>
             <Rectangle Fill="#FFD7D7D7" HorizontalAlignment="Left" Height="221.396" RadiusY="15" RadiusX="15" VerticalAlignment="Top" Width="313.3" Margin="29.8,286.8,0,0"/>
-            <TextBlock HorizontalAlignment="Left" Height="27.4" Margin="386.467,30.4,0,0" TextWrapping="Wrap" Text="Thông tin" VerticalAlignment="Top" Width="119.134" FontSize="24" FontWeight="Medium"/>
-            <TextBlock HorizontalAlignment="Left" Height="15" Margin="388.467,73.558,0,0" TextWrapping="Wrap" Text="LÚC VÀO" VerticalAlignment="Top" Width="66.267" FontSize="14" Opacity="0.5"/>
-            <TextBlock x:Name="dateIn" HorizontalAlignment="Left" Height="18.8" Margin="388.467,93.558,0,0" TextWrapping="Wrap" Text="01/11/2022" VerticalAlignment="Top" Width="90.6" FontSize="16"/>
-            <TextBlock HorizontalAlignment="Left" Height="15" Margin="388.467,151.3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52.6" FontSize="14" Opacity="0.5" Text="LÚC RA"/>
-            <TextBlock x:Name="dateOut" HorizontalAlignment="Left" Height="18.8" Margin="388.467,171.3,0,0" TextWrapping="Wrap" Text="01/11/2022" VerticalAlignment="Top" Width="82.6" FontSize="16"/>
-            <TextBlock x:Name="timeIn" HorizontalAlignment="Left" Height="18.8" Margin="388.667,117.358,0,0" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top" Width="66.067" FontSize="11"/>
-            <TextBlock x:Name="timeOut" HorizontalAlignment="Left" Height="18.8" Margin="388.467,195.1,0,0" TextWrapping="Wrap" Text="00:00:01" VerticalAlignment="Top" Width="66.067" FontSize="11"/>
-            <TextBlock HorizontalAlignment="Left" Height="22.4" Margin="386.467,229.396,0,0" TextWrapping="Wrap" Text="Biển số xe" VerticalAlignment="Top" Width="92.6" FontSize="20" FontWeight="Medium"/>
-            <TextBlock x:Name="vehiclePlate" HorizontalAlignment="Left" Height="18.8" Margin="386.467,260.131,0,0" TextWrapping="Wrap" Text="52-6D-825.69" VerticalAlignment="Top" Width="100.8" FontSize="16"/>
-            <TextBlock HorizontalAlignment="Left" Height="22.4" Margin="386.467,454.462,0,0" TextWrapping="Wrap" Text="Giá tiền" VerticalAlignment="Top" Width="78.067" FontSize="20" FontWeight="Medium"/>
-            <TextBlock x:Name="priceTag" HorizontalAlignment="Left" Height="18.8" Margin="386.967,487.896,0,0" TextWrapping="Wrap" Text="4.000 đồng" VerticalAlignment="Top" Width="92" Foreground="#DDFF0000" FontWeight="Bold" FontSize="16"/>
-            <TextBlock HorizontalAlignment="Left" Height="22.4" Margin="386.467,379.462,0,0" TextWrapping="Wrap" Text="Loại xe" VerticalAlignment="Top" Width="78.067" FontSize="20" FontWeight="Medium"/>
-            <TextBlock HorizontalAlignment="Left" Height="22.4" Margin="386.467,302.497,0,0" TextWrapping="Wrap" Text="Mã thẻ" VerticalAlignment="Top" Width="78.067" FontSize="20" FontWeight="Medium"/>
-            <TextBlock x:Name="cardID" HorizontalAlignment="Left" Height="18.8" Margin="386.467,335.297,0,0" TextWrapping="Wrap" Text="2937DD092" VerticalAlignment="Top" Width="92.4" FontSize="16"/>
-            <TextBlock x:Name="vehiclePlate_Copy" HorizontalAlignment="Left" Height="18.8" Margin="386.467,411.662,0,0" TextWrapping="Wrap" Text="Xe máy" VerticalAlignment="Top" Width="65.867" FontSize="16"/>
+            <TextBlock HorizontalAlignment="Left" Height="27.4" Margin="367.833,206.7,0,0" TextWrapping="Wrap" Text="Thông tin" VerticalAlignment="Top" Width="119.134" FontSize="24" FontWeight="Medium"/>
+            <TextBlock HorizontalAlignment="Left" Height="15" Margin="368.667,248.797,0,0" TextWrapping="Wrap" Text="LÚC VÀO" VerticalAlignment="Top" Width="66.267" FontSize="14" Opacity="0.5"/>
+            <TextBlock x:Name="dateIn" HorizontalAlignment="Left" Height="18.8" Margin="368.667,268.797,0,0" TextWrapping="Wrap" Text="01/11/2022" VerticalAlignment="Top" Width="90.6" FontSize="16"/>
+            <TextBlock HorizontalAlignment="Left" Height="15" Margin="481.267,248.797,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52.6" FontSize="14" Opacity="0.5" Text="LÚC RA"/>
+            <TextBlock x:Name="dateOut" HorizontalAlignment="Left" Height="18.8" Margin="481.267,268.797,0,0" TextWrapping="Wrap" Text="01/11/2022" VerticalAlignment="Top" Width="82.6" FontSize="16"/>
+            <TextBlock x:Name="timeIn" HorizontalAlignment="Left" Height="18.8" Margin="368.867,292.597,0,0" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top" Width="66.067" FontSize="11"/>
+            <TextBlock x:Name="timeOut" HorizontalAlignment="Left" Height="18.8" Margin="481.267,292.597,0,0" TextWrapping="Wrap" Text="00:00:01" VerticalAlignment="Top" Width="66.067" FontSize="11"/>
+            <TextBlock HorizontalAlignment="Left" Height="22.4" Margin="368.167,455.962,0,0" TextWrapping="Wrap" Text="Giá tiền" VerticalAlignment="Top" Width="78.067" FontSize="20" FontWeight="Medium"/>
+            <TextBlock x:Name="priceTag" HorizontalAlignment="Left" Height="18.8" Margin="368.667,489.396,0,0" TextWrapping="Wrap" Text="4.000 đồng" VerticalAlignment="Top" Width="92" Foreground="#DDFF0000" FontWeight="Bold" FontSize="16"/>
+            <TextBlock HorizontalAlignment="Left" Height="22.4" Margin="369.067,387.462,0,0" TextWrapping="Wrap" Text="Loại xe" VerticalAlignment="Top" Width="78.067" FontSize="20" FontWeight="Medium"/>
+            <TextBlock HorizontalAlignment="Left" Height="22.4" Margin="368.867,322.862,0,0" TextWrapping="Wrap" Text="Mã thẻ" VerticalAlignment="Top" Width="78.067" FontSize="20" FontWeight="Medium"/>
+            <TextBlock x:Name="cardID" HorizontalAlignment="Left" Height="18.8" Margin="368.867,355.662,0,0" TextWrapping="Wrap" Text="2937DD092" VerticalAlignment="Top" Width="92.4" FontSize="16"/>
+            <TextBlock x:Name="vehiclePlate_Copy" HorizontalAlignment="Left" Height="18.8" Margin="369.067,419.662,0,0" TextWrapping="Wrap" Text="Xe máy" VerticalAlignment="Top" Width="65.867" FontSize="16"/>
+            <Rectangle Fill="#FFD7D7D7" HorizontalAlignment="Left" Height="126.846" RadiusY="15" RadiusX="15" VerticalAlignment="Top" Width="179.501" Margin="367.833,30.4,0,0"/>
 
         </Grid>
         <Grid Margin="654.3,64.8,43.2,77.2">
             <Rectangle Fill="White" RadiusX="15" RadiusY="15" Margin="0,0,0,10" d:IsLocked="True"/>
             <Rectangle Fill="#FFD7D7D7" HorizontalAlignment="Left" Height="221.396" RadiusY="15" RadiusX="15" VerticalAlignment="Top" Width="313.3" Margin="234.6,30.4,0,0"/>
             <Rectangle Fill="#FFD7D7D7" HorizontalAlignment="Left" Height="221.396" RadiusY="15" RadiusX="15" VerticalAlignment="Top" Width="313.3" Margin="234.6,286.8,0,0"/>
-            <TextBlock HorizontalAlignment="Left" Height="32" Margin="81.167,30.4,0,0" TextWrapping="Wrap" Text="Thông tin" VerticalAlignment="Top" Width="113.8" FontSize="24" FontWeight="Medium" TextAlignment="Right"/>
-            <TextBlock HorizontalAlignment="Left" Height="15" Margin="128.1,75,0,0" TextWrapping="Wrap" Text="LÚC VÀO" VerticalAlignment="Top" Width="66.267" FontSize="14" Opacity="0.5" TextAlignment="Right"/>
-            <TextBlock x:Name="dateIn_Copy" HorizontalAlignment="Left" Height="18.8" Margin="107.033,95,0,0" TextWrapping="Wrap" Text="01/11/2022" VerticalAlignment="Top" Width="87.934" TextAlignment="Right" FontSize="16"/>
-            <TextBlock HorizontalAlignment="Left" Height="15" Margin="140.767,149.767,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="54.2" FontSize="14" Opacity="0.5" Text="LÚC RA" TextAlignment="Right"/>
-            <TextBlock x:Name="dateOut_Copy" HorizontalAlignment="Left" Height="18.8" Margin="106.833,169.767,0,0" TextWrapping="Wrap" Text="01/11/2022" VerticalAlignment="Top" Width="87.934" TextAlignment="Right" FontSize="16"/>
-            <TextBlock x:Name="timeIn_Copy" HorizontalAlignment="Left" Height="18.8" Margin="128.7,118.8,0,0" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top" Width="66.067" FontSize="11" TextAlignment="Right"/>
-            <TextBlock x:Name="timeOut_Copy" HorizontalAlignment="Left" Height="18.8" Margin="128.7,193.567,0,0" TextWrapping="Wrap" Text="00:00:01" VerticalAlignment="Top" Width="66.067" FontSize="11" TextAlignment="Right"/>
-            <TextBlock HorizontalAlignment="Left" Height="22.4" Margin="88.032,230.73,0,0" TextWrapping="Wrap" Text="Biển số xe" VerticalAlignment="Top" Width="106.19" FontSize="20" FontWeight="Medium" TextAlignment="Right"/>
-            <TextBlock x:Name="vehiclePlate_Copy1" HorizontalAlignment="Left" Height="18.8" Margin="88.433,263.132,0,0" TextWrapping="Wrap" Text="52-6D-825.69" VerticalAlignment="Top" Width="106.062" TextAlignment="Right" FontSize="16"/>
-            <TextBlock HorizontalAlignment="Left" Height="22.4" Margin="87.903,453.837,0,0" TextWrapping="Wrap" Text="Giá tiền" VerticalAlignment="Top" Width="106.19" FontSize="20" FontWeight="Medium" TextAlignment="Right"/>
-            <TextBlock x:Name="priceTag_Copy" HorizontalAlignment="Left" Height="18.8" Margin="88.032,487.395,0,0" TextWrapping="Wrap" Text="4.000 đồng" VerticalAlignment="Top" Width="106.061" Foreground="#DDFF0000" FontWeight="Bold" TextAlignment="Right" FontSize="16"/>
-            <TextBlock HorizontalAlignment="Left" Height="22.4" Margin="88.777,379.504,0,0" TextWrapping="Wrap" Text="Loại xe" VerticalAlignment="Top" Width="106.19" FontSize="20" FontWeight="Medium" TextAlignment="Right"/>
-            <TextBlock HorizontalAlignment="Left" Height="22.4" Margin="88.305,304.504,0,0" TextWrapping="Wrap" Text="Mã thẻ" VerticalAlignment="Top" Width="106.19" FontSize="20" FontWeight="Medium" TextAlignment="Right"/>
-            <TextBlock x:Name="cardID_Copy" HorizontalAlignment="Left" Height="18.8" Margin="104.233,339.904,0,0" TextWrapping="Wrap" Text="2937DD092" VerticalAlignment="Top" Width="89.989" TextAlignment="Right" FontSize="16"/>
-            <TextBlock x:Name="vehiclePlate_Copy2" HorizontalAlignment="Left" Height="18.8" Margin="104.233,412.437,0,0" TextWrapping="Wrap" Text="Xe máy" VerticalAlignment="Top" Width="89.716" TextAlignment="Right" FontSize="16"/>
+            <TextBlock HorizontalAlignment="Left" Height="32" Margin="88.777,204.904,0,0" TextWrapping="Wrap" Text="Thông tin" VerticalAlignment="Top" Width="113.8" FontSize="24" FontWeight="Medium" TextAlignment="Right"/>
+            <TextBlock HorizontalAlignment="Left" Height="15" Margin="32.9,249.304,0,0" TextWrapping="Wrap" Text="LÚC VÀO" VerticalAlignment="Top" Width="66.267" FontSize="14" Opacity="0.5" TextAlignment="Right"/>
+            <TextBlock x:Name="dateIn_Copy" HorizontalAlignment="Left" Height="18.8" Margin="11.833,269.304,0,0" TextWrapping="Wrap" Text="01/11/2022" VerticalAlignment="Top" Width="87.934" TextAlignment="Right" FontSize="16"/>
+            <TextBlock HorizontalAlignment="Left" Height="15" Margin="148.577,249.304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="54.2" FontSize="14" Opacity="0.5" Text="LÚC RA" TextAlignment="Right"/>
+            <TextBlock x:Name="dateOut_Copy" HorizontalAlignment="Left" Height="18.8" Margin="114.643,269.304,0,0" TextWrapping="Wrap" Text="01/11/2022" VerticalAlignment="Top" Width="87.934" TextAlignment="Right" FontSize="16"/>
+            <TextBlock x:Name="timeIn_Copy" HorizontalAlignment="Left" Height="18.8" Margin="33.5,293.104,0,0" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top" Width="66.067" FontSize="11" TextAlignment="Right"/>
+            <TextBlock x:Name="timeOut_Copy" HorizontalAlignment="Left" Height="18.8" Margin="136.51,293.104,0,0" TextWrapping="Wrap" Text="00:00:01" VerticalAlignment="Top" Width="66.067" FontSize="11" TextAlignment="Right"/>
+            <TextBlock HorizontalAlignment="Left" Height="22.4" Margin="96.587,454.637,0,0" TextWrapping="Wrap" Text="Giá tiền" VerticalAlignment="Top" Width="106.19" FontSize="20" FontWeight="Medium" TextAlignment="Right"/>
+            <TextBlock x:Name="priceTag_Copy" HorizontalAlignment="Left" Height="18.8" Margin="96.716,486.195,0,0" TextWrapping="Wrap" Text="4.000 đồng" VerticalAlignment="Top" Width="106.061" Foreground="#DDFF0000" FontWeight="Bold" TextAlignment="Right" FontSize="16"/>
+            <TextBlock HorizontalAlignment="Left" Height="22.4" Margin="96.587,388.304,0,0" TextWrapping="Wrap" Text="Loại xe" VerticalAlignment="Top" Width="106.19" FontSize="20" FontWeight="Medium" TextAlignment="Right"/>
+            <TextBlock HorizontalAlignment="Left" Height="22.4" Margin="96.587,323.104,0,0" TextWrapping="Wrap" Text="Mã thẻ" VerticalAlignment="Top" Width="106.19" FontSize="20" FontWeight="Medium" TextAlignment="Right"/>
+            <TextBlock x:Name="cardID_Copy" HorizontalAlignment="Left" Height="18.8" Margin="112.515,355.504,0,0" TextWrapping="Wrap" Text="2937DD092" VerticalAlignment="Top" Width="89.989" TextAlignment="Right" FontSize="16"/>
+            <TextBlock x:Name="vehiclePlate_Copy2" HorizontalAlignment="Left" Height="18.8" Margin="112.043,418.237,0,0" TextWrapping="Wrap" Text="Xe máy" VerticalAlignment="Top" Width="89.716" TextAlignment="Right" FontSize="16"/>
+            <Rectangle Fill="#FFD7D7D7" HorizontalAlignment="Left" Height="126.846" RadiusY="15" RadiusX="15" VerticalAlignment="Top" Width="179.501" Margin="22.258,30.4,0,0"/>
 
         </Grid>
         <Grid Margin="148.8,635.4,0,-19.8">
@@ -75,15 +73,12 @@
         <TextBlock HorizontalAlignment="Left" Height="31.2" Margin="507.6,18.7,0,0" TextWrapping="Wrap" Foreground="black" Text="F2 - Mở bảng tìm kiếm" VerticalAlignment="Top" Width="232.867" FontSize="22" FontWeight="Medium"/>
         <TextBlock HorizontalAlignment="Left" Height="22.4" Margin="996.466,18.7,0,0" TextWrapping="Wrap" Text="F3 - Đổi loại xe làn ra" VerticalAlignment="Top" Width="233.934" FontSize="22" FontWeight="Medium" TextAlignment="Right"/>
         <Button
-             Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
-             ToolTip="MaterialDesignFloatingActionMiniDarkButton"
-             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="-6.2,647.35,1232.95,-5.8" Height="Auto" Width="Auto" Background="#FFC70404" BorderBrush="{x:Null}">
-            <materialDesign:PackIcon
-                Kind="LogoutVariant"
-                Width="20"
-                Height="20"
-                 Foreground="White"
-             />
+          Style="{StaticResource MaterialDesignFloatingActionLightButton}"
+          ToolTip="MaterialDesignFloatingActionLightButton"
+          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="-14.134,641.266,1231.733,-8.867">
+                <materialDesign:PackIcon
+            Kind="LogoutVariant" Height="33.6" Width="36.4"
+         /> 
         </Button>
     </Grid>
 </Window>
