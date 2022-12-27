@@ -22,9 +22,6 @@ namespace QLBaiDoXe.DBClasses
                 Staff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.StaffID == staffId)
             };
             DataProvider.Ins.DB.Receipts.Add(receipt);
-
-            //if (DataProvider.Ins.DB.FinancialReports.Any(x => x.FinancialReportMonth.Month != DateTime.Now.Month && x.FinancialReportMonth.Year != DateTime.Now.Year))
-
             DataProvider.Ins.DB.SaveChanges();
         }
 

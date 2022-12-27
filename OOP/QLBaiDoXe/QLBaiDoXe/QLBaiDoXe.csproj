@@ -262,7 +262,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="ViewUserControl\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ParkingLotModel\ParkingLotModel.Context.tt">

@@ -88,7 +88,7 @@
           </Key>
           <Property Name="VehicleTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="VehicleTypeName" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="ParkingFee" Type="money" Nullable="false" />
+          <Property Name="ParkingFee" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="Accounts_RoleID_FK">
           <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
@@ -332,7 +332,7 @@
           </Key>
           <Property Name="VehicleTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="VehicleTypeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ParkingFee" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="ParkingFee" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Vehicles" Relationship="Self.Vehicles_VehicleTypeID_FK" FromRole="VehicleTypes" ToRole="Vehicles" />
         </EntityType>
         <Association Name="Accounts_RoleID_FK">
