@@ -22,7 +22,7 @@ namespace QLBaiDoXe.ParkingLotModel
     
         public int VehicleID { get; set; }
         public int VehicleTypeID { get; set; }
-        public int ParkingCardID { get; set; }
+        public long ParkingCardID { get; set; }
         public System.DateTime TimeStartedParking { get; set; }
         public Nullable<System.DateTime> TimeEndedParking { get; set; }
         public int VehicleState { get; set; }

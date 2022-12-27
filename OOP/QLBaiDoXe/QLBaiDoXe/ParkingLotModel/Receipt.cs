@@ -18,7 +18,7 @@ namespace QLBaiDoXe.ParkingLotModel
         public int VehicleID { get; set; }
         public int StaffID { get; set; }
         public System.DateTime TimePaid { get; set; }
-        public decimal ParkingFee { get; set; }
+        public int ParkingFee { get; set; }
     
         public virtual Staff Staff { get; set; }
         public virtual Vehicle Vehicle { get; set; }

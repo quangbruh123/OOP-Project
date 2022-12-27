@@ -16,7 +16,7 @@ namespace QLBaiDoXe.ParkingLotModel
     {
         public int FinancialReportID { get; set; }
         public System.DateTime FinancialReportMonth { get; set; }
-        public decimal Income { get; set; }
-        public decimal Expenditure { get; set; }
+        public int Income { get; set; }
+        public int Expenditure { get; set; }
     }
 }
