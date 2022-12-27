@@ -92,6 +92,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DBClasses\Account.cs" />
+    <Compile Include="DBClasses\Cards.cs" />
     <Compile Include="DBClasses\Finance.cs" />
     <Compile Include="DBClasses\ParkingVehicle.cs" />
     <Compile Include="DBClasses\Regulation.cs" />
