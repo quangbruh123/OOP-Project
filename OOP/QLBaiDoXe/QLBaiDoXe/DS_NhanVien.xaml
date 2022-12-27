@@ -1,4 +1,4 @@
-﻿<Window
+﻿<UserControl
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:QLBaiDoXe"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="QLBaiDoXe.DS_NhanVien"
         mc:Ignorable="d"
-        Title="DS_NhanVien" Height="720" Width="1039">
+        Height="720" Width="1039">
     <Grid Background="#80FFA03F">
         <TextBlock FontWeight="Bold" HorizontalAlignment="Left" Height="80" Margin="35,25,0,0" TextWrapping="Wrap" Text="Danh sách nhân viên" VerticalAlignment="Top" Width="485" FontSize="42"/>
         <Rectangle Fill="White" HorizontalAlignment="Left" Height="431.068" Margin="10,245,0,0" VerticalAlignment="Top" Width="1012.6" RadiusX="20" RadiusY="20"/>
@@ -25,4 +25,4 @@
         <Button Content="Tạo tài khoản" HorizontalAlignment="Left" Height="28.066" Margin="854.267,625,0,0" VerticalAlignment="Top" Width="125.733" Foreground="White"/>
 
     </Grid>
-</Window>
+</UserControl>
