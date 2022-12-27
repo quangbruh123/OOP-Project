@@ -111,6 +111,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="BaoCaoDoanhThu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="DS_NhanVien.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -132,6 +136,9 @@
     </Compile>
     <Compile Include="Bang_Cham_Cong.xaml.cs">
       <DependentUpon>Bang_Cham_Cong.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCaoDoanhThu.xaml.cs">
+      <DependentUpon>BaoCaoDoanhThu.xaml</DependentUpon>
     </Compile>
     <Compile Include="DS_NhanVien.xaml.cs">
       <DependentUpon>DS_NhanVien.xaml</DependentUpon>
