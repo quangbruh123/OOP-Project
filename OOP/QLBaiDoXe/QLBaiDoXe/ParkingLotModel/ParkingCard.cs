@@ -20,7 +20,7 @@ namespace QLBaiDoXe.ParkingLotModel
             this.Vehicles = new HashSet<Vehicle>();
         }
     
-        public int ParkingCardID { get; set; }
+        public long ParkingCardID { get; set; }
         public int CardState { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
