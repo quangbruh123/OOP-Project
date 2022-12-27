@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using QLBaiDoXe.ViewModel;
 
 namespace QLBaiDoXe
 {
@@ -22,6 +23,7 @@ namespace QLBaiDoXe
         public Homepage1()
         {
             InitializeComponent();
+            this.DataContext = new LoginViewModel();
         }
     }
 }

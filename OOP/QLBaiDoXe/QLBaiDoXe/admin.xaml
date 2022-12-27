@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:QLBaiDoXe"
         mc:Ignorable="d"
-        Title="admin" Height="720" Width="1280">
+        Title="admin" Height="720" Width="1280" ResizeMode="NoResize">
     <Grid Background="#80FFA03F">
         <Grid Margin="10,0,1042.357,0">
             <Rectangle Fill="White" HorizontalAlignment="Left" Height="670.4" Margin="10,5.668,-10,0" VerticalAlignment="Top" Width="221.243" RadiusX="20" RadiusY="20" d:IsLocked="True"/>

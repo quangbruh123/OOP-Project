@@ -1,4 +1,4 @@
-﻿<Window
+﻿<UserControl
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="QLBaiDoXe.DS_NhanVien"
     
         mc:Ignorable="d"
-        Title="DS_NhanVien" Height="720" Width="1039">
+        Height="720" Width="1039">
     <Grid Background="#80FFA03F">
         <Grid Margin="10,245,10,14.332">
             <Rectangle Fill="White" HorizontalAlignment="Left" Height="431.068" Margin="0.4,-3.4,-0.4,0" VerticalAlignment="Top" Width="1012.6" RadiusX="20" RadiusY="20"/>
@@ -27,4 +27,4 @@
         <TextBlock HorizontalAlignment="Left" Height="31.05" Margin="694.42,38.95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="268.667" TextAlignment="Right" FontSize="10"><Run Text="Điện thoại: (094).8423.014"/><LineBreak/><Run Text="Email: 20521868@gm.uit.edu.vn"/><LineBreak/></TextBlock>
 
     </Grid>
-</Window>
+</UserControl>
