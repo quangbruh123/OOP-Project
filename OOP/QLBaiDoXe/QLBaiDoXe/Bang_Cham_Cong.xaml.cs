@@ -11,17 +11,19 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using QLBaiDoXe.ViewModel;
 
 namespace QLBaiDoXe
 {
     /// <summary>
     /// Interaction logic for Bang_Cham_Cong.xaml
     /// </summary>
-    public partial class Bang_Cham_Cong : Window
+    public partial class Bang_Cham_Cong : UserControl
     {
         public Bang_Cham_Cong()
         {
             InitializeComponent();
+            this.DataContext = new BangChamCongViewModel();
         }
     }
 }

@@ -39,3 +39,56 @@ C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technol
 C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\Simple Styles.baml
 C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\admin.g.cs
 C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\admin.baml
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\Simple Styles.baml
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\admin.g.cs
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\Homepage1.g.cs
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\Login.g.cs
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\App.g.cs
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe_Content.g.cs
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe_MarkupCompile.cache
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe_MarkupCompile.lref
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\App.baml
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\admin.baml
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\Homepage1.baml
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\Login.baml
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.exe
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.pdb
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\QLBaiDoXe.exe.config
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\QLBaiDoXe.exe
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\QLBaiDoXe.pdb
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\ControlzEx.dll
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\EntityFramework.dll
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\HandyControl.dll
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\MahApps.Metro.dll
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\MaterialDesignColors.dll
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\MaterialDesignThemes.MahApps.dll
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\ControlzEx.pdb
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\ControlzEx.xml
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\EntityFramework.xml
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\HandyControl.pdb
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\HandyControl.xml
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\MahApps.Metro.pdb
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\MahApps.Metro.xml
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\MaterialDesignThemes.MahApps.pdb
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\Resource Dictionary\SelectViewResource.baml
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.g.resources
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.Properties.Resources.resources
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.csproj.CopyComplete
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\Bang_Cham_Cong.g.cs
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\DS_NhanVien.g.cs
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\Bang_Cham_Cong.baml
+C:\Users\Admin\Desktop\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\DS_NhanVien.baml

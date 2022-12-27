@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QLBaiDoXe"
         mc:Ignorable="d"
-        Title="admin" Height="720" Width="1280">
+        Title="admin" Height="720" Width="1280" ResizeMode="NoResize">
     <Grid Background="#80FFA03F">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="235*"/>
@@ -31,10 +31,10 @@
         <TextBlock HorizontalAlignment="Left" Height="22.334" Margin="20,200.618,0,0" TextWrapping="Wrap" Text="Thay đổi" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="#7F000000" Grid.Row="1" FontWeight="SemiBold" FontSize="14"/>
         <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="69.9,233.614,0,0" TextWrapping="Wrap" Text="Giá gửi xe" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="Black" Grid.Row="1" FontSize="17"/>
         <Image Margin="36.144,233.614,172.77,340.646" Grid.Row="1" Source="Resources/icons8-banknotes-100.png" Stretch="Fill"/>
-        <Button Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20,31.94,0,0" Grid.Row="1" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17"/>
-        <Button Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20,75.898,0,0" Grid.Row="1" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17" d:IsLocked="True"/>
+        <Button x:Name="DanhSachBtn" Command="{Binding SelectViewCommand}" CommandParameter="{Binding ElementName=DanhSachBtn}" Tag="DanhSach" Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20,31.94,0,0" Grid.Row="1" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17" />
+        <Button x:Name="ChamCongBtn" Command="{Binding SelectViewCommand}"  CommandParameter="{Binding ElementName=ChamCongBtn}" Tag="ChamCong" Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20,75.898,0,0" Grid.Row="1" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17" d:IsLocked="True" />
         <Button Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20,145.951,0,0" Grid.Row="1" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17" d:IsLocked="True"/>
         <Button Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20,225.951,0,0" Grid.Row="1" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17" d:IsLocked="True"/>
-
+        <UserControl Grid.Column="1" Grid.RowSpan="2" Content="{Binding SelectedViewModel}"></UserControl>
     </Grid>
 </Window>
