@@ -18,7 +18,7 @@ namespace QLBaiDoXe
     /// <summary>
     /// Interaction logic for DS_NhanVien.xaml
     /// </summary>
-    public partial class DS_NhanVien : Window
+    public partial class DS_NhanVien : UserControl
     {
         public DS_NhanVien()
         {
