@@ -1,4 +1,5 @@
 ﻿using QLBaiDoXe.ParkingLotModel;
+using QLBaiDoXe.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace QLBaiDoXe.DBClasses
     {
         public static void VehicleIn(string vehicleType, long cardId, string imagePath)
         {
-            if (DataProvider.Ins.DB.ParkingCards.Any(x => x.ParkingCardID == cardId) && !string.IsNullOrEmpty(imagePath))
+            if (!string.IsNullOrEmpty(imagePath))
             {
                 int vehicleTypeId = DataProvider.Ins.DB.VehicleTypes.FirstOrDefault(x => x.VehicleTypeName == vehicleType).VehicleTypeID;
                 Vehicle vehicle = new Vehicle()
@@ -21,32 +22,33 @@ namespace QLBaiDoXe.DBClasses
                     ParkingCardID = cardId,
                     VehicleImage = imagePath,
                     VehicleState = 1,
-                    TimeStartedParking = DateTime.Now
+                    TimeStartedParking = DateTime.Now,
+                    ParkingCard = DataProvider.Ins.DB.ParkingCards.FirstOrDefault(x => x.ParkingCardID == cardId)
                 };
+                ParkingCard card = DataProvider.Ins.DB.ParkingCards.FirstOrDefault(x => x.ParkingCardID == cardId);
+                card.CardState = 1;
                 DataProvider.Ins.DB.Vehicles.Add(vehicle);
                 DataProvider.Ins.DB.SaveChanges();
+                Settings.Default.todayVehicleIn++;
             }
         }
 
-        public static string GetVehicleImagePath(long cardId, string imagePath)
+        public static Vehicle GetVehicleInfoFromCard(long cardId)
         {
-            if (DataProvider.Ins.DB.Vehicles.Any(x => x.ParkingCardID == cardId) && !string.IsNullOrEmpty(imagePath))
-            {
-                Vehicle vehicle = DataProvider.Ins.DB.Vehicles.FirstOrDefault(x => x.ParkingCardID == cardId);
-                return vehicle.VehicleImage;
-            }
-            else
-                return null;
+            return DataProvider.Ins.DB.Vehicles.FirstOrDefault(x => x.ParkingCardID == cardId);
         }
 
         public static bool VehicleOut(long cardId)
         {
-            if (DataProvider.Ins.DB.Vehicles.Any(x => x.ParkingCardID == cardId))
+            if (DataProvider.Ins.DB.Vehicles.Any(x => x.ParkingCardID == cardId && x.ParkingCard.CardState == 1))
             {
                 Vehicle vehicle = DataProvider.Ins.DB.Vehicles.FirstOrDefault(x => x.ParkingCardID == cardId);
                 vehicle.VehicleState = 0;
                 vehicle.TimeEndedParking = DateTime.Now;
+                ParkingCard card = DataProvider.Ins.DB.ParkingCards.FirstOrDefault(x => x.ParkingCardID == cardId);
+                card.CardState = 0;
                 DataProvider.Ins.DB.SaveChanges();
+                Settings.Default.todayVehicleOut++;
                 return true;
             }
             else
@@ -60,22 +62,17 @@ namespace QLBaiDoXe.DBClasses
 
         public static List<Vehicle> SearchVehicle_TimeIn_DateOnly(DateTime timeIn)
         {
-            if (DataProvider.Ins.DB.Vehicles.Any(x => x.TimeStartedParking.Date == timeIn.Date))
-            {
-                return DataProvider.Ins.DB.Vehicles.Where(x => x.TimeStartedParking.Date == timeIn.Date).ToList();
-            }
-            else
-                return null;
+            return DataProvider.Ins.DB.Vehicles.Where(x => x.TimeStartedParking.Date == timeIn.Date).ToList();
         }
 
         public static List<Vehicle> SearchVehicle_TimeIn_DateAndHour(DateTime timeIn)
         {
-            if (DataProvider.Ins.DB.Vehicles.Any(x => x.TimeStartedParking.Date == timeIn.Date && x.TimeStartedParking.Hour == timeIn.Hour))
-            {
-                return DataProvider.Ins.DB.Vehicles.Where(x => x.TimeStartedParking.Date == timeIn.Date).ToList();
-            }
-            else
-                return null;
+            return DataProvider.Ins.DB.Vehicles.Where(x => x.TimeStartedParking.Date == timeIn.Date && x.TimeStartedParking.Hour == timeIn.Hour).ToList();
+        }
+
+        public static int GetParkedVehicleNumber()
+        {
+            return DataProvider.Ins.DB.Vehicles.Where(x => x.VehicleState == 1).Count();
         }
     }
 }

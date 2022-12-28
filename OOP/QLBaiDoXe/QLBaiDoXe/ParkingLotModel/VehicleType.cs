@@ -22,7 +22,7 @@ namespace QLBaiDoXe.ParkingLotModel
     
         public int VehicleTypeID { get; set; }
         public string VehicleTypeName { get; set; }
-        public decimal ParkingFee { get; set; }
+        public int ParkingFee { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Vehicle> Vehicles { get; set; }

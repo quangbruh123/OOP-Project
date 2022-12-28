@@ -23,8 +23,7 @@
         </Grid>
         <Grid Margin="10,236,16.4,31.332">
             <Rectangle Fill="White" HorizontalAlignment="Left" Height="452.668" Margin="1.5,-9,-1.5,0" VerticalAlignment="Top" Width="1012.6" RadiusX="20" RadiusY="20"/>
-            <DataGrid HorizontalAlignment="Left" Height="431.068" VerticalAlignment="Top" Width="1012.6" Margin="1.5,0,-1.5,0"/>
-
+            <DataGrid x:Name="VehicleDataGrid" HorizontalAlignment="Left" Height="431.068" VerticalAlignment="Top" Width="1012.6" Margin="1.5,0,-1.5,0"/>
         </Grid>
         <TextBlock FontWeight="Bold" HorizontalAlignment="Left" Height="80" Margin="35,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="485" FontSize="42" Text="Tra cứu xe"/>
         <Button
