@@ -69,7 +69,7 @@ namespace QLBaiDoXe.DBClasses
             {
                 SHA256 sha256hash = SHA256.Create();
                 string passwordhash = GetHash(sha256hash, password);
-                ParkingLotModel.Account staffAccount = new ParkingLotModel.Account()
+                Account staffAccount = new Account()
                 {
                     AccountName = name,
                     AccountPassword = passwordhash,
@@ -88,7 +88,7 @@ namespace QLBaiDoXe.DBClasses
             {
                 SHA256 sha256hash = SHA256.Create();
                 string passwordhash = GetHash(sha256hash, password);
-                ParkingLotModel.Account staffAccount = new ParkingLotModel.Account()
+                Account staffAccount = new Account()
                 {
                     AccountName = name,
                     AccountPassword = passwordhash,
@@ -147,7 +147,7 @@ namespace QLBaiDoXe.DBClasses
         {
             if (DataProvider.Ins.DB.Accounts.Any(x => x.AccountName == username))
             {
-                ParkingLotModel.Account account = DataProvider.Ins.DB.Accounts.FirstOrDefault(x => x.AccountName == username);
+                Account account = DataProvider.Ins.DB.Accounts.FirstOrDefault(x => x.AccountName == username);
                 Timekeep timekeep = DataProvider.Ins.DB.Timekeeps.FirstOrDefault(x => x.StaffID == account.StaffID);
                 timekeep.LogoutTime = DateTime.Now;
                 DataProvider.Ins.DB.SaveChanges();
@@ -163,7 +163,7 @@ namespace QLBaiDoXe.DBClasses
             {
                 SHA256 sha256hash = SHA256.Create();
                 string passwordhash = GetHash(sha256hash, newPassword);
-                ParkingLotModel.Account account = DataProvider.Ins.DB.Accounts.FirstOrDefault(x => x.AccountName == username);
+                Account account = DataProvider.Ins.DB.Accounts.FirstOrDefault(x => x.AccountName == username);
                 if (account.AccountPassword != passwordhash)
                 {
                     account.AccountPassword = newPassword;

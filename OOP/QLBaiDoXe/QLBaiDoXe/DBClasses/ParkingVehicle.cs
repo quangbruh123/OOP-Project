@@ -62,7 +62,7 @@ namespace QLBaiDoXe.DBClasses
 
         public static List<Vehicle> SearchVehicle_TimeIn_DateOnly(DateTime timeIn)
         {
-            return DataProvider.Ins.DB.Vehicles.Where(x => x.TimeStartedParking.Date == timeIn.Date).ToList();
+            return DataProvider.Ins.DB.Vehicles.Where(x => x.TimeStartedParking.Day == timeIn.Day && x.TimeStartedParking.Month == timeIn.Month && x.TimeStartedParking.Year == timeIn.Year).ToList();
         }
 
         public static List<Vehicle> SearchVehicle_TimeIn_DateAndHour(DateTime timeIn)
