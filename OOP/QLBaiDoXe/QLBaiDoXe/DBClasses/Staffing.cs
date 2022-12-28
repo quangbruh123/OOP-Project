@@ -10,7 +10,7 @@ using System.Xml.Linq;
 
 namespace QLBaiDoXe.DBClasses
 {
-    public class Account
+    public class Staffing
     {
         public static string GetHash(HashAlgorithm hashAlgorithm, string input)
         {
@@ -174,6 +174,21 @@ namespace QLBaiDoXe.DBClasses
             }
             else
                 return false;
+        }
+
+        public static List<Staff> GetAllStaff()
+        {
+            return DataProvider.Ins.DB.Staffs.ToList();
+        }
+
+        public static List<Staff> FindStaff(string name)
+        {
+            return DataProvider.Ins.DB.Staffs.Where(x => x.StaffName == name).ToList();
+        }
+
+        public static List<Timekeep> GetTimekeepForStaff(string name)
+        {
+            return DataProvider.Ins.DB.Timekeeps.Where(x => x.Staff.StaffName == name).ToList();
         }
     }
 }

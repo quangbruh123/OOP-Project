@@ -53,7 +53,7 @@ namespace QLBaiDoXe.ViewModel
                 MessageBox.Show("Bạn chưa điền đủ thông tin", "Thông báo");
                 return;
             }
-            else if (DBClasses.Account.LogIn(userName, password))
+            else if (DBClasses.Staffing.LogIn(userName, password))
             {
                 MessageBox.Show("Đăng nhập thành công", "Thông báo");
                 admin adminScreen = new admin();
