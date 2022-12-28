@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="AccountID" />
     </Key>
-    <Property Name="AccountID" Type="int" Nullable="false" />
+    <Property Name="AccountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="StaffID" Type="int" Nullable="false" />
     <Property Name="RoleID" Type="int" Nullable="false" />
     <Property Name="AccountName" Type="nvarchar(max)" Nullable="false" />
@@ -14,63 +14,53 @@
     <Key>
       <PropertyRef Name="FinancialReportID" />
     </Key>
-    <Property Name="FinancialReportID" Type="int" Nullable="false" />
+    <Property Name="FinancialReportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="FinancialReportMonth" Type="smalldatetime" Nullable="false" />
-    <Property Name="Income" Type="money" Nullable="false" />
-    <Property Name="Expenditure" Type="money" Nullable="false" />
+    <Property Name="Income" Type="int" Nullable="false" />
+    <Property Name="Expenditure" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ParkingCards">
     <Key>
       <PropertyRef Name="ParkingCardID" />
     </Key>
-    <Property Name="ParkingCardID" Type="int" Nullable="false" />
+    <Property Name="ParkingCardID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CardState" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Receipts">
     <Key>
       <PropertyRef Name="ReceiptID" />
     </Key>
-    <Property Name="ReceiptID" Type="int" Nullable="false" />
+    <Property Name="ReceiptID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="VehicleID" Type="int" Nullable="false" />
     <Property Name="StaffID" Type="int" Nullable="false" />
     <Property Name="TimePaid" Type="smalldatetime" Nullable="false" />
-    <Property Name="ParkingFee" Type="money" Nullable="false" />
+    <Property Name="ParkingFee" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Roles">
     <Key>
       <PropertyRef Name="RoleID" />
     </Key>
-    <Property Name="RoleID" Type="int" Nullable="false" />
+    <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="RoleName" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Staff">
     <Key>
       <PropertyRef Name="StaffID" />
     </Key>
-    <Property Name="StaffID" Type="int" Nullable="false" />
+    <Property Name="StaffID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CivilID" Type="nvarchar(max)" Nullable="false" />
     <Property Name="StaffName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="RoleID" Type="int" Nullable="false" />
     <Property Name="PhoneNumber" Type="nvarchar(max)" />
     <Property Name="StaffAddress" Type="nvarchar(max)" />
     <Property Name="DateOfBirth" Type="smalldatetime" Nullable="false" />
-    <Property Name="Wage" Type="float" Nullable="false" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
+    <Property Name="Wage" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Timekeeps">
     <Key>
       <PropertyRef Name="TimekeepID" />
     </Key>
-    <Property Name="TimekeepID" Type="int" Nullable="false" />
+    <Property Name="TimekeepID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="StaffID" Type="int" Nullable="false" />
     <Property Name="LoginTime" Type="smalldatetime" Nullable="false" />
     <Property Name="LogoutTime" Type="smalldatetime" />
@@ -79,19 +69,19 @@
     <Key>
       <PropertyRef Name="VehicleID" />
     </Key>
-    <Property Name="VehicleID" Type="int" Nullable="false" />
+    <Property Name="VehicleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="VehicleTypeID" Type="int" Nullable="false" />
-    <Property Name="ParkingCardID" Type="int" Nullable="false" />
+    <Property Name="ParkingCardID" Type="bigint" Nullable="false" />
     <Property Name="TimeStartedParking" Type="smalldatetime" Nullable="false" />
     <Property Name="TimeEndedParking" Type="smalldatetime" />
     <Property Name="VehicleState" Type="int" Nullable="false" />
-    <Property Name="VehicleImage" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="VehicleImage" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="VehicleTypes">
     <Key>
       <PropertyRef Name="VehicleTypeID" />
     </Key>
-    <Property Name="VehicleTypeID" Type="int" Nullable="false" />
+    <Property Name="VehicleTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="VehicleTypeName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ParkingFee" Type="money" Nullable="false" />
   </EntityType>
@@ -191,37 +181,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="ParkingLotModelStoreContainer">
     <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FinancialReports" EntityType="Self.FinancialReports" Schema="dbo" store:Type="Tables" />
@@ -229,7 +188,6 @@
     <EntitySet Name="Receipts" EntityType="Self.Receipts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Timekeeps" EntityType="Self.Timekeeps" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Vehicles" EntityType="Self.Vehicles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VehicleTypes" EntityType="Self.VehicleTypes" Schema="dbo" store:Type="Tables" />

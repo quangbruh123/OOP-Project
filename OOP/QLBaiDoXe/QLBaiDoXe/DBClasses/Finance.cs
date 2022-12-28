@@ -17,7 +17,7 @@ namespace QLBaiDoXe.DBClasses
                 VehicleID = vehicle.VehicleID,
                 StaffID = staffId,
                 TimePaid = DateTime.Now,
-                ParkingFee = vehicle.VehicleType.ParkingFee,
+                ParkingFee = (int)vehicle.VehicleType.ParkingFee,
                 Vehicle = vehicle,
                 Staff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.StaffID == staffId)
             };
