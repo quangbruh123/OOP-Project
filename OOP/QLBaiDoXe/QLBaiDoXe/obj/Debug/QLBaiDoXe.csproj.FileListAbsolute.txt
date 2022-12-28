@@ -33,7 +33,6 @@ C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technol
 C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.csproj.CopyComplete
 C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.exe
 C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.pdb
-C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.csproj.AssemblyReference.cache
 C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\Simple Styles.baml
 C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\admin.g.cs
 C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\admin.baml
@@ -99,3 +98,14 @@ C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technol
 C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\Bang_Cham_Cong.baml
 C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\DS_NhanVien.baml
 C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\Homepage1.baml
+C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\BaoCaoDoanhThu.g.cs
+C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\TraCuuXe.g.cs
+C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\BaoCaoDoanhThu.baml
+C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\TraCuuXe.baml
+C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\LiveCharts.dll
+C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\LiveCharts.pdb
+C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\LiveCharts.xml
+C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\QLBaiDoXe.csproj.AssemblyReference.cache

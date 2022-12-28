@@ -75,7 +75,7 @@
         <Button
           Style="{StaticResource MaterialDesignFloatingActionLightButton}"
           ToolTip="MaterialDesignFloatingActionLightButton"
-          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="-14.134,641.266,1231.733,-8.867">
+          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="-14.134,616.2,1206.667,-8.866" Height="Auto" Width="Auto">
             <materialDesign:PackIcon
             Kind="LogoutVariant" Height="33.6" Width="36.4"
          />
