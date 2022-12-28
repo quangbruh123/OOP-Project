@@ -106,7 +106,7 @@
     <Compile Include="BaoCaoDoanhThu.xaml.cs">
       <DependentUpon>BaoCaoDoanhThu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DBClasses\Account.cs" />
+    <Compile Include="DBClasses\Staffing.cs" />
     <Compile Include="DBClasses\Cards.cs" />
     <Compile Include="DBClasses\Finance.cs" />
     <Compile Include="DBClasses\ParkingVehicle.cs" />
@@ -205,9 +205,6 @@
     <Compile Include="Bang_Cham_Cong.xaml.cs">
       <DependentUpon>Bang_Cham_Cong.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BaoCaoDoanhThu.xaml.cs">
-      <DependentUpon>BaoCaoDoanhThu.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DS_NhanVien.xaml.cs">
       <DependentUpon>DS_NhanVien.xaml</DependentUpon>
     </Compile>
@@ -218,10 +215,6 @@
       <DependentUpon>Login.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Resource Dictionary\SelectViewResource.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Simple Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -43,7 +43,7 @@ namespace QLBaiDoXe
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            if (DBClasses.Account.LogIn(UsernameTextbox.Text, PasswordTextbox.Password))
+            if (Staffing.LogIn(UsernameTextbox.Text, PasswordTextbox.Password))
             {
                 MessageBox.Show("Đăng nhập thành công", "Thông báo");
                 Homepage1 homepage = new Homepage1();

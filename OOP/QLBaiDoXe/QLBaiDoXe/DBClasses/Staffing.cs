@@ -6,11 +6,12 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Xml.Linq;
 
 namespace QLBaiDoXe.DBClasses
 {
-    public class Account
+    public class Staffing
     {
         public static string GetHash(HashAlgorithm hashAlgorithm, string input)
         {
@@ -123,7 +124,7 @@ namespace QLBaiDoXe.DBClasses
                 SHA256 sha256hash = SHA256.Create();
                 string passwordhash = GetHash(sha256hash, password);
                 Debug.WriteLine(passwordhash);
-                ParkingLotModel.Account account = DataProvider.Ins.DB.Accounts.FirstOrDefault(x => x.AccountName == username);
+                Account account = DataProvider.Ins.DB.Accounts.FirstOrDefault(x => x.AccountName == username);
                 if (account.AccountPassword == passwordhash)
                 {
                     Timekeep timekeep = new Timekeep()
@@ -147,7 +148,7 @@ namespace QLBaiDoXe.DBClasses
         {
             if (DataProvider.Ins.DB.Accounts.Any(x => x.AccountName == username))
             {
-                ParkingLotModel.Account account = DataProvider.Ins.DB.Accounts.FirstOrDefault(x => x.AccountName == username);
+                Account account = DataProvider.Ins.DB.Accounts.FirstOrDefault(x => x.AccountName == username);
                 Timekeep timekeep = DataProvider.Ins.DB.Timekeeps.FirstOrDefault(x => x.StaffID == account.StaffID);
                 timekeep.LogoutTime = DateTime.Now;
                 DataProvider.Ins.DB.SaveChanges();
@@ -163,7 +164,7 @@ namespace QLBaiDoXe.DBClasses
             {
                 SHA256 sha256hash = SHA256.Create();
                 string passwordhash = GetHash(sha256hash, newPassword);
-                ParkingLotModel.Account account = DataProvider.Ins.DB.Accounts.FirstOrDefault(x => x.AccountName == username);
+                Account account = DataProvider.Ins.DB.Accounts.FirstOrDefault(x => x.AccountName == username);
                 if (account.AccountPassword != passwordhash)
                 {
                     account.AccountPassword = newPassword;
@@ -174,6 +175,21 @@ namespace QLBaiDoXe.DBClasses
             }
             else
                 return false;
+        }
+
+        public static List<Staff> GetAllStaff()
+        {
+            return DataProvider.Ins.DB.Staffs.ToList();
+        }
+
+        public static List<Staff> FindStaff(string name)
+        {
+            return DataProvider.Ins.DB.Staffs.Where(x => x.StaffName == name).ToList();
+        }
+
+        public static List<Timekeep> GetTimekeepForStaff(string name)
+        {
+            return DataProvider.Ins.DB.Timekeeps.Where(x => x.Staff.StaffName == name).ToList();
         }
     }
 }
