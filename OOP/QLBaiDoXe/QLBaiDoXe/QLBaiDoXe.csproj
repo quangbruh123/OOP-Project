@@ -156,6 +156,9 @@
     <Compile Include="ViewModel\DSNhanVienViewModel.cs" />
     <Compile Include="ViewModel\HomePage1ViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewUserControl\SwitchViewClass\SwitchViewBangChamCong.cs" />
+    <Compile Include="ViewUserControl\SwitchViewClass\SwitchViewBaoCaoDoanhThu.cs" />
+    <Compile Include="ViewUserControl\SwitchViewClass\SwitchViewDS_NhanVien.cs" />
     <Page Include="admin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -200,6 +203,10 @@
       <DependentUpon>Login.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Resource Dictionary\SelectViewResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Simple Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -269,7 +276,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="ViewUserControl\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ParkingLotModel\ParkingLotModel.Context.tt">
