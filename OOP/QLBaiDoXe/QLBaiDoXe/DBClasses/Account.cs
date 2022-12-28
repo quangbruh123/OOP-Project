@@ -1,6 +1,7 @@
 ﻿using QLBaiDoXe.ParkingLotModel;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -33,8 +34,7 @@ namespace QLBaiDoXe.DBClasses
                     RoleID = 0,
                     PhoneNumber = phoneNumber,
                     StaffAddress = address,
-                    DateOfBirth = dob,
-                    Wage = wage,
+                    DateOfBirth = dob
                 };
                 DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 1).Staffs.Add(newStaff);
                 DataProvider.Ins.DB.SaveChanges();
@@ -54,8 +54,7 @@ namespace QLBaiDoXe.DBClasses
                     RoleID = 1,
                     PhoneNumber = phoneNumber,
                     StaffAddress = address,
-                    DateOfBirth = dob,
-                    Wage = wage,
+                    DateOfBirth = dob
                 };
                 DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 1).Staffs.Add(newStaff);
                 DataProvider.Ins.DB.SaveChanges();
@@ -123,6 +122,7 @@ namespace QLBaiDoXe.DBClasses
             {
                 SHA256 sha256hash = SHA256.Create();
                 string passwordhash = GetHash(sha256hash, password);
+                Debug.WriteLine(passwordhash);
                 ParkingLotModel.Account account = DataProvider.Ins.DB.Accounts.FirstOrDefault(x => x.AccountName == username);
                 if (account.AccountPassword == passwordhash)
                 {

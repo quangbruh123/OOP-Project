@@ -24,9 +24,9 @@
             <TextBlock HorizontalAlignment="Left" Height="22.334" Margin="20.343,267.818,0,0" TextWrapping="Wrap" Text="Thay đổi" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="#7F000000" FontWeight="SemiBold" FontSize="14"/>
             <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="70.243,300.814,0,0" TextWrapping="Wrap" Text="Giá gửi xe" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="Black" FontSize="17"/>
             <Image Margin="33.103,300.814,163.788,363.846" Source="Resources/icons8-banknotes-100.png" Stretch="Fill"/>
-            <Button Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,99.14,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17"/>
-            <Button Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,143.098,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17"/>
-            <Button Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,213.151,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17"/>
+            <Button x:Name="DanhSachBtn" Command="{Binding SelectViewCommand}" CommandParameter="{Binding ElementName=DanhSachBtn}" Tag="DanhSach" Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,99.14,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17"/>
+            <Button x:Name="ChamCongBtn" Command="{Binding SelectViewCommand}" CommandParameter="{Binding ElementName=ChamCongBtn}" Tag="ChamCong" Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,143.098,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17"/>
+            <Button x:Name="DoanhThuBtn" Command="{Binding SelectViewCommand}" CommandParameter="{Binding ElementName=DoanhThuBtn}" Tag="DoanhThu" Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,213.151,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17"/>
             <Button Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,293.151,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17"/>
             <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="70.243,356.214,0,0" TextWrapping="Wrap" Text="Đăng xuất" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="#FFFF6363" FontSize="17"/>
             <Button
@@ -35,6 +35,6 @@
 
             </Button>
         </Grid>
-
+        <UserControl Content="{Binding SelectedViewModel}" Margin="243,0,0,0"/>
     </Grid>
 </Window>

@@ -29,7 +29,6 @@ namespace QLBaiDoXe.ParkingLotModel
         public string PhoneNumber { get; set; }
         public string StaffAddress { get; set; }
         public System.DateTime DateOfBirth { get; set; }
-        public int Wage { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Account> Accounts { get; set; }

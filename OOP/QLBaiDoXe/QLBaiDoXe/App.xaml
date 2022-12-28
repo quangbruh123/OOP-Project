@@ -14,7 +14,7 @@
                 <materialDesign:CustomColorTheme BaseTheme="Light" PrimaryColor="#FFFFA03F" SecondaryColor="Lime" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
                 <ResourceDictionary Source="/Resource Dictionary/SelectViewResource.xaml"></ResourceDictionary>
-                
+
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
                

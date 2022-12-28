@@ -37,5 +37,10 @@ namespace QLBaiDoXe.DBClasses
             else
                 return false;
         }
+
+        public static List<ParkingCard> GetAllParkingCards()
+        {
+            return DataProvider.Ins.DB.ParkingCards.ToList();
+        }
     }
 }

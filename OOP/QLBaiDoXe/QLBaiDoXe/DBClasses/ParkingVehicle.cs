@@ -1,4 +1,5 @@
 ﻿using QLBaiDoXe.ParkingLotModel;
+using QLBaiDoXe.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,7 @@ namespace QLBaiDoXe.DBClasses
                 card.CardState = 1;
                 DataProvider.Ins.DB.Vehicles.Add(vehicle);
                 DataProvider.Ins.DB.SaveChanges();
+                Settings.Default.todayVehicleIn++;
             }
         }
 
@@ -38,7 +40,7 @@ namespace QLBaiDoXe.DBClasses
 
         public static bool VehicleOut(long cardId)
         {
-            if (DataProvider.Ins.DB.Vehicles.Any(x => x.ParkingCardID == cardId))
+            if (DataProvider.Ins.DB.Vehicles.Any(x => x.ParkingCardID == cardId && x.ParkingCard.CardState == 1))
             {
                 Vehicle vehicle = DataProvider.Ins.DB.Vehicles.FirstOrDefault(x => x.ParkingCardID == cardId &&
                                     x.ParkingCard.CardState == 1);
@@ -47,6 +49,7 @@ namespace QLBaiDoXe.DBClasses
                 ParkingCard card = DataProvider.Ins.DB.ParkingCards.FirstOrDefault(x => x.ParkingCardID == cardId);
                 card.CardState = 0;
                 DataProvider.Ins.DB.SaveChanges();
+                Settings.Default.todayVehicleOut++;
                 return true;
             }
             else
@@ -66,6 +69,11 @@ namespace QLBaiDoXe.DBClasses
         public static List<Vehicle> SearchVehicle_TimeIn_DateAndHour(DateTime timeIn)
         {
             return DataProvider.Ins.DB.Vehicles.Where(x => x.TimeStartedParking.Date == timeIn.Date && x.TimeStartedParking.Hour == timeIn.Hour).ToList();
+        }
+
+        public static int GetParkedVehicleNumber()
+        {
+            return DataProvider.Ins.DB.Vehicles.Where(x => x.VehicleState == 1).Count();
         }
     }
 }

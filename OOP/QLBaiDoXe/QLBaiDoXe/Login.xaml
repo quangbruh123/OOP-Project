@@ -1,10 +1,12 @@
 ﻿<Window x:Class="QLBaiDoXe.MainWindow"
+        x:Name="LoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QLBaiDoXe"
         xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:i1="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="600">
     <Window.Resources>
@@ -41,8 +43,10 @@
         <Grid x:Name="Login" HorizontalAlignment="Left" Margin="-37,0,0,0" VerticalAlignment="Center" Width="601" Visibility="Visible">
             <Rectangle HorizontalAlignment="Left" Height="420.4" VerticalAlignment="Center" Width="292.2" Fill="#FFFFA03F" Opacity="0.5" RadiusX="10" RadiusY="10"/>
             <TextBlock HorizontalAlignment="Left" Height="72" Text="Login" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" FontSize="40" Foreground="#FFFFA03F" Margin="335,65,0,0"/>
-            <hc:TextBox hc:InfoElement.Placeholder="Username" HorizontalAlignment="Left" Height="37" Margin="337,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" FontSize="14"/>
-            <hc:PasswordBox hc:InfoElement.Placeholder="Password" ShowEyeButton="True" HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="261" Margin="337,194,0,0"/>
+            <hc:TextBox x:Name="UsernameTextbox" hc:InfoElement.Placeholder="Username" HorizontalAlignment="Left" Height="37" Margin="337,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" FontSize="14"/>
+            <hc:PasswordBox x:Name="PasswordTextbox" hc:InfoElement.Placeholder="Password" ShowEyeButton="True" HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="261" Margin="337,194,0,0">
+                
+            </hc:PasswordBox>
             <CheckBox Content="Ghi nhớ tài khoản" HorizontalAlignment="Left" Height="21" Width="130" Margin="337,255,0,0" VerticalAlignment="Top"/>
             <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="23" Text="Quên mật khẩu?" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" Margin="509,257,0,0" Foreground="#FFFFA03F" FontWeight="SemiBold">
                 <TextBlock.Style>
@@ -59,8 +63,8 @@
                     </Style>
                 </TextBlock.Style>
             </TextBlock>
-            <Button  Margin="337,313,0,0"
-                Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Width="261" BorderBrush="{x:Null}" Background="#FFFFA03F" Foreground="White" FontSize="14" Height="42"/>
+            <Button x:Name="LoginButton" Margin="337,313,0,0"
+                Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Width="261" BorderBrush="{x:Null}" Background="#FFFFA03F" Foreground="White" FontSize="14" Height="42" Click="LoginButton_Click"/>
 
         </Grid>
         <Grid x:Name="Forget_Password" HorizontalAlignment="Left" Margin="-37,0,0,0" VerticalAlignment="Center" Width="601" Visibility="Hidden">

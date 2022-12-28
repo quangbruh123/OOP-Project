@@ -2,12 +2,18 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:switchview="clr-namespace:QLBaiDoXe.ViewUserControl.SwitchViewClass"
                     xmlns:view="clr-namespace:QLBaiDoXe">
+    
     <DataTemplate DataType="{x:Type switchview:SwitchViewBangChamCong}">
         <view:Bang_Cham_Cong></view:Bang_Cham_Cong>
     </DataTemplate>
-    
-    <DataTemplate DataType="{x:Type switchview:SwitchViewDSNhanVien}">
+
+    <DataTemplate DataType="{x:Type switchview:SwitchViewDS_NhanVien}">
         <view:DS_NhanVien></view:DS_NhanVien>
     </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type switchview:SwitchViewBaoCaoDoanhThu}">
+        <view:BaoCaoDoanhThu></view:BaoCaoDoanhThu>
+    </DataTemplate>
+
 
 </ResourceDictionary>

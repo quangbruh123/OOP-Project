@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QLBaiDoXe.Properties;
+using System.Diagnostics;
 
 namespace QLBaiDoXe.DBClasses
 {
@@ -37,42 +38,35 @@ namespace QLBaiDoXe.DBClasses
         }
 
         public static void UpdateFinancialReport()
-        {
-            if (DateTime.Now.Month == Settings.Default.currentDate.Month && DateTime.Now.Year == Settings.Default.currentDate.Year)
-                return;
-            else
+        {           
+            int income = 0;
+            DateTime yesterday = new DateTime();
+            try
             {
-                if (DataProvider.Ins.DB.FinancialReports.Last().FinancialReportMonth.Month != Settings.Default.currentDate.Month)
-                {
-                    int income = 0;
-                    int expenditure = 0;
-                    List<Receipt> receipts = DataProvider.Ins.DB.Receipts.Where(x => x.TimePaid.Month == Settings.Default.currentDate.AddMonths(-1).Month).ToList();
-                    List<Staff> staffs = DataProvider.Ins.DB.Staffs.ToList();
-                    foreach (Receipt receipt in receipts)
-                    {
-                        income += receipt.ParkingFee;
-                    }
-                    foreach (Staff staff in staffs)
-                    {
-                        expenditure += staff.Wage;
-                    }
-                    FinancialReport financialReport = new FinancialReport()
-                    {
-                        FinancialReportMonth = DateTime.Now.AddMonths(-1),
-                        Income = income,
-                        Expenditure = expenditure
-                    };
-                    DataProvider.Ins.DB.FinancialReports.Add(financialReport);
-                    DataProvider.Ins.DB.SaveChanges();
-                }
-                else
-                    return;
+                yesterday = Settings.Default.currentDate.AddDays(-1).Date;
             }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                return;
+            }
+            List<Receipt> receipts = DataProvider.Ins.DB.Receipts.Where(x => x.TimePaid.Date == yesterday).ToList();
+            foreach (Receipt receipt in receipts)
+            {
+                income += (int)receipt.ParkingFee;
+            }
+            FinancialReport financialReport = new FinancialReport()
+            {
+                FinancialReportDate = DateTime.Now.AddDays(-1),
+                Income = income
+            };
+            DataProvider.Ins.DB.FinancialReports.Add(financialReport);
+            DataProvider.Ins.DB.SaveChanges();
         }
 
         public static FinancialReport GetFinancialReportForDate(int month, int year)
         {
-            return DataProvider.Ins.DB.FinancialReports.FirstOrDefault(x => x.FinancialReportMonth.Date.Month == month && x.FinancialReportMonth.Year == year);
+            return DataProvider.Ins.DB.FinancialReports.FirstOrDefault(x => x.FinancialReportDate.Date.Month == month && x.FinancialReportDate.Year == year);
         }
 
         public static List<FinancialReport> GetAllFinancialReports()

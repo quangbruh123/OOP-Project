@@ -20,15 +20,14 @@
             <PropertyRef Name="FinancialReportID" />
           </Key>
           <Property Name="FinancialReportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FinancialReportMonth" Type="smalldatetime" Nullable="false" />
+          <Property Name="FinancialReportDate" Type="smalldatetime" Nullable="false" />
           <Property Name="Income" Type="int" Nullable="false" />
-          <Property Name="Expenditure" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ParkingCards">
           <Key>
             <PropertyRef Name="ParkingCardID" />
           </Key>
-          <Property Name="ParkingCardID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ParkingCardID" Type="bigint" Nullable="false" />
           <Property Name="CardState" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Receipts">
@@ -59,7 +58,6 @@
           <Property Name="PhoneNumber" Type="nvarchar(max)" />
           <Property Name="StaffAddress" Type="nvarchar(max)" />
           <Property Name="DateOfBirth" Type="smalldatetime" Nullable="false" />
-          <Property Name="Wage" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Timekeeps">
           <Key>
@@ -251,15 +249,14 @@
             <PropertyRef Name="FinancialReportID" />
           </Key>
           <Property Name="FinancialReportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FinancialReportMonth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FinancialReportDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Income" Type="Int32" Nullable="false" />
-          <Property Name="Expenditure" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="ParkingCard">
           <Key>
             <PropertyRef Name="ParkingCardID" />
           </Key>
-          <Property Name="ParkingCardID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParkingCardID" Type="Int64" Nullable="false" />
           <Property Name="CardState" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Vehicles" Relationship="Self.Vehicles_CardID_FK" FromRole="ParkingCards" ToRole="Vehicles" />
         </EntityType>
@@ -295,7 +292,6 @@
           <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="StaffAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Wage" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Accounts" Relationship="Self.Accounts_StaffID_FK" FromRole="Staff" ToRole="Accounts" />
           <NavigationProperty Name="Receipts" Relationship="Self.Receipts_StaffID_FK" FromRole="Staff" ToRole="Receipts" />
           <NavigationProperty Name="Role" Relationship="Self.Staff_RoleID_FK" FromRole="Staff" ToRole="Roles" />
@@ -495,9 +491,8 @@
             <EntityTypeMapping TypeName="ParkingLotModel.FinancialReport">
               <MappingFragment StoreEntitySet="FinancialReports">
                 <ScalarProperty Name="FinancialReportID" ColumnName="FinancialReportID" />
-                <ScalarProperty Name="FinancialReportMonth" ColumnName="FinancialReportMonth" />
+                <ScalarProperty Name="FinancialReportDate" ColumnName="FinancialReportDate" />
                 <ScalarProperty Name="Income" ColumnName="Income" />
-                <ScalarProperty Name="Expenditure" ColumnName="Expenditure" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -538,7 +533,6 @@
                 <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
                 <ScalarProperty Name="StaffAddress" ColumnName="StaffAddress" />
                 <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
-                <ScalarProperty Name="Wage" ColumnName="Wage" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
