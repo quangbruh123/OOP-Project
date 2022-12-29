@@ -53,18 +53,20 @@ namespace QLBaiDoXe.ViewModel
                 MessageBox.Show("Bạn chưa điền đủ thông tin", "Thông báo");
                 return;
             }
-            else if (DBClasses.Staffing.LogIn(userName, password))
-            {
-                MessageBox.Show("Đăng nhập thành công", "Thông báo");
-                admin adminScreen = new admin();
-                Application.Current.MainWindow = adminScreen;
-                Application.Current.MainWindow.Show();
-                p.Close();
-            }
             else
             {
-                MessageBox.Show("Sai thông tin đăng nhập", "Thông báo");
-            }
+                MainWindow.currentStaffID = DBClasses.Staffing.LogIn(userName, password);
+                if (MainWindow.currentStaffID != 0)
+                {
+                    MessageBox.Show("Đăng nhập thành công", "Thông báo");
+                    admin adminScreen = new admin();
+                    Application.Current.MainWindow = adminScreen;
+                    Application.Current.MainWindow.Show();
+                    p.Close();
+                }
+                else
+                    MessageBox.Show("Sai thông tin đăng nhập", "Thông báo");
+            }          
         }
     }
 }

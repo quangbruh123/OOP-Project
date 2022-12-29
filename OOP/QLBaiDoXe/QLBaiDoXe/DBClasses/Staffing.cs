@@ -39,6 +39,8 @@ namespace QLBaiDoXe.DBClasses
                 };
                 DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 1).Staffs.Add(newStaff);
                 DataProvider.Ins.DB.SaveChanges();
+                AddStaffAccount(username, password);
+                DataProvider.Ins.DB.SaveChanges();
                 return true;
             }
             return false;
@@ -150,7 +152,7 @@ namespace QLBaiDoXe.DBClasses
                 return false;
         }
 
-        public static bool LogIn(string username, string password)
+        public static int LogIn(string username, string password)
         {
             if (DataProvider.Ins.DB.Accounts.Any(x => x.AccountName == username))
             {
@@ -168,13 +170,13 @@ namespace QLBaiDoXe.DBClasses
                     };
                     DataProvider.Ins.DB.Timekeeps.Add(timekeep);
                     DataProvider.Ins.DB.SaveChanges();
-                    return true;
+                    return account.Staff.StaffID;
                 }                    
                 else
-                    return false;
+                    return 0;
             }
             else
-                return false;
+                return 0;
         }
 
         public static bool LogOut(string username)

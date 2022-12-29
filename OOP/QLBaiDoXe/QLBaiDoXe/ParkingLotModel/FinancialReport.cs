@@ -14,8 +14,17 @@ namespace QLBaiDoXe.ParkingLotModel
     
     public partial class FinancialReport
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public FinancialReport()
+        {
+            this.Receipts = new HashSet<Receipt>();
+        }
+    
         public int FinancialReportID { get; set; }
         public System.DateTime FinancialReportDate { get; set; }
         public int Income { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Receipt> Receipts { get; set; }
     }
 }

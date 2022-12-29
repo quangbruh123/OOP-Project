@@ -25,14 +25,15 @@ namespace QLBaiDoXe
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static int currentStaffID;
         public MainWindow()
         {
             InitializeComponent();
             Debug.WriteLine(DataProvider.Ins.DB.Accounts.FirstOrDefault(x => x.AccountName == "admin").AccountName);
             Debug.WriteLine("last log in date: " + Settings.Default.currentDate.ToString());
-            if (DateTime.Now.Date != Settings.Default.currentDate.Date)
+            if (DateTime.Now.Month != Settings.Default.currentDate.Month)
             {
-                Finance.UpdateFinancialReport();
+                Finance.CreateFinancialReport();
                 Settings.Default.todayVehicleIn = Settings.Default.todayVehicleOut = 0;
             }
             Settings.Default.currentDate = DateTime.Now;
@@ -43,7 +44,9 @@ namespace QLBaiDoXe
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Staffing.LogIn(UsernameTextbox.Text, PasswordTextbox.Password))
+            currentStaffID = Staffing.LogIn(UsernameTextbox.Text, PasswordTextbox.Password);
+            Debug.WriteLine(currentStaffID.ToString());
+            if (currentStaffID != 0)
             {
                 MessageBox.Show("Đăng nhập thành công", "Thông báo");
                 Homepage1 homepage = new Homepage1();

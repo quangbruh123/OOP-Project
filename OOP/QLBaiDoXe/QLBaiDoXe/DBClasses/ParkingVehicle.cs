@@ -38,7 +38,7 @@ namespace QLBaiDoXe.DBClasses
             return DataProvider.Ins.DB.Vehicles.FirstOrDefault(x => x.ParkingCardID == cardId);
         }
 
-        public static bool VehicleOut(long cardId)
+        public static bool VehicleOut(long cardId, int staffId)
         {
             if (DataProvider.Ins.DB.Vehicles.Any(x => x.ParkingCardID == cardId && x.ParkingCard.CardState == 1))
             {
@@ -48,8 +48,51 @@ namespace QLBaiDoXe.DBClasses
                 vehicle.TimeEndedParking = DateTime.Now;
                 ParkingCard card = DataProvider.Ins.DB.ParkingCards.FirstOrDefault(x => x.ParkingCardID == cardId);
                 card.CardState = 0;
+
+                FinancialReport financialReport = DataProvider.Ins.DB.FinancialReports.FirstOrDefault(x => x.FinancialReportDate.Month == DateTime.Now.Month);
+                if (financialReport != null)
+                {
+                    Receipt receipt = new Receipt()
+                    {
+                        StaffID = staffId,
+                        FinancialReportID = financialReport.FinancialReportID,
+                        VehicleID = vehicle.VehicleID,
+                        TimePaid = DateTime.Now,
+                        ParkingFee = vehicle.VehicleType.ParkingFee,
+                        Vehicle = vehicle,
+                        FinancialReport = financialReport,
+                        Staff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.StaffID == staffId),
+                    };
+                    financialReport.Income += receipt.ParkingFee;
+                    DataProvider.Ins.DB.Receipts.Add(receipt);
+                }
+                else
+                {
+                    financialReport = new FinancialReport()
+                    {
+                        FinancialReportDate = DateTime.Now,
+                        Income = 0
+                    };
+                    DataProvider.Ins.DB.FinancialReports.Add(financialReport);
+                    DataProvider.Ins.DB.SaveChanges();
+
+                    Receipt receipt = new Receipt()
+                    {
+                        StaffID = staffId,
+                        FinancialReportID = financialReport.FinancialReportID,
+                        VehicleID = vehicle.VehicleID,
+                        TimePaid = DateTime.Now,
+                        ParkingFee = vehicle.VehicleType.ParkingFee,
+                        Vehicle = vehicle,
+                        FinancialReport = financialReport,
+                        Staff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.StaffID == staffId),
+                    };
+                    financialReport.Income += receipt.ParkingFee;
+                    DataProvider.Ins.DB.Receipts.Add(receipt);
+                }               
+
                 DataProvider.Ins.DB.SaveChanges();
-                Settings.Default.todayVehicleOut++;
+                Settings.Default.todayVehicleOut++;               
                 return true;
             }
             else

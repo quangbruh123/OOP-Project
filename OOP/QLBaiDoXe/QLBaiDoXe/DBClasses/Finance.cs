@@ -37,36 +37,27 @@ namespace QLBaiDoXe.DBClasses
             return DataProvider.Ins.DB.Receipts.Where(x => x.TimePaid.Day == date.Day && x.TimePaid.Month == date.Month && x.TimePaid.Year == date.Year).ToList();
         }
 
-        public static void UpdateFinancialReport()
-        {           
-            int income = 0;
-            DateTime yesterday = new DateTime();
-            try
-            {
-                yesterday = Settings.Default.currentDate.AddDays(-1).Date;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.ToString());
-                return;
-            }
-            List<Receipt> receipts = DataProvider.Ins.DB.Receipts.Where(x => x.TimePaid.Day == yesterday.Day && x.TimePaid.Month == yesterday.Month && x.TimePaid.Year == yesterday.Year).ToList();
-            foreach (Receipt receipt in receipts)
-            {
-                income += (int)receipt.ParkingFee;
-            }
+        public static void CreateFinancialReport()
+        {    
             FinancialReport financialReport = new FinancialReport()
             {
-                FinancialReportDate = DateTime.Now.AddDays(-1),
-                Income = income
+                FinancialReportDate = DateTime.Now,
+                Income = 0
             };
             DataProvider.Ins.DB.FinancialReports.Add(financialReport);
+            Debug.WriteLine("FinancialReportID: " + financialReport.FinancialReportID.ToString());
             DataProvider.Ins.DB.SaveChanges();
+            Debug.WriteLine("FinancialReportID: " + financialReport.FinancialReportID.ToString());
         }
 
-        public static FinancialReport GetFinancialReportForDate(int month, int year)
+        public static List<Receipt> GetReceiptsInFinancialReport(int financialReportId)
         {
-            return DataProvider.Ins.DB.FinancialReports.FirstOrDefault(x => x.FinancialReportDate.Date.Month == month && x.FinancialReportDate.Year == year);
+            return DataProvider.Ins.DB.Receipts.Where(x => x.FinancialReportID == financialReportId).ToList();
+        }
+
+        public static List<FinancialReport> GetFinancialReportForYear(int year)
+        {
+            return DataProvider.Ins.DB.FinancialReports.Where(x => x.FinancialReportDate.Year == year).ToList();
         }
 
         public static List<FinancialReport> GetAllFinancialReports()

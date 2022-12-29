@@ -20,7 +20,7 @@
             <PropertyRef Name="FinancialReportID" />
           </Key>
           <Property Name="FinancialReportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FinancialReportDate" Type="datetime" Nullable="false" />
+          <Property Name="FinancialReportDate" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="Income" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ParkingCards">
@@ -36,8 +36,9 @@
           </Key>
           <Property Name="ReceiptID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="VehicleID" Type="int" Nullable="false" />
+          <Property Name="FinancialReportID" Type="int" Nullable="false" />
           <Property Name="StaffID" Type="int" Nullable="false" />
-          <Property Name="TimePaid" Type="datetime" Nullable="false" />
+          <Property Name="TimePaid" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="ParkingFee" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Roles">
@@ -57,7 +58,7 @@
           <Property Name="RoleID" Type="int" Nullable="false" />
           <Property Name="PhoneNumber" Type="nvarchar(max)" />
           <Property Name="StaffAddress" Type="nvarchar(max)" />
-          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="DateOfBirth" Type="datetime2" Precision="7" />
         </EntityType>
         <EntityType Name="Timekeeps">
           <Key>
@@ -65,8 +66,8 @@
           </Key>
           <Property Name="TimekeepID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="StaffID" Type="int" Nullable="false" />
-          <Property Name="LoginTime" Type="datetime" Nullable="false" />
-          <Property Name="LogoutTime" Type="datetime" />
+          <Property Name="LoginTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LogoutTime" Type="datetime2" Precision="7" />
         </EntityType>
         <EntityType Name="Vehicles">
           <Key>
@@ -75,8 +76,8 @@
           <Property Name="VehicleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="VehicleTypeID" Type="int" Nullable="false" />
           <Property Name="ParkingCardID" Type="bigint" Nullable="false" />
-          <Property Name="TimeStartedParking" Type="datetime" Nullable="false" />
-          <Property Name="TimeEndedParking" Type="datetime" />
+          <Property Name="TimeStartedParking" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="TimeEndedParking" Type="datetime2" Precision="7" />
           <Property Name="VehicleState" Type="int" Nullable="false" />
           <Property Name="VehicleImage" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
@@ -109,6 +110,18 @@
             </Principal>
             <Dependent Role="Accounts">
               <PropertyRef Name="StaffID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Receipts_FinancialReportID_FK">
+          <End Role="FinancialReports" Type="Self.FinancialReports" Multiplicity="1" />
+          <End Role="Receipts" Type="Self.Receipts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FinancialReports">
+              <PropertyRef Name="FinancialReportID" />
+            </Principal>
+            <Dependent Role="Receipts">
+              <PropertyRef Name="FinancialReportID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -202,6 +215,10 @@
             <End Role="Staff" EntitySet="Staff" />
             <End Role="Accounts" EntitySet="Accounts" />
           </AssociationSet>
+          <AssociationSet Name="Receipts_FinancialReportID_FK" Association="Self.Receipts_FinancialReportID_FK">
+            <End Role="FinancialReports" EntitySet="FinancialReports" />
+            <End Role="Receipts" EntitySet="Receipts" />
+          </AssociationSet>
           <AssociationSet Name="Receipts_StaffID_FK" Association="Self.Receipts_StaffID_FK">
             <End Role="Staff" EntitySet="Staff" />
             <End Role="Receipts" EntitySet="Receipts" />
@@ -249,8 +266,9 @@
             <PropertyRef Name="FinancialReportID" />
           </Key>
           <Property Name="FinancialReportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FinancialReportDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FinancialReportDate" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="Income" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Receipts" Relationship="Self.Receipts_FinancialReportID_FK" FromRole="FinancialReports" ToRole="Receipts" />
         </EntityType>
         <EntityType Name="ParkingCard">
           <Key>
@@ -266,9 +284,11 @@
           </Key>
           <Property Name="ReceiptID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="VehicleID" Type="Int32" Nullable="false" />
+          <Property Name="FinancialReportID" Type="Int32" Nullable="false" />
           <Property Name="StaffID" Type="Int32" Nullable="false" />
-          <Property Name="TimePaid" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TimePaid" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="ParkingFee" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FinancialReport" Relationship="Self.Receipts_FinancialReportID_FK" FromRole="Receipts" ToRole="FinancialReports" />
           <NavigationProperty Name="Staff" Relationship="Self.Receipts_StaffID_FK" FromRole="Receipts" ToRole="Staff" />
           <NavigationProperty Name="Vehicle" Relationship="Self.Receipts_VehicleID_FK" FromRole="Receipts" ToRole="Vehicles" />
         </EntityType>
@@ -291,7 +311,7 @@
           <Property Name="RoleID" Type="Int32" Nullable="false" />
           <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="StaffAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="7" />
           <NavigationProperty Name="Accounts" Relationship="Self.Accounts_StaffID_FK" FromRole="Staff" ToRole="Accounts" />
           <NavigationProperty Name="Receipts" Relationship="Self.Receipts_StaffID_FK" FromRole="Staff" ToRole="Receipts" />
           <NavigationProperty Name="Role" Relationship="Self.Staff_RoleID_FK" FromRole="Staff" ToRole="Roles" />
@@ -303,8 +323,8 @@
           </Key>
           <Property Name="TimekeepID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="StaffID" Type="Int32" Nullable="false" />
-          <Property Name="LoginTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="LogoutTime" Type="DateTime" Precision="3" />
+          <Property Name="LoginTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="LogoutTime" Type="DateTime" Precision="7" />
           <NavigationProperty Name="Staff" Relationship="Self.Timekeeps_StaffID_FK" FromRole="Timekeeps" ToRole="Staff" />
         </EntityType>
         <EntityType Name="Vehicle">
@@ -314,8 +334,8 @@
           <Property Name="VehicleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="VehicleTypeID" Type="Int32" Nullable="false" />
           <Property Name="ParkingCardID" Type="Int64" Nullable="false" />
-          <Property Name="TimeStartedParking" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="TimeEndedParking" Type="DateTime" Precision="3" />
+          <Property Name="TimeStartedParking" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="TimeEndedParking" Type="DateTime" Precision="7" />
           <Property Name="VehicleState" Type="Int32" Nullable="false" />
           <Property Name="VehicleImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="ParkingCard" Relationship="Self.Vehicles_CardID_FK" FromRole="Vehicles" ToRole="ParkingCards" />
@@ -352,6 +372,18 @@
             </Principal>
             <Dependent Role="Accounts">
               <PropertyRef Name="StaffID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Receipts_FinancialReportID_FK">
+          <End Role="FinancialReports" Type="Self.FinancialReport" Multiplicity="1" />
+          <End Role="Receipts" Type="Self.Receipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FinancialReports">
+              <PropertyRef Name="FinancialReportID" />
+            </Principal>
+            <Dependent Role="Receipts">
+              <PropertyRef Name="FinancialReportID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -445,6 +477,10 @@
             <End Role="Staff" EntitySet="Staffs" />
             <End Role="Accounts" EntitySet="Accounts" />
           </AssociationSet>
+          <AssociationSet Name="Receipts_FinancialReportID_FK" Association="Self.Receipts_FinancialReportID_FK">
+            <End Role="FinancialReports" EntitySet="FinancialReports" />
+            <End Role="Receipts" EntitySet="Receipts" />
+          </AssociationSet>
           <AssociationSet Name="Vehicles_CardID_FK" Association="Self.Vehicles_CardID_FK">
             <End Role="ParkingCards" EntitySet="ParkingCards" />
             <End Role="Vehicles" EntitySet="Vehicles" />
@@ -509,6 +545,7 @@
               <MappingFragment StoreEntitySet="Receipts">
                 <ScalarProperty Name="ReceiptID" ColumnName="ReceiptID" />
                 <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="FinancialReportID" ColumnName="FinancialReportID" />
                 <ScalarProperty Name="StaffID" ColumnName="StaffID" />
                 <ScalarProperty Name="TimePaid" ColumnName="TimePaid" />
                 <ScalarProperty Name="ParkingFee" ColumnName="ParkingFee" />
