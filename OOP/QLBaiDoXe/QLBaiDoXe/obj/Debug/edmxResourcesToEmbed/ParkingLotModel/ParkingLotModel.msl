@@ -16,9 +16,8 @@
       <EntityTypeMapping TypeName="ParkingLotModel.FinancialReport">
         <MappingFragment StoreEntitySet="FinancialReports">
           <ScalarProperty Name="FinancialReportID" ColumnName="FinancialReportID" />
-          <ScalarProperty Name="FinancialReportMonth" ColumnName="FinancialReportMonth" />
+          <ScalarProperty Name="FinancialReportDate" ColumnName="FinancialReportDate" />
           <ScalarProperty Name="Income" ColumnName="Income" />
-          <ScalarProperty Name="Expenditure" ColumnName="Expenditure" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -59,7 +58,6 @@
           <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
           <ScalarProperty Name="StaffAddress" ColumnName="StaffAddress" />
           <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
-          <ScalarProperty Name="Wage" ColumnName="Wage" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

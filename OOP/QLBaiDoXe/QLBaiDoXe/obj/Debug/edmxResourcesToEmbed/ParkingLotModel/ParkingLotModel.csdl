@@ -17,15 +17,14 @@
       <PropertyRef Name="FinancialReportID" />
     </Key>
     <Property Name="FinancialReportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FinancialReportMonth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FinancialReportDate" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Income" Type="Int32" Nullable="false" />
-    <Property Name="Expenditure" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="ParkingCard">
     <Key>
       <PropertyRef Name="ParkingCardID" />
     </Key>
-    <Property Name="ParkingCardID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParkingCardID" Type="Int64" Nullable="false" />
     <Property Name="CardState" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Vehicles" Relationship="Self.Vehicles_CardID_FK" FromRole="ParkingCards" ToRole="Vehicles" />
   </EntityType>
@@ -61,7 +60,6 @@
     <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="StaffAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="Wage" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Accounts" Relationship="Self.Accounts_StaffID_FK" FromRole="Staff" ToRole="Accounts" />
     <NavigationProperty Name="Receipts" Relationship="Self.Receipts_StaffID_FK" FromRole="Staff" ToRole="Receipts" />
     <NavigationProperty Name="Role" Relationship="Self.Staff_RoleID_FK" FromRole="Staff" ToRole="Roles" />
@@ -98,7 +96,7 @@
     </Key>
     <Property Name="VehicleTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="VehicleTypeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="ParkingFee" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ParkingFee" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Vehicles" Relationship="Self.Vehicles_VehicleTypeID_FK" FromRole="VehicleTypes" ToRole="Vehicles" />
   </EntityType>
   <Association Name="Accounts_RoleID_FK">

@@ -20,25 +20,79 @@
             <materialDesign:PackIcon
                 Kind="Search"
                 Opacity=".56" Margin="31.8,27.654,0,0" Height="32.946" Width="32.946" />
-            <Button Content="Tìm kiếm" HorizontalAlignment="Left" Height="Auto" Margin="745.2,29.322,0,37.732" Width="131.2" Foreground="White" Command="{Binding SubmitCommand}"/>
-            <materialDesign:TimePicker HorizontalAlignment="Left" Height="40" Margin="555.733,25.6,0,0" VerticalAlignment="Top" Width="141.6" FontSize="20"/>
-            <ComboBox materialDesign:HintAssist.Hint="Ngày" HorizontalAlignment="Left" Height="40" Margin="82.7,25.6,0,0" VerticalAlignment="Top" Width="120" FontSize="20" Text="{Binding Ngay, UpdateSourceTrigger=PropertyChanged}">
-                <ComboBoxItem Content="ComboBoxItem" Height="100" Width="100"/>
+            <Button Content="Tìm kiếm" HorizontalAlignment="Left" Height="Auto" Margin="745.2,29.322,0,37.732" Width="131.2" Foreground="White" Command="{Binding SubmitCommand}" Click="Button_Click"/>
+            <materialDesign:TimePicker x:Name="TimePicker" HorizontalAlignment="Left" Height="40" Margin="555.733,25.6,0,0" VerticalAlignment="Top" Width="141.6" FontSize="20"/>
+            <ComboBox x:Name="cbxDay" materialDesign:HintAssist.Hint="Ngày" HorizontalAlignment="Left" Height="40" Margin="82.7,25.6,0,0" VerticalAlignment="Top" Width="120" FontSize="20" Text="{Binding Ngay, UpdateSourceTrigger=PropertyChanged}">
+                <ComboBoxItem Content="1" />
+                <ComboBoxItem Content="2" />
+                <ComboBoxItem Content="3" />
+                <ComboBoxItem Content="4" />
+                <ComboBoxItem Content="5" />
+                <ComboBoxItem Content="6" />
+                <ComboBoxItem Content="7"/>
+                <ComboBoxItem Content="8"/>
+                <ComboBoxItem Content="9"/>
+                <ComboBoxItem Content="10"/>
+                <ComboBoxItem Content="11"/>
+                <ComboBoxItem Content="12"/>
+                <ComboBoxItem Content="13"/>
+                <ComboBoxItem Content="14"/>
+                <ComboBoxItem Content="15"/>
+                <ComboBoxItem Content="16"/>
+                <ComboBoxItem Content="17"/>
+                <ComboBoxItem Content="18"/>
+                <ComboBoxItem Content="19"/>
+                <ComboBoxItem Content="20"/>
+                <ComboBoxItem Content="21"/>
+                <ComboBoxItem Content="22"/>
+                <ComboBoxItem Content="23"/>
+                <ComboBoxItem Content="24"/>
+                <ComboBoxItem Content="25"/>
+                <ComboBoxItem Content="26"/>
+                <ComboBoxItem Content="27"/>
+                <ComboBoxItem Content="28"/>
+                <ComboBoxItem Content="29"/>
+                <ComboBoxItem Content="30"/>
+                <ComboBoxItem Content="31"/>
             </ComboBox>
-            <ComboBox materialDesign:HintAssist.Hint="Tháng" HorizontalAlignment="Left" Height="40" Margin="229.9,25.6,0,0" VerticalAlignment="Top" Width="120" FontSize="20" Text="{Binding Thang, UpdateSourceTrigger=PropertyChanged}">
-                <ComboBoxItem Content="ComboBoxItem" Height="100" Width="100"/>
+            <ComboBox x:Name="cbxMonth" materialDesign:HintAssist.Hint="Tháng" HorizontalAlignment="Left" Height="40" Margin="229.9,25.6,0,0" VerticalAlignment="Top" Width="120" FontSize="20" Text="{Binding Thang, UpdateSourceTrigger=PropertyChanged}">
+                <ComboBoxItem Content="1"/>
+                <ComboBoxItem Content="2"/>
+                <ComboBoxItem Content="3"/>
+                <ComboBoxItem Content="4"/>
+                <ComboBoxItem Content="5"/>
+                <ComboBoxItem Content="6"/>
+                <ComboBoxItem Content="7"/>
+                <ComboBoxItem Content="8"/>
+                <ComboBoxItem Content="9"/>
+                <ComboBoxItem Content="10"/>
+                <ComboBoxItem Content="11"/>
+                <ComboBoxItem Content="12"/>
             </ComboBox>
-            <ComboBox materialDesign:HintAssist.Hint="Năm" HorizontalAlignment="Left" Height="40" Margin="382.733,25.6,0,0" VerticalAlignment="Top" Width="120" FontSize="20" Text="{Binding Nam, UpdateSourceTrigger=PropertyChanged}">
-                <ComboBoxItem Content="ComboBoxItem" Height="100" Width="100"/>
+            <ComboBox x:Name="cbxYear" materialDesign:HintAssist.Hint="Năm" HorizontalAlignment="Left" Height="40" Margin="382.733,25.6,0,0" VerticalAlignment="Top" Width="120" FontSize="20" Text="{Binding Nam, UpdateSourceTrigger=PropertyChanged}">
+                <ComboBoxItem Content="2021"/>
+                <ComboBoxItem Content="2022"/>
+                <ComboBoxItem Content="2023"/>
+                <ComboBoxItem Content="2024"/>
+                <ComboBoxItem Content="2025"/>
+                <ComboBoxItem Content="2026"/>
+                <ComboBoxItem Content="2027"/>
+                <ComboBoxItem Content="2028"/>
+                <ComboBoxItem Content="2029"/>
+                <ComboBoxItem Content="2030"/>
+                <ComboBoxItem Content="2031"/>
+                <ComboBoxItem Content="2032"/>
             </ComboBox>
 
         </Grid>
         <Grid Margin="10,236,16.4,31.332">
             <Rectangle Fill="White" HorizontalAlignment="Left" Height="452.668" Margin="1.5,-9,-1.5,0" VerticalAlignment="Top" Width="1012.6" RadiusX="20" RadiusY="20"/>
-            <ListView HorizontalAlignment="Left" Height="427.6" Margin="10,0,0,0" VerticalAlignment="Top" Width="992.6">
+            <ListView x:Name="lvResult" HorizontalAlignment="Left" Height="427.6" Margin="10,0,0,0" VerticalAlignment="Top" Width="992.6">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn/>
+                        <GridViewColumn Header="Biển số" DisplayMemberBinding="{Binding VehicleID}"/>
+                        <GridViewColumn Header="Số thẻ" DisplayMemberBinding="{Binding ParkingCardID}"/>
+                        <GridViewColumn Header="Ngày vào bãi"  DisplayMemberBinding="{Binding TimeStartedParking}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
