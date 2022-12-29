@@ -182,7 +182,7 @@ namespace QLBaiDoXe.DBClasses
             return DataProvider.Ins.DB.Staffs.ToList();
         }
 
-        public static List<Staff> FindStaff(string name)
+        public static List<Staff> FindStaffByName(string name)
         {
             return DataProvider.Ins.DB.Staffs.Where(x => x.StaffName == name).ToList();
         }

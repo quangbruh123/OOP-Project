@@ -43,7 +43,7 @@ namespace QLBaiDoXe
             switch (cbxItem.Text)
             {
                 case "Tên":
-                    result = Staffing.FindStaff(txbSearch.Text);
+                    result = Staffing.FindStaffByName(txbSearch.Text);
                     break;
                 case "Số điện thoại":
                     result = Staffing.FindStaffByPhoneNumber(txbSearch.Text);
