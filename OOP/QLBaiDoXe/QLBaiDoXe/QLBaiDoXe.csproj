@@ -129,6 +129,9 @@
     <Compile Include="DBClasses\Finance.cs" />
     <Compile Include="DBClasses\ParkingVehicle.cs" />
     <Compile Include="DBClasses\Regulation.cs" />
+    <Compile Include="DSThe.xaml.cs">
+      <DependentUpon>DSThe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ParkingLotModel\Account.cs">
       <DependentUpon>ParkingLotModel.tt</DependentUpon>
     </Compile>
@@ -172,6 +175,9 @@
     <Compile Include="ParkingLotModel\VehicleType.cs">
       <DependentUpon>ParkingLotModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SuaNhanVien.xaml.cs">
+      <DependentUpon>SuaNhanVien.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ThemNhanVien.xaml.cs">
       <DependentUpon>ThemNhanVien.xaml</DependentUpon>
     </Compile>
@@ -186,6 +192,7 @@
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\NotifyErrorInfoViewModel.cs" />
     <Compile Include="ViewModel\NotifyErrorVewModel1.cs" />
+    <Compile Include="ViewModel\NotifyErrorViewModel2.cs" />
     <Page Include="admin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -195,6 +202,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BaoCaoDoanhThu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DSThe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -233,6 +244,10 @@
     <Page Include="Simple Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SuaNhanVien.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ThemNhanVien.xaml">
       <SubType>Designer</SubType>
