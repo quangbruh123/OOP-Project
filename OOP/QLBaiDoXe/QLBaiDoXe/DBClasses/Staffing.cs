@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Xml.Linq;
 
 namespace QLBaiDoXe.DBClasses
@@ -123,7 +124,7 @@ namespace QLBaiDoXe.DBClasses
                 SHA256 sha256hash = SHA256.Create();
                 string passwordhash = GetHash(sha256hash, password);
                 Debug.WriteLine(passwordhash);
-                ParkingLotModel.Account account = DataProvider.Ins.DB.Accounts.FirstOrDefault(x => x.AccountName == username);
+                Account account = DataProvider.Ins.DB.Accounts.FirstOrDefault(x => x.AccountName == username);
                 if (account.AccountPassword == passwordhash)
                 {
                     Timekeep timekeep = new Timekeep()

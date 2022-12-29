@@ -25,5 +25,7 @@ namespace QLBaiDoXe
             InitializeComponent();
             this.DataContext = new LoginViewModel();
         }
+
+
     }
 }
