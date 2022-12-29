@@ -102,12 +102,12 @@ namespace QLBaiDoXe.DBClasses
                 return false;
         }
 
-        public static bool ChangeStaffInfo(string name, string civilId, string role, string phoneNumber, string address, DateTime dob, string accountName, string passsword)
+        public static bool ChangeStaffInfo(string staffName, string staffNewName, string civilId, string role, string phoneNumber, string address, DateTime dob, string accountName, string passsword)
         {
-            if (DataProvider.Ins.DB.Staffs.Any(x => x.StaffName == name))
+            if (DataProvider.Ins.DB.Staffs.Any(x => x.StaffName == staffName))
             {
-                Staff staff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.StaffName == name);
-                staff.StaffName = name;
+                Staff staff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.StaffName == staffName);
+                staff.StaffName = staffNewName;
                 staff.StaffAddress = address;
                 staff.CivilID = civilId;
                 staff.Role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleName == role);
