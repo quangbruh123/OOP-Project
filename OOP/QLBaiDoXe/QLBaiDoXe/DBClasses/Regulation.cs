@@ -9,9 +9,17 @@ namespace QLBaiDoXe.DBClasses
 {
     public class Regulation
     {
-        public List<VehicleType> GetAllVehicleTypes()
+        public static List<VehicleType> GetAllVehicleTypes()
         {
             return DataProvider.Ins.DB.VehicleTypes.ToList();
+        }
+
+        public static List<string> GetAllVehicleTypeNames()
+        {
+            if (DataProvider.Ins.DB.VehicleTypes.Count() > 0)
+                return DataProvider.Ins.DB.VehicleTypes.Select(x => x.VehicleTypeName).ToList();
+            else
+                return null;
         }
         
         public static bool AddVehicleType(string vehicleTypeName, int parkingFee)
