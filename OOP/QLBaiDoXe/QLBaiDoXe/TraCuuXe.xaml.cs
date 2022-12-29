@@ -82,24 +82,27 @@ namespace QLBaiDoXe
         {
             
             List<Vehicle> result = new List<Vehicle>();
-            //if (TimePicker.Text != null)
-            //{
-            //    DateTime datesearch = new DateTime(int.Parse(cbxYear.Text), int.Parse(cbxMonth.Text), int.Parse(cbxDay.Text), int.Parse(TimePicker.Text),0,0);
-            //    result = ParkingVehicle.SearchVehicle_TimeIn_DateAndHour(datesearch);
-            //}    
-            //else
-            //{
-            //    DateTime datesearch = new DateTime(int.Parse(cbxYear.Text), int.Parse(cbxMonth.Text), int.Parse(cbxDay.Text));
-            //    result = ParkingVehicle.SearchVehicle_TimeIn_DateOnly(datesearch);
+            string hour = string.Empty;
+            if (TimePicker.Text != null)
+            {
+                if (TimePicker.Text.Length == 4)
+                    hour = TimePicker.Text.Substring(0, 1);
+                else
+                    hour = TimePicker.Text.Substring(0, 2);
+                DateTime datesearch = new DateTime(int.Parse(cbxYear.Text), int.Parse(cbxMonth.Text), int.Parse(cbxDay.Text), int.Parse(hour), 0, 0);
+                result = ParkingVehicle.SearchVehicle_TimeIn_DateAndHour(datesearch);
+            }
+            else
+            {
+                DateTime datesearch = new DateTime(int.Parse(cbxYear.Text), int.Parse(cbxMonth.Text), int.Parse(cbxDay.Text));
+                result = ParkingVehicle.SearchVehicle_TimeIn_DateOnly(datesearch);
 
-            //}
-            DateTime datesearch = new DateTime(int.Parse(cbxYear.Text), int.Parse(cbxMonth.Text), int.Parse(cbxDay.Text));
-            result = ParkingVehicle.SearchVehicle_TimeIn_DateOnly(datesearch);
+            }
             if (CheckInput() == false) { return; }
               
             if (result.Count == 0)
             {
-                MessageBox.Show("Ngày bạn đã nhập không có xe");
+                MessageBox.Show("Trong khoảng thời gian bạn đã nhập không có xe trong bãi!");
             }
             lvResult.ItemsSource = null;
             lvResult.ItemsSource = result;
