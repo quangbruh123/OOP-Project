@@ -8,7 +8,7 @@
         xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="QLBaiDoXe.ThemNhanVien"
         mc:Ignorable="d"
         Background="{DynamicResource MaterialDesignPaper}"    
-        Height="450" Width="800">
+        Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="White">
         <Grid.DataContext>
             <local:NotifyErrorInfoViewModel/>

@@ -6,6 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:QLBaiDoXe"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="admin" Height="720" Width="1280" ResizeMode="NoResize">
     <Grid Background="#80FFA03F">
         <Grid Margin="10,0,1042.357,0">

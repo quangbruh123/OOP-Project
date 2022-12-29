@@ -187,6 +187,29 @@ namespace QLBaiDoXe.DBClasses
             return DataProvider.Ins.DB.Staffs.Where(x => x.StaffName == name).ToList();
         }
 
+        public static List<Staff> FindStaffByCivilID(string CivilID)
+        {
+            return DataProvider.Ins.DB.Staffs.Where(x => x.CivilID == CivilID).ToList();
+        }
+
+        public static List<Staff> FindStaffByRoleID(string Role)
+        {
+            if (Role == "admin")
+                return DataProvider.Ins.DB.Staffs.Where(x => x.RoleID == 2).ToList();
+            if (Role == "staff")
+                return DataProvider.Ins.DB.Staffs.Where(x => x.RoleID == 1).ToList();
+            return null;
+        }
+
+        public static List<Staff> FindStaffByPhoneNumber(string PhoneNumber)
+        {
+            return DataProvider.Ins.DB.Staffs.Where(x => x.PhoneNumber == PhoneNumber).ToList();
+        }
+        public static List<Staff> FindStaffByStaffAddress(string StaffAddress)
+        {
+            return DataProvider.Ins.DB.Staffs.Where(x => x.StaffAddress == StaffAddress).ToList();
+        }
+
         public static List<Timekeep> GetTimekeepForStaff(string name)
         {
             return DataProvider.Ins.DB.Timekeeps.Where(x => x.Staff.StaffName == name).ToList();

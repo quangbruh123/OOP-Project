@@ -7,11 +7,25 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="QLBaiDoXe.DS_NhanVien"
         Background="{DynamicResource MaterialDesignPaper}"
         mc:Ignorable="d"
-        Height="720" Width="1039">
+        Height="720" Width="1039" >
     <Grid Background="#80FFA03F">
         <Grid Margin="10,245,10,14.332">
-            <Rectangle Fill="White" HorizontalAlignment="Left" Height="464.068" Margin="0.4,-3.4,0,0" VerticalAlignment="Top" Width="1012.6" RadiusX="20" RadiusY="20"/>
-            <DataGrid HorizontalAlignment="Left" Height="431.068" VerticalAlignment="Top" Width="1012.6" Margin="0.4,10,0,0"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="505*"/>
+                <ColumnDefinition Width="514*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="464" Margin="0,-3,0,0" VerticalAlignment="Top" Width="1013" RadiusX="20" RadiusY="20" Grid.ColumnSpan="2"/>
+            <ListView x:Name="lvNhanVien" HorizontalAlignment="Left" Height="461" VerticalAlignment="Center" Width="1013" Grid.ColumnSpan="2">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Tên" DisplayMemberBinding="{Binding StaffName}"/>
+                        <GridViewColumn Header="Số CCCD" DisplayMemberBinding="{Binding CivilID}"/>
+                        <GridViewColumn Header="Số điện thoại"  DisplayMemberBinding="{Binding PhoneNumber}"/>
+                        <GridViewColumn Header="Địa chỉ nhà"  DisplayMemberBinding="{Binding StaffAddress}"/>
+                        <GridViewColumn Header="Ngày sinh"  DisplayMemberBinding="{Binding DateOfBirth}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
 
         </Grid>
         <Grid Margin="10,105,10,480.4">
@@ -20,9 +34,16 @@
             <materialDesign:PackIcon
                 Kind="Search"
                 Opacity=".56" Margin="437.054,30.528,0,0" Height="32.946" Width="32.946" RenderTransformOrigin="-0.152,0.591" />
-            <TextBox materialDesign:HintAssist.Hint="Tìm kiếm nhân viên" HorizontalAlignment="Left" Height="39.946" Margin="46.559,30.528,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="423.441" FontSize="20"/>
-            <ComboBox materialDesign:HintAssist.Hint="Theo mục" HorizontalAlignment="Left" Height="35.474" Margin="500,35,0,0" VerticalAlignment="Top" Width="210" FontSize="20"/>
-            <Button Content="Thêm nhân viên mới" HorizontalAlignment="Left" Height="35.474" Margin="775,35,0,0" VerticalAlignment="Top" Width="190" Foreground="White" FontSize="16"/>
+            <TextBox  x:Name="txbSearch" materialDesign:HintAssist.Hint="Tìm kiếm nhân viên" HorizontalAlignment="Left" Height="39.946" Margin="46.559,30.528,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="423.441" FontSize="20" TextChanged="TextBox_TextChanged" IsEnabled="False"/>
+            <ComboBox x:Name="cbxItem" materialDesign:HintAssist.Hint="Theo mục" HorizontalAlignment="Left" Height="35.474" Margin="500,35,0,0" VerticalAlignment="Top" Width="210" FontSize="20" SelectionChanged="cbxItem_SelectionChanged">
+                <ComboBoxItem Content="Tên" />
+                <ComboBoxItem Content="Số điện thoại" />
+                <ComboBoxItem Content="Số CCCD" />
+                <ComboBoxItem Content="Chức vụ" />
+                <ComboBoxItem Content="Địa chỉ" />
+            </ComboBox>
+
+            <Button  Content="Thêm nhân viên mới" HorizontalAlignment="Left" Height="35.474" Margin="775,35,0,0" VerticalAlignment="Top" Width="190" Foreground="White" FontSize="16" Click="Button_Click"/>
         </Grid>
         <TextBlock FontWeight="Bold" HorizontalAlignment="Left" Height="80" Margin="35,25,0,0" TextWrapping="Wrap" Text="Danh sách nhân viên" VerticalAlignment="Top" Width="485" FontSize="42"/>
         <Image Margin="961.587,2.8,3.813,620.4" Source="Image4.png" Stretch="Fill"/>
