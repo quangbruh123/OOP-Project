@@ -48,7 +48,7 @@ namespace QLBaiDoXe
             set => SetProperty(ref matKhau, value);
         }
 
-       
+
         public RelayCommand SubmitCommand { get; }
 
         public NotifyErrorInfoViewModel()
@@ -122,7 +122,7 @@ namespace QLBaiDoXe
                         ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(nameof(ChucVu)));
                     }
                     break;
-              
+
 
                 case nameof(TaiKhoan):
                     if (string.IsNullOrWhiteSpace(TaiKhoan))
@@ -148,7 +148,7 @@ namespace QLBaiDoXe
                     }
                     break;
 
-                
+
             }
             SubmitCommand.NotifyCanExecuteChanged();
 
@@ -165,7 +165,7 @@ namespace QLBaiDoXe
             }
             */
         }
-    
+
 
         public IEnumerable GetErrors(string propertyName)
         {

@@ -129,8 +129,6 @@
     <Compile Include="DBClasses\Finance.cs" />
     <Compile Include="DBClasses\ParkingVehicle.cs" />
     <Compile Include="DBClasses\Regulation.cs" />
-    <Compile Include="NotifyErrorInfoViewModel.cs" />
-    <Compile Include="NotifyErrorViewModel1.cs" />
     <Compile Include="ParkingLotModel\Account.cs">
       <DependentUpon>ParkingLotModel.tt</DependentUpon>
     </Compile>
@@ -186,6 +184,8 @@
     <Compile Include="ViewModel\DSNhanVienViewModel.cs" />
     <Compile Include="ViewModel\HomePage1ViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\NotifyErrorInfoViewModel.cs" />
+    <Compile Include="ViewModel\NotifyErrorVewModel1.cs" />
     <Page Include="admin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

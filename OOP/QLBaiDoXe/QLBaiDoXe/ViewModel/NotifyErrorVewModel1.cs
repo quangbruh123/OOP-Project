@@ -13,7 +13,7 @@ namespace QLBaiDoXe
     {
         //Khởi tạo loại textbox tương ứng trong đây:
 
-       
+
         private string ngay;
         public string Ngay
         {
