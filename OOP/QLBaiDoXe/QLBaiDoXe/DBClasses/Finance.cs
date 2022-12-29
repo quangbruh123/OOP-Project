@@ -34,7 +34,7 @@ namespace QLBaiDoXe.DBClasses
 
         public static List<Receipt> GetAllReceipt_Date(DateTime date)
         {
-            return DataProvider.Ins.DB.Receipts.Where(x => x.TimePaid.Date == date.Date).ToList();
+            return DataProvider.Ins.DB.Receipts.Where(x => x.TimePaid.Day == date.Day && x.TimePaid.Month == date.Month && x.TimePaid.Year == date.Year).ToList();
         }
 
         public static void UpdateFinancialReport()
@@ -50,7 +50,7 @@ namespace QLBaiDoXe.DBClasses
                 Debug.WriteLine(ex.ToString());
                 return;
             }
-            List<Receipt> receipts = DataProvider.Ins.DB.Receipts.Where(x => x.TimePaid.Date == yesterday).ToList();
+            List<Receipt> receipts = DataProvider.Ins.DB.Receipts.Where(x => x.TimePaid.Day == yesterday.Day && x.TimePaid.Month == yesterday.Month && x.TimePaid.Year == yesterday.Year).ToList();
             foreach (Receipt receipt in receipts)
             {
                 income += (int)receipt.ParkingFee;

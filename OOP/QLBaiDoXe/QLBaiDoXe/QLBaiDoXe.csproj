@@ -106,7 +106,7 @@
     <Compile Include="BaoCaoDoanhThu.xaml.cs">
       <DependentUpon>BaoCaoDoanhThu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DBClasses\Account.cs" />
+    <Compile Include="DBClasses\Staffing.cs" />
     <Compile Include="DBClasses\Cards.cs" />
     <Compile Include="DBClasses\Finance.cs" />
     <Compile Include="DBClasses\ParkingVehicle.cs" />
