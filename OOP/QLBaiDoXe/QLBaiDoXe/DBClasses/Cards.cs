@@ -42,5 +42,17 @@ namespace QLBaiDoXe.DBClasses
         {
             return DataProvider.Ins.DB.ParkingCards.ToList();
         }
+
+        /// <summary>
+        /// Check parking card state
+        /// </summary>
+        /// <param name="cardId"></param>
+        /// <returns>
+        /// 1 if the card is being used, 0 if the card is usused
+        /// </returns>
+        public static int CheckCardState(long cardId)
+        {
+            return DataProvider.Ins.DB.ParkingCards.FirstOrDefault(x => x.ParkingCardID == cardId).CardState;
+        }
     }
 }

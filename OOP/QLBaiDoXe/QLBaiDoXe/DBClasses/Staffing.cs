@@ -39,7 +39,6 @@ namespace QLBaiDoXe.DBClasses
                 };
                 DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 1).Staffs.Add(newStaff);
                 DataProvider.Ins.DB.SaveChanges();
-                AddStaffAccount(username, password);
                 return true;
             }
             return false;
@@ -60,7 +59,6 @@ namespace QLBaiDoXe.DBClasses
                 };
                 DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 1).Staffs.Add(newStaff);
                 DataProvider.Ins.DB.SaveChanges();
-                AddAdminAccount(username, password);
                 return true;
             }
             return false;
@@ -97,6 +95,24 @@ namespace QLBaiDoXe.DBClasses
                     AccountPassword = passwordhash,
                     RoleID = 1
                 };
+                DataProvider.Ins.DB.SaveChanges();
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public static bool ChangeStaffInfo(string name, string civilId, string role, string phoneNumber, string address, DateTime dob, string accountName, string passsword)
+        {
+            if (DataProvider.Ins.DB.Staffs.Any(x => x.StaffName == name))
+            {
+                Staff staff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.StaffName == name);
+                staff.StaffName = name;
+                staff.StaffAddress = address;
+                staff.CivilID = civilId;
+                staff.Role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleName == role);
+                staff.PhoneNumber = phoneNumber;
+                staff.DateOfBirth = dob;
                 DataProvider.Ins.DB.SaveChanges();
                 return true;
             }
