@@ -108,19 +108,6 @@ namespace QLBaiDoXe
                     break;
             }
             SubmitCommand.NotifyCanExecuteChanged();
-
-            //Notify the command that it needs to invoke its CanExecute method (in this case CanSubmit).
-
-            /*if (string.IsNullOrWhiteSpace(changedPropertyName))
-            {
-                _ValidationErrorsByProperty[nameof(changedPropertyName)] = new List<object> { " Trường dữ liệu bắt buộc." };
-                ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(nameof(changedPropertyName)));
-            }
-            else if (_ValidationErrorsByProperty.Remove(nameof(changedPropertyName)))
-            {
-                ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(nameof(changedPropertyName)));
-            }
-            */
         }
 
 

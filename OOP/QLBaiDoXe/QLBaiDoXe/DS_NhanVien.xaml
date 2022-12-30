@@ -26,6 +26,11 @@
                     </GridView>
                 </ListView.View>
             </ListView>
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="464.068" Margin="0.4,-3.4,0,0" VerticalAlignment="Top" Width="1012.6" RadiusX="20" RadiusY="20"/>
+            <DataGrid HorizontalAlignment="Left" Height="389.068" VerticalAlignment="Top" Width="1012.6" Margin="0.4,10,0,0"/>
+            <Button Content="Sửa" HorizontalAlignment="Left" Height="35.474" Margin="657,415.194,0,0" VerticalAlignment="Top" Width="131.333" Foreground="White" FontSize="16"/>
+            <Button Content="Xoá" HorizontalAlignment="Left" Height="35.474" Margin="829,415.194,0,0" VerticalAlignment="Top" Width="127.6" Foreground="White" FontSize="16" Background="#FFFF3F3F"/>
+
 
         </Grid>
         <Grid Margin="10,105,10,480.4">
@@ -42,8 +47,9 @@
                 <ComboBoxItem Content="Chức vụ" />
                 <ComboBoxItem Content="Địa chỉ" />
             </ComboBox>
-
-            <Button  Content="Thêm nhân viên mới" HorizontalAlignment="Left" Height="35.474" Margin="775,35,0,0" VerticalAlignment="Top" Width="190" Foreground="White" FontSize="16" Click="Button_Click"/>
+            <TextBox materialDesign:HintAssist.Hint="Tìm kiếm nhân viên" HorizontalAlignment="Left" Height="39.946" Margin="46.559,30.528,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="423.441" FontSize="20"/>
+            <ComboBox materialDesign:HintAssist.Hint="Theo mục" HorizontalAlignment="Left" Height="35.474" Margin="500,35,0,0" VerticalAlignment="Top" Width="210" FontSize="20"/>
+            <Button Content="Thêm" HorizontalAlignment="Left" Height="35.474" Margin="807,35,0,0" VerticalAlignment="Top" Width="140.933" Foreground="White" FontSize="16" Background="#FF2BA342" BorderBrush="{x:Null}"/>
         </Grid>
         <TextBlock FontWeight="Bold" HorizontalAlignment="Left" Height="80" Margin="35,25,0,0" TextWrapping="Wrap" Text="Danh sách nhân viên" VerticalAlignment="Top" Width="485" FontSize="42"/>
         <Image Margin="961.587,2.8,3.813,620.4" Source="Image4.png" Stretch="Fill"/>
