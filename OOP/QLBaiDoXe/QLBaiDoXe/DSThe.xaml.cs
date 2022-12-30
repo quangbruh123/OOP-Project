@@ -46,5 +46,19 @@ namespace QLBaiDoXe
                 MessageBox.Show("Đã xóa thẻ thành công!");
             }
         }
+
+        private void CardSearchTxb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (long.TryParse(CardSearchTxb.Text, out long cardId))
+            {
+                if (StateCbx.Text == "Đang dùng")                 
+                    ListThe.ItemsSource = Cards.GetCards(cardId, 1);
+                if (StateCbx.Text == "Chưa dùng")
+                    ListThe.ItemsSource = Cards.GetCards(cardId, 0);
+                else
+                    ListThe.ItemsSource = Cards.GetCardsFromId(cardId);
+            }
+            
+        }
     }
 }
