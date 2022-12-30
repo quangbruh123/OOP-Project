@@ -26,6 +26,9 @@
                     </GridView>
                 </ListView.View>
             </ListView>
+            <Button Content="Sửa" HorizontalAlignment="Left" Height="35.474" Margin="657,415.194,0,0" VerticalAlignment="Top" Width="131.333" Foreground="White" FontSize="16"/>
+            <Button Content="Xoá" HorizontalAlignment="Left" Height="35.474" Margin="829,415.194,0,0" VerticalAlignment="Top" Width="127.6" Foreground="White" FontSize="16" Background="#FFFF3F3F"/>
+
 
         </Grid>
         <Grid Margin="10,105,10,480.4">
