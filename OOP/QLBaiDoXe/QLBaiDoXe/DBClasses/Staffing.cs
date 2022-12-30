@@ -251,12 +251,12 @@ namespace QLBaiDoXe.DBClasses
 
         public static List<Staff> FindStaffByName(string name)
         {
-            return DataProvider.Ins.DB.Staffs.Where(x => x.StaffName == name).ToList();
+            return DataProvider.Ins.DB.Staffs.Where(x => x.StaffName.Contains(name)).ToList();
         }
 
         public static List<Staff> FindStaffByCivilID(string CivilID)
         {
-            return DataProvider.Ins.DB.Staffs.Where(x => x.CivilID == CivilID).ToList();
+            return DataProvider.Ins.DB.Staffs.Where(x => x.CivilID.Contains(CivilID)).ToList();
         }
 
         public static List<Staff> FindStaffByRoleID(string Role)
@@ -270,11 +270,11 @@ namespace QLBaiDoXe.DBClasses
 
         public static List<Staff> FindStaffByPhoneNumber(string PhoneNumber)
         {
-            return DataProvider.Ins.DB.Staffs.Where(x => x.PhoneNumber == PhoneNumber).ToList();
+            return DataProvider.Ins.DB.Staffs.Where(x => x.PhoneNumber.Contains(PhoneNumber)).ToList();
         }
         public static List<Staff> FindStaffByStaffAddress(string StaffAddress)
         {
-            return DataProvider.Ins.DB.Staffs.Where(x => x.StaffAddress == StaffAddress).ToList();
+            return DataProvider.Ins.DB.Staffs.Where(x => x.StaffAddress.Contains(StaffAddress)).ToList();
         }
 
         public static List<Timekeep> GetAllTimekeeps()

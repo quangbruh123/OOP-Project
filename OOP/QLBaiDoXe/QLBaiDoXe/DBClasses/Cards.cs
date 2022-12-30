@@ -54,5 +54,10 @@ namespace QLBaiDoXe.DBClasses
         {
             return DataProvider.Ins.DB.ParkingCards.FirstOrDefault(x => x.ParkingCardID == cardId).CardState;
         }
+
+        public static List<ParkingCard> GetCardsFromId(long cardId)
+        {
+            return DataProvider.Ins.DB.ParkingCards.Where(x => x.ParkingCardID.ToString().Contains(cardId.ToString())).ToList();
+        }
     }
 }

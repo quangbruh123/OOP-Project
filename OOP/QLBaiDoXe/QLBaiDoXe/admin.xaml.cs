@@ -27,6 +27,8 @@ namespace QLBaiDoXe
             InitializeComponent();
             this.DataContext = new AdminViewModel();
             LoginTime = DateTime.Now;
+            StaffNameTxt.Text = MainWindow.currentUser.Staff.StaffName;
+            StaffAccountTxt.Text = MainWindow.currentUser.AccountName;
         }
 
         private void LogoutButton_Click(object sender, RoutedEventArgs e)

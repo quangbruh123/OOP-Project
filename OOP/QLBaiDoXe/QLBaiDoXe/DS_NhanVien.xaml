@@ -11,7 +11,7 @@
     <Grid Background="#80FFA03F" Width="1037" Height="704.04" >
         <Grid Margin="10,245,10,14.332">
             <Rectangle Fill="White" HorizontalAlignment="Left" Height="464.068" Margin="0.4,-3.4,0,0" VerticalAlignment="Top" Width="1012.6" RadiusX="20" RadiusY="20"/>
-            <ListView x:Name="lvNhanVien" HorizontalAlignment="Left" Height="461" VerticalAlignment="Center" Width="1013" Grid.ColumnSpan="2">
+            <ListView x:Name="lvNhanVien" HorizontalAlignment="Stretch" Height="461" VerticalAlignment="Center" Width="1013" Grid.ColumnSpan="2" HorizontalContentAlignment="Stretch">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="ID" DisplayMemberBinding="{Binding StaffID}"/>

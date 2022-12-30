@@ -22,7 +22,7 @@
         </Grid>
         <Grid Margin="10,236,16.4,31.332">
             <Rectangle Fill="White" HorizontalAlignment="Left" Height="452.668" Margin="1.5,-9,-1.5,0" VerticalAlignment="Top" Width="1012.6" RadiusX="20" RadiusY="20"/>
-            <ListView x:Name="TimekeepLV" HorizontalAlignment="Left" Height="431.068" VerticalAlignment="Top" Width="1012.6" Margin="1.5,0,-1.5,0">
+            <ListView x:Name="TimekeepLV" HorizontalAlignment="Left" Height="431.068" VerticalAlignment="Top" Width="1012.6" Margin="1.5,0,-1.5,0" HorizontalContentAlignment="Center">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Staff.StaffID}"/>
