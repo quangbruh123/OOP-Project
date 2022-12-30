@@ -33,24 +33,8 @@ namespace QLBaiDoXe
         public BaoCaoDoanhThu()
         {
             InitializeComponent();
-            SeriesCollection = new SeriesCollection
-            {
-                new LineSeries
-                {
-                    Title = "Xe máy",
-                    Values = new ChartValues<double> { 4, 6, 5, 2 ,4 },
-                },
-                new LineSeries
-                {
-                    Title = "Xe ô tô",
-                    Values = new ChartValues<double> { 6, 7, 3, 4 ,6 },
-                },
-                new LineSeries
-                {
-                    Title = "Xe đạp",
-                    Values = new ChartValues<double> { 4 ,2 ,7 ,2 ,7 },
-                }
-            };
+            SeriesCollection = new SeriesCollection();
+            UpdateReport(DateTime.Now.Year);
 
             Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
             YFormatter = value => value + "";
@@ -76,53 +60,9 @@ namespace QLBaiDoXe
         {
             bool isNumber = int.TryParse(YearTextbox.Text, out int year);
             if (isNumber)
-            {
-                FinancialReport financialReport;
-                List<VehicleType> vehicleTypes = Regulation.GetAllVehicleTypes();
-                List<LineSeries> lineSeries = new List<LineSeries>();
-                int total = 0;
-                for (int i = 0; i < vehicleTypes.Count; i++)
-                {
-                    lineSeries.Add(new LineSeries()
-                    {
-                        Title = vehicleTypes[i].VehicleTypeName,
-                        Values = new ChartValues<int>()
-                    });
-                }
-                for (int m = 1; m <= 12; m++)
-                {
-                    financialReport = Finance.GetFinancialReportForDate(m, year);
-                    if (financialReport == null)
-                    {
-                        for (int j = 0; j < lineSeries.Count; j++)
-                        {
-                            lineSeries[j].Values.Add(0);
-                        }
-                    }
-                    else
-                    {
-                        for (int j = 0; j < lineSeries.Count; j++)
-                        {
-                            int income = 0;
-                            List<Receipt> receipts = financialReport.Receipts.ToList();
-                            for (int k = 0; k < financialReport.Receipts.Count; k++)
-                            {
-                                if (lineSeries[j].Title == receipts[k].Vehicle.VehicleType.VehicleTypeName)
-                                {
-                                    income += receipts[k].ParkingFee;
-                                }
-                                lineSeries[j].Values.Add(income);
-                                total += income;
-                            }
-                        }
-                    }
-                }
-                IncomeTextbox.Text = total.ToString() + " đồng";
-                SeriesCollection.Clear();
-                SeriesCollection.AddRange(lineSeries);
-            }
+                UpdateReport(year);
             else
-            {
+            {               
                 return;
             }
         }
@@ -130,6 +70,53 @@ namespace QLBaiDoXe
         private void GetReportButton_Click(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void UpdateReport(int year)
+        {
+            FinancialReport financialReport;
+            List<VehicleType> vehicleTypes = Regulation.GetAllVehicleTypes();
+            List<LineSeries> lineSeries = new List<LineSeries>();
+            int total = 0;
+            for (int i = 0; i < vehicleTypes.Count; i++)
+            {
+                lineSeries.Add(new LineSeries()
+                {
+                    Title = vehicleTypes[i].VehicleTypeName,
+                    Values = new ChartValues<int>()
+                });
+            }
+            for (int m = 1; m <= 12; m++)
+            {
+                financialReport = Finance.GetFinancialReportForDate(m, year);
+                if (financialReport == null)
+                {
+                    for (int j = 0; j < lineSeries.Count; j++)
+                    {
+                        lineSeries[j].Values.Add(0);
+                    }
+                }
+                else
+                {
+                    for (int j = 0; j < lineSeries.Count; j++)
+                    {
+                        int income = 0;
+                        List<Receipt> receipts = financialReport.Receipts.ToList();
+                        for (int k = 0; k < financialReport.Receipts.Count; k++)
+                        {
+                            if (lineSeries[j].Title == receipts[k].Vehicle.VehicleType.VehicleTypeName)
+                            {
+                                income += receipts[k].ParkingFee;
+                            }
+                            lineSeries[j].Values.Add(income);
+                            total += income;
+                        }
+                    }
+                }
+            }
+            IncomeTextbox.Text = total.ToString() + " đồng";
+            SeriesCollection.Clear();
+            SeriesCollection.AddRange(lineSeries);
         }
     }
 }
