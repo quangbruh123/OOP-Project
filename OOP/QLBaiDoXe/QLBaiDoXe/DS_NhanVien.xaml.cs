@@ -26,6 +26,7 @@ namespace QLBaiDoXe
         public DS_NhanVien()
         {
             InitializeComponent();
+            lvNhanVien.ItemsSource = Staffing.GetAllStaff();
             this.DataContext = new DSNhanVienViewModel();
         }
 

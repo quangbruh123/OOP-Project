@@ -15,15 +15,17 @@ namespace QLBaiDoXe.DBClasses
         {
             if (!string.IsNullOrEmpty(imagePath))
             {
-                int vehicleTypeId = DataProvider.Ins.DB.VehicleTypes.FirstOrDefault(x => x.VehicleTypeName == vehicleType).VehicleTypeID;
+                VehicleType type = DataProvider.Ins.DB.VehicleTypes.FirstOrDefault(x => x.VehicleTypeName == vehicleType);
                 Vehicle vehicle = new Vehicle()
                 {
-                    VehicleID = vehicleTypeId,
+                    VehicleID = type.VehicleTypeID,
                     ParkingCardID = cardId,
                     VehicleImage = imagePath,
                     VehicleState = 1,
                     TimeStartedParking = DateTime.Now,
-                    ParkingCard = DataProvider.Ins.DB.ParkingCards.FirstOrDefault(x => x.ParkingCardID == cardId)
+                    ParkingCard = DataProvider.Ins.DB.ParkingCards.FirstOrDefault(x => x.ParkingCardID == cardId),
+                    VehicleType = type,
+                    VehicleTypeID = type.VehicleTypeID
                 };
                 ParkingCard card = DataProvider.Ins.DB.ParkingCards.FirstOrDefault(x => x.ParkingCardID == cardId);
                 card.CardState = 1;
@@ -62,7 +64,7 @@ namespace QLBaiDoXe.DBClasses
                         ParkingFee = vehicle.VehicleType.ParkingFee,
                         Vehicle = vehicle,
                         FinancialReport = financialReport,
-                        Staff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.StaffID == staffId),
+                        Staff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.StaffID == staffId)
                     };
                     financialReport.Income += receipt.ParkingFee;
                     DataProvider.Ins.DB.Receipts.Add(receipt);
