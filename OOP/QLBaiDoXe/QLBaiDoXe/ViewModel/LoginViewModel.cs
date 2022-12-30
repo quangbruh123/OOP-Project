@@ -55,8 +55,8 @@ namespace QLBaiDoXe.ViewModel
             }
             else
             {
-                MainWindow.currentStaffID = DBClasses.Staffing.LogIn(userName, password);
-                if (MainWindow.currentStaffID != 0)
+                MainWindow.currentUser = DBClasses.Staffing.LogIn(userName, password);
+                if (MainWindow.currentUser != null)
                 {
                     MessageBox.Show("Đăng nhập thành công", "Thông báo");
                     admin adminScreen = new admin();

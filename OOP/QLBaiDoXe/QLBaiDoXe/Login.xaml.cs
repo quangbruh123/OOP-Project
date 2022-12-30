@@ -25,7 +25,8 @@ namespace QLBaiDoXe
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static int currentStaffID;
+        //public static int currentStaffID;
+        public static Account currentUser;
         public MainWindow()
         {
             InitializeComponent();
@@ -44,9 +45,9 @@ namespace QLBaiDoXe
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            currentStaffID = Staffing.LogIn(UsernameTextbox.Text, PasswordTextbox.Password);
-            Debug.WriteLine(currentStaffID.ToString());
-            if (currentStaffID != 0)
+            currentUser = Staffing.LogIn(UsernameTextbox.Text, PasswordTextbox.Password);
+            Debug.WriteLine("ID: " + currentUser.AccountID.ToString() + "\nUsername: " + currentUser.AccountName);
+            if (currentUser != null)
             {
                 MessageBox.Show("Đăng nhập thành công", "Thông báo");
                 Homepage1 homepage = new Homepage1();

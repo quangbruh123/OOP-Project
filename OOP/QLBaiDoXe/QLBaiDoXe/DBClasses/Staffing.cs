@@ -152,7 +152,7 @@ namespace QLBaiDoXe.DBClasses
                 return false;
         }
 
-        public static int LogIn(string username, string password)
+        public static Account LogIn(string username, string password)
         {
             if (DataProvider.Ins.DB.Accounts.Any(x => x.AccountName == username))
             {
@@ -170,13 +170,13 @@ namespace QLBaiDoXe.DBClasses
                     };
                     DataProvider.Ins.DB.Timekeeps.Add(timekeep);
                     DataProvider.Ins.DB.SaveChanges();
-                    return account.Staff.StaffID;
-                }                    
+                    return account;
+                }
                 else
-                    return 0;
+                    return null;
             }
             else
-                return 0;
+                return null;
         }
 
         public static bool LogOut(string username)
