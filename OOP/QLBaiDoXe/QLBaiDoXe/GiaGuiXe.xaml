@@ -24,18 +24,18 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <TextBlock FontWeight="SemiBold" HorizontalAlignment="Left" Height="53.223" Margin="175.006,82.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238.827" FontSize="32" TextAlignment="Right" Foreground="#FFFF3C4A"><Run Text="Xe máy:"/><LineBreak/><Run/></TextBlock>
-                <TextBlock FontWeight="SemiBold" HorizontalAlignment="Left" Height="53.223" Margin="175.006,82.198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238.827" FontSize="32" TextAlignment="Right" Grid.Row="1" Foreground="#FF76BA00"><Run Text="Xe đạp:"/><LineBreak/><Run/></TextBlock>
-                <TextBlock FontWeight="SemiBold" HorizontalAlignment="Left" Height="53.223" Margin="175.006,82.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238.827" FontSize="32" TextAlignment="Right" Grid.Row="2" Foreground="#FFD47E46"><Run Text="Xe ô tô:"/><LineBreak/><Run/></TextBlock>
-                <TextBox HorizontalAlignment="Left" Height="62.4" Margin="42.973,83.023,0,0" TextWrapping="Wrap" Text="3,000" VerticalAlignment="Top" Width="174" FontSize="30" Grid.Column="1"/>
-                <TextBox HorizontalAlignment="Left" Height="62.4" Margin="42.973,83.022,0,0" TextWrapping="Wrap" Text="2,000" VerticalAlignment="Top" Width="174" FontSize="30" Grid.Column="1" Grid.Row="1"/>
-                <TextBox HorizontalAlignment="Left" Height="62.4" Margin="42.973,83.023,0,0" TextWrapping="Wrap" Text="4,000" VerticalAlignment="Top" Width="174" FontSize="30" Grid.Column="1" Grid.Row="2"/>
+                <TextBlock x:Name="MotorbikeTextBlock" FontWeight="SemiBold" HorizontalAlignment="Left" Height="53.223" Margin="175.006,82.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238.827" FontSize="32" TextAlignment="Right" Foreground="#FFFF3C4A"><Run x:Name="MotorbikeRun" Text="Xe máy:"/><LineBreak/><Run/></TextBlock>
+                <TextBlock x:Name="BikeTextBlock" FontWeight="SemiBold" HorizontalAlignment="Left" Height="53.223" Margin="175.006,82.198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238.827" FontSize="32" TextAlignment="Right" Grid.Row="1" Foreground="#FF76BA00"><Run x:Name="BikeRun" Text="Xe đạp:"/><LineBreak/><Run/></TextBlock>
+                <TextBlock x:Name="CarTextBlock" FontWeight="SemiBold" HorizontalAlignment="Left" Height="53.223" Margin="175.006,82.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238.827" FontSize="32" TextAlignment="Right" Grid.Row="2" Foreground="#FFD47E46"><Run x:Name="CarRun" Text="Xe hơi:"/><LineBreak/><Run/></TextBlock>
+                <TextBox x:Name="MotorbikeFeeTxb" HorizontalAlignment="Left" Height="62.4" Margin="42.973,83.023,0,0" TextWrapping="Wrap" Text="3,000" VerticalAlignment="Top" Width="174" FontSize="30" Grid.Column="1"/>
+                <TextBox x:Name="BikeFeeTxb" HorizontalAlignment="Left" Height="62.4" Margin="42.973,83.022,0,0" TextWrapping="Wrap" Text="2,000" VerticalAlignment="Top" Width="174" FontSize="30" Grid.Column="1" Grid.Row="1"/>
+                <TextBox x:Name="CarFeeTxb" HorizontalAlignment="Left" Height="62.4" Margin="42.973,83.023,0,0" TextWrapping="Wrap" Text="4,000" VerticalAlignment="Top" Width="174" FontSize="30" Grid.Column="1" Grid.Row="2"/>
                 <TextBlock HorizontalAlignment="Left" Height="53.223" Margin="238.773,82.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238.827" FontSize="32" Grid.Column="1"><Run Text="Đồng"/><LineBreak/><Run/></TextBlock>
                 <TextBlock HorizontalAlignment="Left" Height="53.223" Margin="238.773,82.199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238.827" FontSize="32" Grid.Column="1" Grid.Row="1"><Run Text="Đồng"/><LineBreak/><Run/></TextBlock>
                 <TextBlock HorizontalAlignment="Left" Height="53.223" Margin="238.773,82.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238.827" FontSize="32" Grid.Column="1" Grid.Row="2"><Run Text="Đồng"/><LineBreak/><Run/></TextBlock>
 
             </Grid>
-            <Button Content="Lưu" HorizontalAlignment="Left" Height="42" Margin="819.5,509.5,0,0" VerticalAlignment="Top" Width="147.6" FontSize="20" Foreground="White"/>
+            <Button x:Name="SaveFeeButton" Content="Lưu" HorizontalAlignment="Left" Height="42" Margin="819.5,509.5,0,0" VerticalAlignment="Top" Width="147.6" FontSize="20" Foreground="White" Click="SaveFeeButton_Click"/>
 
 
         </Grid>

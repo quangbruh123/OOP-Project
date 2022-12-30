@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace QLBaiDoXe.DBClasses
 {
@@ -41,7 +42,7 @@ namespace QLBaiDoXe.DBClasses
 
         public static bool ChangeParkingFee(string vehicleTypeName, int parkingFee)
         {
-            if (!DataProvider.Ins.DB.VehicleTypes.Any(x => x.VehicleTypeName == vehicleTypeName))
+            if (DataProvider.Ins.DB.VehicleTypes.Any(x => x.VehicleTypeName == vehicleTypeName))
             {
                 VehicleType vehicleType = DataProvider.Ins.DB.VehicleTypes.FirstOrDefault(x => x.VehicleTypeName == vehicleTypeName);
                 vehicleType.ParkingFee = parkingFee;
@@ -50,6 +51,11 @@ namespace QLBaiDoXe.DBClasses
             }
             else
                 return false;
+        }
+
+        public static int GetParkingFeeType(string name)
+        {
+            return DataProvider.Ins.DB.VehicleTypes.FirstOrDefault(x => x.VehicleTypeName == name).ParkingFee;
         }
     }
 }
