@@ -123,5 +123,17 @@ namespace QLBaiDoXe.DBClasses
         {
             return DataProvider.Ins.DB.Vehicles.Where(x => x.VehicleState == 1).Count();
         }
+
+        public static int GetVehicleInNumber(DateTime timeIn)
+        {
+            return DataProvider.Ins.DB.Vehicles.Where(x => x.TimeStartedParking.Day == timeIn.Day && x.TimeStartedParking.Month == timeIn.Month
+                                                        && x.TimeStartedParking.Year == timeIn.Year).Count();
+        }
+
+        public static int GetVehicleOutNumber(DateTime timeOut)
+        {
+            return DataProvider.Ins.DB.Vehicles.Where(x => x.TimeStartedParking.Day == timeOut.Day && x.TimeStartedParking.Month == timeOut.Month
+                                                        && x.TimeStartedParking.Year == timeOut.Year && x.VehicleState == 0).Count();
+        }
     }
 }

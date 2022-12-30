@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using QLBaiDoXe.ParkingLotModel;
 
 namespace QLBaiDoXe
 {
@@ -22,6 +23,23 @@ namespace QLBaiDoXe
         public ThemThe()
         {
             InitializeComponent();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (CardID.Text.Length == 10)
+            {
+                long temp = long.Parse(CardID.Text);
+                if (DataProvider.Ins.DB.ParkingCards.Any(x => x.ParkingCardID == temp)) {
+                    MessageBox.Show("Mã số thẻ này đã tồn tại", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.ServiceNotification);
+                }
+                else
+                {
+                    DBClasses.Cards.AddCard(long.Parse(CardID.Text));
+                    MessageBox.Show("Thêm thẻ thành công");
+                    CardID.Clear();
+                }
+            }
         }
     }
 }
