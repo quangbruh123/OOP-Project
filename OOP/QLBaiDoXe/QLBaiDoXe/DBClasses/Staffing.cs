@@ -48,7 +48,8 @@ namespace QLBaiDoXe.DBClasses
                 RoleID = role.RoleID,
                 PhoneNumber = phoneNumber,
                 StaffAddress = address,
-                DateOfBirth = dob
+                DateOfBirth = dob,
+                Role = role
             };
             role.Staffs.Add(newStaff);
             DataProvider.Ins.DB.SaveChanges();
@@ -96,7 +97,7 @@ namespace QLBaiDoXe.DBClasses
                 PhoneNumber = phoneNumber,
                 StaffAddress = address,
                 DateOfBirth = dob,
-                Role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 1)
+                Role = role
             };
             DataProvider.Ins.DB.SaveChanges();
 
