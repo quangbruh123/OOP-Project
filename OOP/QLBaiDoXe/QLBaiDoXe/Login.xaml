@@ -64,7 +64,7 @@
 
         </Grid>
         <Grid x:Name="Forget_Password" HorizontalAlignment="Left" Margin="-37,0,0,0" VerticalAlignment="Center" Width="601" Visibility="Hidden">
-            <Rectangle HorizontalAlignment="Left" Height="434" Stroke="Black" VerticalAlignment="Center" Width="289" Fill="#FFFFA03F" Opacity="0.5" RadiusX="10" RadiusY="10"/>
+            <Rectangle HorizontalAlignment="Left" Height="434" VerticalAlignment="Center" Width="294" Fill="#FFFFA03F" Opacity="0.5" RadiusX="10" RadiusY="10"/>
             <TextBlock HorizontalAlignment="Left" Height="72" Text="Quên mật khẩu" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" FontSize="36" Foreground="#FFFFA03F" Margin="335,65,0,0"/>
             <hc:TextBox hc:InfoElement.Placeholder="Email"  Margin="337,177,1,195.6">
                 <hc:TextBox.Text>

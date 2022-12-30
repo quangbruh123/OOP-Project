@@ -132,3 +132,5 @@ C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technol
 C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\SuaNhanVien.g.cs
 C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\DSThe.baml
 C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\SuaNhanVien.baml
+C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\GiaGuiXe.g.cs
+C:\Users\nhokb\OneDrive - Trường ĐH CNTT - University of Information Technology\Better OOP\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\obj\Debug\GiaGuiXe.baml

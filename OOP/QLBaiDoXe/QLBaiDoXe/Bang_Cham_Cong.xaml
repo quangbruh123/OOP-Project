@@ -16,8 +16,8 @@
             <materialDesign:PackIcon
                 Kind="Search"
                 Opacity=".56" Margin="471,24.654,0,0" Height="32.946" Width="32.946" />
-            <DatePicker materialDesign:HintAssist.Hint="Từ ngày" HorizontalAlignment="Left" Height="39.946" Margin="562.134,24.654,0,0" VerticalAlignment="Top" Width="185.07" RenderTransformOrigin="0.651,0.512" FontSize="20"/>
-            <DatePicker materialDesign:HintAssist.Hint="Đến ngày" HorizontalAlignment="Left" Height="39.946" Margin="795.73,24.654,0,0" VerticalAlignment="Top" Width="185.07" RenderTransformOrigin="0.651,0.512" FontSize="20"/>
+            <DatePicker materialDesign:HintAssist.Hint="Từ ngày" HorizontalAlignment="Left" Height="39.946" Margin="562.134,24.654,0,0" VerticalAlignment="Top" Width="185.07" RenderTransformOrigin="0.651,0.512" FontSize="20" Focusable="False"/>
+            <DatePicker materialDesign:HintAssist.Hint="Đến ngày" HorizontalAlignment="Left" Height="39.946" Margin="795.73,24.654,0,0" VerticalAlignment="Top" Width="185.07" RenderTransformOrigin="0.651,0.512" FontSize="20" Focusable="False"/>
 
         </Grid>
         <Grid Margin="10,236,16.4,31.332">

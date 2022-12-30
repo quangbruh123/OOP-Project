@@ -132,6 +132,9 @@
     <Compile Include="DSThe.xaml.cs">
       <DependentUpon>DSThe.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GiaGuiXe.xaml.cs">
+      <DependentUpon>GiaGuiXe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ParkingLotModel\Account.cs">
       <DependentUpon>ParkingLotModel.tt</DependentUpon>
     </Compile>
@@ -210,6 +213,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DS_NhanVien.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GiaGuiXe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -300,9 +307,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\icon-g9c96c190e_1280.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image1.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\icons8-calendar-100.png" />
