@@ -8,7 +8,7 @@
         xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="QLBaiDoXe.SuaNhanVien"
         mc:Ignorable="d"
         Background="{DynamicResource MaterialDesignPaper}"    
-        Height="450" Width="800">
+        Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="White">
         <Grid.DataContext>
             <local:NotifyErrorViewModel2/>
@@ -25,12 +25,12 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <TextBox HorizontalAlignment="Left" Height="29.6" TextWrapping="Wrap" VerticalAlignment="Top" Width="173.6" FontSize="16" Margin="0,41.6,0,0" Text="{Binding TenNguoiDung, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox HorizontalAlignment="Left" Height="29.6" TextWrapping="Wrap" VerticalAlignment="Top" Width="173.6" FontSize="16" Margin="0,41.6,0,0" Grid.Row="1"/>
-            <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="29.6" TextWrapping="Wrap" VerticalAlignment="Top" Width="173.6" FontSize="16" Margin="0,41.6,0,0" Grid.Row="1" Text="{Binding CCCD, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox Grid.Column="2" HorizontalAlignment="Left" Height="29.6" TextWrapping="Wrap" VerticalAlignment="Top" Width="173.6" FontSize="16" Margin="0,41.6,0,0" Grid.Row="1"/>
-            <TextBox HorizontalAlignment="Left" Height="29.6" TextWrapping="Wrap" VerticalAlignment="Top" Width="173.6" FontSize="16" Margin="0,41.6,0,0" Grid.Row="2" Text="{Binding TaiKhoan, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="29.6" TextWrapping="Wrap" VerticalAlignment="Top" Width="173.6" FontSize="16" Grid.Row="2" Margin="0,41.6,0,0" Text="{Binding MatKhau, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="txbName" HorizontalAlignment="Left" Height="29.6" TextWrapping="Wrap" VerticalAlignment="Top" Width="173.6" FontSize="16" Margin="0,41.6,0,0" Text="{Binding TenNguoiDung, UpdateSourceTrigger=PropertyChanged}" Loaded="TextBoxName_Loaded"/>
+            <TextBox x:Name="txbPhoneNumb" HorizontalAlignment="Left" Height="29.6" TextWrapping="Wrap" VerticalAlignment="Top" Width="173.6" FontSize="16" Margin="0,41.6,0,0" Grid.Row="1" Loaded="txbPhoneNumb_Loaded"/>
+            <TextBox x:Name="txbCivlID" Grid.Column="1" HorizontalAlignment="Left" Height="29.6" TextWrapping="Wrap" VerticalAlignment="Top" Width="173.6" FontSize="16" Margin="0,41.6,0,0" Grid.Row="1" Text="{Binding CCCD, UpdateSourceTrigger=PropertyChanged}" Loaded="txbCivilID_Loaded"/>
+            <TextBox x:Name="txbAddress" Grid.Column="2" HorizontalAlignment="Left" Height="29.6" TextWrapping="Wrap" VerticalAlignment="Top" Width="173.6" FontSize="16" Margin="0,41.6,0,0" Grid.Row="1" Loaded="txbAddress_Loaded"/>
+            <TextBox x:Name="txbAccName" HorizontalAlignment="Left" Height="29.6" TextWrapping="Wrap" VerticalAlignment="Top" Width="173.6" FontSize="16" Margin="0,41.6,0,0" Grid.Row="2" Text="{Binding TaiKhoan, UpdateSourceTrigger=PropertyChanged}" Loaded="txbAccName_Loaded"/>
+            <TextBox x:Name="txbPassword" Grid.Column="1" HorizontalAlignment="Left" Height="29.6" TextWrapping="Wrap" VerticalAlignment="Top" Width="173.6" FontSize="16" Grid.Row="2" Margin="0,41.6,0,0" Text="{Binding MatKhau, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBlock HorizontalAlignment="Left" Height="33.6" TextWrapping="Wrap" Text="CMND/CCCD" VerticalAlignment="Top" Width="231.333" FontSize="20" Grid.Column="1" Margin="0.001,0,0,0" Grid.Row="1" />
             <TextBlock HorizontalAlignment="Left" Height="33.6" TextWrapping="Wrap" Text="Họ và tên" VerticalAlignment="Top" Width="231.333" FontSize="20"/>
             <TextBlock HorizontalAlignment="Left" Height="33.6" TextWrapping="Wrap" VerticalAlignment="Top" Width="231.333" FontSize="20" Grid.Column="1" Margin="0.001,0,0,0"><Run Text="Ngày sinh"/></TextBlock>
@@ -39,12 +39,13 @@
             <TextBlock HorizontalAlignment="Left" Height="33.6" TextWrapping="Wrap" Text="Địa chỉ" VerticalAlignment="Top" Width="231.333" FontSize="20" Grid.Column="2" Grid.Row="1"/>
             <TextBlock HorizontalAlignment="Left" Height="33.6" TextWrapping="Wrap" Text="Tên tài khoản" VerticalAlignment="Top" Width="231.333" FontSize="20" Grid.Row="2"/>
             <TextBlock HorizontalAlignment="Left" Height="33.6" TextWrapping="Wrap" Text="Mật khẩu" VerticalAlignment="Top" Width="231.333" FontSize="20" Grid.Column="1" Margin="0.001,0,0,0" Grid.Row="2"/>
-            <ComboBox HorizontalAlignment="Left" Height="29.6" Margin="0,41.6,0,0" VerticalAlignment="Top" Width="173.6" Grid.Column="2" Text="{Binding ChucVu, UpdateSourceTrigger=PropertyChanged}" FontSize="16">
-                <ComboBoxItem Content="Giám đốc" Height="100" Width="100"/>
+            <ComboBox x:Name="cbxRole" HorizontalAlignment="Left" Height="29.6" Margin="0,41.6,0,0" VerticalAlignment="Top" Width="173.6" Grid.Column="2" Text="{Binding ChucVu, UpdateSourceTrigger=PropertyChanged}" FontSize="16" Loaded="cbxRole_Loaded">
+                <ComboBoxItem Content="Quản trị viên"/>
+                <ComboBoxItem Content="Nhân viên"/>
             </ComboBox>
-            <DatePicker HorizontalAlignment="Left" Height="29.6" Margin="0.001,41.6,0,0" VerticalAlignment="Top" Width="173.6" RenderTransformOrigin="0.651,0.512" Grid.Column="1" FontSize="16"/>
-            <Button Content="Sửa" Grid.Column="2" HorizontalAlignment="Left" Height="32.433" Margin="102.8,50.834,0,0" Grid.Row="2" VerticalAlignment="Top" Width="94.4" Foreground="White" Command="{Binding SubmitCommand}"/>
-            <Button Content="Huỷ" Grid.Column="1" HorizontalAlignment="Left" Height="32.433" Margin="234.8,50.834,0,0" Grid.Row="2" VerticalAlignment="Top" Width="94.4" Foreground="#FFFFA03F" Grid.ColumnSpan="2" Background="White"/>
+            <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Height="29.6" Margin="0.001,41.6,0,0" VerticalAlignment="Top" Width="173.6" RenderTransformOrigin="0.651,0.512" Grid.Column="1" FontSize="16" Loaded="datePicker_Loaded"/>
+            <Button x:Name="btnAdjust" Content="Sửa" Grid.Column="2" HorizontalAlignment="Left" Height="32.433" Margin="102.8,50.834,0,0" Grid.Row="2" VerticalAlignment="Top" Width="94.4" Foreground="White" Command="{Binding SubmitCommand}" Click="btnAdjust_Click"/>
+            <Button x:Name="btbCancel" Content="Huỷ" Grid.Column="1" HorizontalAlignment="Left" Height="32.433" Margin="234.8,50.834,0,0" Grid.Row="2" VerticalAlignment="Top" Width="94.4" Foreground="#FFFFA03F" Grid.ColumnSpan="2" Background="White" Click="btnCancel_Click"/>
         </Grid>
 
     </Grid>
