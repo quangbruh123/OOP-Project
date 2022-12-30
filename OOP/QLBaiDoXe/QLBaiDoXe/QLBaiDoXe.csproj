@@ -141,6 +141,8 @@
     <Compile Include="BaoCaoDoanhThu.xaml.cs">
       <DependentUpon>BaoCaoDoanhThu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Classes\BitmapHelper.cs" />
+    <Compile Include="Classes\BitmapImageConvert.cs" />
     <Compile Include="DBClasses\Staffing.cs" />
     <Compile Include="DBClasses\Cards.cs" />
     <Compile Include="DBClasses\Finance.cs" />
