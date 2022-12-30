@@ -26,7 +26,7 @@
             <materialDesign:PackIcon Kind="CreditCardSwipeOutline" HorizontalAlignment="Left" Height="53.6" Margin="30.161,46.672,0,0" VerticalAlignment="Top" Width="53.6" RenderTransformOrigin="0.91,0.164" Grid.Column="2"/>
         </Grid>
         <TextBlock HorizontalAlignment="Left" Height="44.8" Margin="10,12.156,0,-4.828" TextWrapping="Wrap" FontWeight="Light" Text="Hoặc nhập trực tiếp ở đây:" VerticalAlignment="Top" Width="213.775" FontSize="16" RenderTransformOrigin="0.522,0.429" Grid.Row="1" Grid.ColumnSpan="2"/>
-        <TextBox materialDesign:HintAssist.Hint="Nhập mã thẻ" HorizontalAlignment="Left" Height="39.946" Margin="0,8.156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152.092" FontSize="16" Grid.Column="1" Grid.Row="1" Foreground="#FFE27200"/>
+        <TextBox x:Name="CardID" materialDesign:HintAssist.Hint="Nhập mã thẻ" HorizontalAlignment="Left" Height="39.946" Margin="0,8.156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152.092" FontSize="16" Grid.Column="1" Grid.Row="1" Foreground="#FFE27200" TextChanged="TextBox_TextChanged"/>
         <Button
           Content="{materialDesign:PackIcon Kind=Check}"
           ToolTip="Icon"
@@ -38,7 +38,7 @@
                 <ColumnDefinition Width="37*"/>
                 <ColumnDefinition Width="69*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock HorizontalAlignment="Left" Height="44.8" Margin="6.8,55.472,0,0" TextWrapping="Wrap" Text="Thẻ không nhận, xin thử lại:" VerticalAlignment="Top" Width="259.2" FontSize="21" RenderTransformOrigin="0.522,0.429" Grid.ColumnSpan="2"/>
+            
             <materialDesign:PackIcon Kind="CardRemoveOutline" HorizontalAlignment="Left" Height="53.6" Margin="30.161,46.672,0,0" VerticalAlignment="Top" Width="53.6" RenderTransformOrigin="0.91,0.164" Grid.Column="2"/>
         </Grid>
 

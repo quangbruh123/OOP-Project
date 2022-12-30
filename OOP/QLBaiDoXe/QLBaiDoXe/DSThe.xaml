@@ -11,7 +11,7 @@
     <Grid Background="#80FFA03F">
         <Grid Margin="10,245,10,14.332">
             <Rectangle Fill="White" HorizontalAlignment="Left" Height="464.068" Margin="0.4,-3.4,0,0" VerticalAlignment="Top" Width="1012.6" RadiusX="20" RadiusY="20"/>
-            <ListView HorizontalAlignment="Left" Height="389.068" VerticalAlignment="Top" Width="1012.6" Margin="0.4,10,0,0">
+            <ListView x:Name="ListThe" HorizontalAlignment="Left" Height="389.068" VerticalAlignment="Top" Width="1012.6" Margin="0.4,10,0,0">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Mã thẻ" DisplayMemberBinding="{Binding ParkingCardID}"/>
@@ -19,7 +19,7 @@
                     </GridView>
                 </ListView.View>
             </ListView>
-            <Button Content="Xoá" HorizontalAlignment="Left" Height="35.474" Margin="829,415.194,0,0" VerticalAlignment="Top" Width="127.6" Foreground="White" FontSize="16" Background="#FFFF3F3F"/>
+            <Button Content="Xoá" HorizontalAlignment="Left" Height="35.474" Margin="829,415.194,0,0" VerticalAlignment="Top" Width="127.6" Foreground="White" FontSize="16" Background="#FFFF3F3F" Click="Button_Click_1"/>
 
 
         </Grid>
@@ -31,7 +31,7 @@
                 Opacity=".56" Margin="437.054,30.528,0,0" Height="32.946" Width="32.946" RenderTransformOrigin="-0.152,0.591" />
             <TextBox materialDesign:HintAssist.Hint="Tìm kiếm thẻ" HorizontalAlignment="Left" Height="39.946" Margin="46.559,30.528,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="423.441" FontSize="20"/>
             <ComboBox materialDesign:HintAssist.Hint="Tình trạng" HorizontalAlignment="Left" Height="35.474" Margin="500,35,0,0" VerticalAlignment="Top" Width="210" FontSize="20"/>
-            <Button Content="Thêm" HorizontalAlignment="Left" Height="35.474" Margin="807,35,0,0" VerticalAlignment="Top" Width="140.933" Foreground="White" FontSize="16" Background="#FF2BA342" BorderBrush="{x:Null}"/>
+            <Button Content="Thêm" HorizontalAlignment="Left" Height="35.474" Margin="807,35,0,0" VerticalAlignment="Top" Width="140.933" Foreground="White" FontSize="16" Background="#FF2BA342" BorderBrush="{x:Null}" Click="Button_Click"/>
         </Grid>
         <TextBlock FontWeight="Bold" HorizontalAlignment="Left" Height="80" Margin="35,25,0,0" TextWrapping="Wrap" Text="Danh sách thẻ" VerticalAlignment="Top" Width="485" FontSize="42"/>
         <Image Margin="961.587,2.8,3.813,620.4" Source="Image4.png" Stretch="Fill"/>

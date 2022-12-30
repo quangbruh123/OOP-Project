@@ -31,6 +31,7 @@ namespace QLBaiDoXe
     /// </summary>
     public partial class Homepage1 : Window
     {
+        DateTime date = DateTime.Now;
         public Homepage1()
         {
             InitializeComponent();
@@ -38,8 +39,8 @@ namespace QLBaiDoXe
             GetVideoDevices();
             StartCamera();
             this.Closing += Homepage1_Closing;
-            VehicleIn_num.Text = Properties.Settings.Default.todayVehicleIn.ToString();
-            VehicleOut_num.Text = Properties.Settings.Default.todayVehicleOut.ToString();
+            VehicleIn_num.Text = DBClasses.ParkingVehicle.GetVehicleInNumber(date).ToString();
+            VehicleOut_num.Text = DBClasses.ParkingVehicle.GetVehicleOutNumber(date).ToString();
             VehicleParked_num.Text = DBClasses.ParkingVehicle.GetParkedVehicleNumber().ToString();
         }
 
@@ -183,7 +184,7 @@ namespace QLBaiDoXe
                         image1.Source = videoPlayer.Source;
                         BitmapImage temp = (BitmapImage)image1.Source;
                         Bitmap temp1 = BitmapImageConvert.BitmapImage2Bitmap(temp);
-                        
+
                         dateIn.Text = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
                         timeIn.Text = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString(); dateOut_Copy.Text = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
                         dateOut_Copy.Text = "--/--/----";
@@ -196,18 +197,17 @@ namespace QLBaiDoXe
                         string path = @"C:\Users\Quang\Pictures\test\" + DateTime.Now.ToString().Replace(':', '_').Replace('/', '_') + ".jpg";
                         DBClasses.ParkingVehicle.VehicleIn(vehiclePlate_Copy.Text.ToString().Trim(), long.Parse(ID), path);
                         temp1.Save(path);
-                        
-                        VehicleIn_num.Text = Properties.Settings.Default.todayVehicleIn.ToString();
+
+                        VehicleIn_num.Text = DBClasses.ParkingVehicle.GetVehicleInNumber(date).ToString();
                         VehicleParked_num.Text = DBClasses.ParkingVehicle.GetParkedVehicleNumber().ToString();
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Phần mềm bị lỗi: " + ex.Message + " Vui lòng liên hệ nhân viên bảo trì để biết thêm chi tiết", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.ServiceNotification);
                     }
-                }    
+                }
             }
         }
-        #endregion
 
         private void textBox2_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -229,13 +229,13 @@ namespace QLBaiDoXe
                     try
                     {
                         textBox2.Clear();
-                        
+
                         long ID_temp = long.Parse(ID);
                         var vehicle = DataProvider.Ins.DB.Vehicles.FirstOrDefault(x => x.ParkingCardID == ID_temp && x.VehicleState == 1);
                         string path = vehicle.VehicleImage;
                         Uri imgDir = new Uri(path);
                         image2.Source = new BitmapImage(imgDir);
-                        
+
                         dateOut_Copy.Text = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
                         timeOut_Copy.Text = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString();
                         dateIn_Copy.Text = vehicle.TimeStartedParking.Day.ToString() + "/" + vehicle.TimeStartedParking.Month.ToString() + "/" + vehicle.TimeStartedParking.Year.ToString();
@@ -244,10 +244,10 @@ namespace QLBaiDoXe
                         timeIn.Text = "00:00:00";
                         vehiclePlate_Copy2.Text = vehicle.VehicleType.VehicleTypeName;
                         priceTag_Copy.Text = vehicle.VehicleType.ParkingFee.ToString() + " đồng";
-                        
-                        DBClasses.ParkingVehicle.VehicleOut(long.Parse(ID), 1);
 
-                        VehicleOut_num.Text = Properties.Settings.Default.todayVehicleOut.ToString();
+                        DBClasses.ParkingVehicle.VehicleOut(long.Parse(ID), MainWindow.currentUser.StaffID);
+
+                        VehicleOut_num.Text = DBClasses.ParkingVehicle.GetVehicleOutNumber(date).ToString();
                         VehicleParked_num.Text = DBClasses.ParkingVehicle.GetParkedVehicleNumber().ToString();
                     }
                     catch (Exception ex)
@@ -268,9 +268,14 @@ namespace QLBaiDoXe
                 }
                 else if (vehiclePlate_Copy.Text == "Xe hơi")
                 {
+                    Dispatcher.BeginInvoke(new Action(() => vehiclePlate_Copy.Text = "Xe đạp"));
+                }
+                else if (vehiclePlate_Copy.Text == "Xe đạp")
+                {
                     Dispatcher.BeginInvoke(new Action(() => vehiclePlate_Copy.Text = "Xe máy"));
                 }
             }
         }
+        #endregion
     }
 }
