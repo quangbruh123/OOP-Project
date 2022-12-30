@@ -67,8 +67,8 @@ namespace QLBaiDoXe.DBClasses
                 Staff = admin,
                 Role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 2)
             };
-            admin.Accounts.Add(adminAccount);
-            role.Accounts.Add(adminAccount);
+            //admin.Accounts.Add(adminAccount);
+            //role.Accounts.Add(adminAccount);
             DataProvider.Ins.DB.Accounts.Add(adminAccount);
             DataProvider.Ins.DB.SaveChanges();
         }
@@ -115,8 +115,8 @@ namespace QLBaiDoXe.DBClasses
                 Staff = admin,
                 Role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 2)
             };
-            admin.Accounts.Add(adminAccount);
-            role.Accounts.Add(adminAccount);
+            //admin.Accounts.Add(adminAccount);
+            //role.Accounts.Add(adminAccount);
             DataProvider.Ins.DB.Accounts.Add(adminAccount);
             DataProvider.Ins.DB.SaveChanges();
         }
