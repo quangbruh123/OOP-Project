@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QLBaiDoXe"
-        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="600">
     <Window.Resources>
@@ -41,8 +41,6 @@
         <Grid x:Name="Login" HorizontalAlignment="Left" Margin="-37,0,0,0" VerticalAlignment="Center" Width="601" Visibility="Visible">
             <Rectangle HorizontalAlignment="Left" Height="420.4" VerticalAlignment="Center" Width="292.2" Fill="#FFFFA03F" Opacity="0.5" RadiusX="10" RadiusY="10"/>
             <TextBlock HorizontalAlignment="Left" Height="72" Text="Login" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" FontSize="40" Foreground="#FFFFA03F" Margin="335,65,0,0"/>
-            <hc:TextBox hc:InfoElement.Placeholder="Username" HorizontalAlignment="Left" Height="37" Margin="337,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" FontSize="14"/>
-            <hc:PasswordBox hc:InfoElement.Placeholder="Password" ShowEyeButton="True" HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="261" Margin="337,194,0,0"/>
             <CheckBox Content="Ghi nhớ tài khoản" HorizontalAlignment="Left" Height="21" Width="130" Margin="337,255,0,0" VerticalAlignment="Top"/>
             <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="23" Text="Quên mật khẩu?" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" Margin="509,257,0,0" Foreground="#FFFFA03F" FontWeight="SemiBold">
                 <TextBlock.Style>
@@ -61,20 +59,13 @@
             </TextBlock>
             <Button  Margin="337,313,0,0"
                 Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Width="261" BorderBrush="{x:Null}" Background="#FFFFA03F" Foreground="White" FontSize="14" Height="42"/>
+            <TextBox materialDesign:HintAssist.Hint="Tên đăng nhập" HorizontalAlignment="Left" Height="36" Margin="337.8,146.8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253.2" FontSize="16"/>
+            <PasswordBox Style="{StaticResource MaterialDesignRevealPasswordBox}" materialDesign:TextFieldAssist.HasClearButton="True" materialDesign:HintAssist.Hint="Mật khẩu" HorizontalAlignment="Left" Height="36" Margin="337.8,201.733,0,0" VerticalAlignment="Top" Width="253.2" FontSize="16"/>
 
         </Grid>
         <Grid x:Name="Forget_Password" HorizontalAlignment="Left" Margin="-37,0,0,0" VerticalAlignment="Center" Width="601" Visibility="Hidden">
             <Rectangle HorizontalAlignment="Left" Height="434" VerticalAlignment="Center" Width="294" Fill="#FFFFA03F" Opacity="0.5" RadiusX="10" RadiusY="10"/>
             <TextBlock HorizontalAlignment="Left" Height="72" Text="Quên mật khẩu" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" FontSize="36" Foreground="#FFFFA03F" Margin="335,65,0,0"/>
-            <hc:TextBox hc:InfoElement.Placeholder="Email"  Margin="337,177,1,195.6">
-                <hc:TextBox.Text>
-                    <Binding Path="Email1" UpdateSourceTrigger="PropertyChanged">
-                        <Binding.ValidationRules>
-                            <hc:RegexRule Type="Mail"/>
-                        </Binding.ValidationRules>
-                    </Binding>
-                </hc:TextBox.Text>
-            </hc:TextBox>
             <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="23" Text="&lt; Quay lại đăng nhập" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Margin="337,256,0,0" Foreground="#FFFFA03F" FontWeight="SemiBold">
                 <TextBlock.Style>
                     <Style TargetType="{x:Type TextBlock}">
@@ -93,6 +84,7 @@
             <Button  Margin="337,313,0,0"
                 Content="Lấy lại mật khẩu" HorizontalAlignment="Left" VerticalAlignment="Top" Width="261" BorderBrush="{x:Null}" Background="#FFFFA03F" Foreground="White" FontSize="14" Height="42"/>
             <TextBlock HorizontalAlignment="Left" Height="29" Text="Để lấy lại mật khẩu, bạn vui lòng điền lại email đã liên kết với username" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" Margin="337,122,0,0" Opacity="0.5"/>
+            <TextBox materialDesign:HintAssist.Hint="Email" HorizontalAlignment="Left" Height="38.4" Margin="337,177.1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" FontSize="16"/>
 
         </Grid>
 
