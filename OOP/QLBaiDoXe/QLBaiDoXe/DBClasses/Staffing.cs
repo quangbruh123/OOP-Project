@@ -29,27 +29,14 @@ namespace QLBaiDoXe.DBClasses
         {
             if (DataProvider.Ins.DB.Staffs.Any(x => x.CivilID == civilId))
             {
-                Staff newStaff = new Staff()
-                {
-                    StaffName = name,
-                    CivilID = civilId,
-                    RoleID = 0,
-                    PhoneNumber = phoneNumber,
-                    StaffAddress = address,
-                    DateOfBirth = dob
-                };
-                DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 1).Staffs.Add(newStaff);
-                DataProvider.Ins.DB.SaveChanges();
-                AddStaffAccount(username, password);
-                DataProvider.Ins.DB.SaveChanges();
                 MessageBox.Show("Tồn tại nhân viên có số căn cước công dân bạn đã nhập!");
                 return;
             }
             else
             {
-                if (DataProvider.Ins.DB.Accounts.Any(x => x.AccountName == accname))
+                if (DataProvider.Ins.DB.Accounts.Any(x => x.AccountName == name))
                 {
-                    MessageBox.Show("Tồn tại tài khoán có cùng tên đăng nhập mà bạn đã nhập!");
+                    MessageBox.Show("Tồn tại tài khoản có cùng tên đăng nhập mà bạn đã nhập!");
                     return;
                 }
             }
@@ -63,26 +50,26 @@ namespace QLBaiDoXe.DBClasses
                 StaffAddress = address,
                 DateOfBirth = dob,
                 Role = role
-            };            
+            };
             DataProvider.Ins.DB.Staffs.Add(newStaff);
             role.Staffs.Add(newStaff);
             DataProvider.Ins.DB.SaveChanges();
 
-            Staff staff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.CivilID == civilId);            
+            Staff admin = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.CivilID == civilId);
             SHA256 sha256hash = SHA256.Create();
             string passwordhash = GetHash(sha256hash, password);
-            Account staffAccount = new Account()
+            Account adminAccount = new Account()
             {
                 AccountName = accname,
                 AccountPassword = passwordhash,
-                RoleID = 0,
-                StaffID = staff.StaffID,
-                Staff = staff,
-                Role = role
+                RoleID = 1,
+                StaffID = admin.StaffID,
+                Staff = admin,
+                Role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 2)
             };
-            staff.Accounts.Add(staffAccount);
-            role.Accounts.Add(staffAccount);
-            DataProvider.Ins.DB.Accounts.Add(staffAccount);
+            admin.Accounts.Add(adminAccount);
+            role.Accounts.Add(adminAccount);
+            DataProvider.Ins.DB.Accounts.Add(adminAccount);
             DataProvider.Ins.DB.SaveChanges();
         }
 
@@ -97,7 +84,7 @@ namespace QLBaiDoXe.DBClasses
             {
                 if (DataProvider.Ins.DB.Accounts.Any(x => x.AccountName == name))
                 {
-                    MessageBox.Show("Tồn tại tài khoán có cùng tên đăng nhập mà bạn đã nhập!");
+                    MessageBox.Show("Tồn tại tài khoản có cùng tên đăng nhập mà bạn đã nhập!");
                     return;
                 }
             }
@@ -123,7 +110,7 @@ namespace QLBaiDoXe.DBClasses
             {
                 AccountName = accname,
                 AccountPassword = passwordhash,
-                RoleID = 1,
+                RoleID = 2,
                 StaffID = admin.StaffID,
                 Staff = admin,
                 Role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 2)
