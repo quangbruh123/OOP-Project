@@ -15,6 +15,8 @@ using QLBaiDoXe.ViewModel;
 using QLBaiDoXe.DBClasses;
 using QLBaiDoXe.ParkingLotModel;
 using ControlzEx.Standard;
+using System.Web.UI.WebControls;
+using System.Collections;
 
 namespace QLBaiDoXe
 {
@@ -23,20 +25,18 @@ namespace QLBaiDoXe
     /// </summary>
     public partial class DS_NhanVien : UserControl
     {
+        
         public DS_NhanVien()
         {
             InitializeComponent();
             lvNhanVien.ItemsSource = Staffing.GetAllStaff();
             this.DataContext = new DSNhanVienViewModel();
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ThemNhanVien add = new ThemNhanVien();
-            
-            add.Show();
+            add.ShowDialog();
         }
-
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             List<Staff> result = new List<Staff>();
@@ -64,10 +64,36 @@ namespace QLBaiDoXe
                 lvNhanVien.ItemsSource = result;
             }
         }
-
         private void cbxItem_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             txbSearch.IsEnabled = true;
+        }
+        private void btnFix_Click(object sender, RoutedEventArgs e)
+        {
+            if (lvNhanVien.SelectedItem == null)
+            {
+                MessageBox.Show("Hãy chọn thông tin nhân viên để sửa!");
+                return;
+            }
+            var selectedItem = (dynamic)lvNhanVien.SelectedItems[0];
+            SuaNhanVien snv = new SuaNhanVien();
+            snv.CivilID = selectedItem.CivilID;
+            snv.ShowDialog();
+        }
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            lvNhanVien.ItemsSource = Staffing.GetAllStaff();
+        }
+        private void btnDel_Click(object sender, RoutedEventArgs e)
+        {
+            if (lvNhanVien.SelectedItem == null)
+            {
+                MessageBox.Show("Hãy chọn thông tin nhân viên cần xóa!");
+                return;
+            }
+            var selectedItem = (dynamic)lvNhanVien.SelectedItems[0];
+            Staffing.DeleteStaff(selectedItem.StaffID);
+            MessageBox.Show("Xóa nhân viên thành công!");
         }
     }
 }

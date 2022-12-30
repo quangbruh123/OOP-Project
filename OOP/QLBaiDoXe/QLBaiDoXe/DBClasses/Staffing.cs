@@ -121,31 +121,47 @@ namespace QLBaiDoXe.DBClasses
             DataProvider.Ins.DB.SaveChanges();
         }
 
-        public static bool ChangeStaffInfo(string staffName, string staffNewName, string civilId, string role, string phoneNumber, string address, DateTime dob)
+        public static void ChangeStaffInfo(int staffId, string staffNewName, string civilId, string role, string phoneNumber, string address, DateTime dob, string accname, string password)
         {
-            if (DataProvider.Ins.DB.Staffs.Any(x => x.StaffName == staffName))
+            Staff checkStaff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.CivilID == civilId);
+            if (checkStaff.StaffID != staffId)
             {
-                Staff staff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.StaffName == staffName);
+                MessageBox.Show("Tồn tại nhân viên có số căn cước công dân bạn đã nhập!");
+                return;
+            }
+            if (DataProvider.Ins.DB.Staffs.Any(x => x.StaffID == staffId))
+            {
+                Staff staff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.StaffID == staffId);
                 staff.StaffName = staffNewName;
                 staff.StaffAddress = address;
                 staff.CivilID = civilId;
                 staff.Role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleName == role);
                 staff.PhoneNumber = phoneNumber;
                 staff.DateOfBirth = dob;
+
+                Account account = DataProvider.Ins.DB.Accounts.FirstOrDefault(x => x.StaffID == staffId);
+                account.AccountName = accname;
+                SHA256 sha256hash = SHA256.Create();
+                string passwordhash = GetHash(sha256hash, password);
+                account.AccountPassword = passwordhash;
+
                 DataProvider.Ins.DB.SaveChanges();
-                return true;
+                MessageBox.Show("Sửa thông tin nhân viên thành công");
+                return;
             }
             else
-                return false;
-        }
-
-        public static bool DeleteStaff(string name)
-        {
-            if (DataProvider.Ins.DB.Staffs.Any(x => x.StaffName == name))
             {
-                Account account = DataProvider.Ins.DB.Accounts.FirstOrDefault(x => x.Staff.StaffName == name);
+                MessageBox.Show("Không tìm thấy nhân viên");
+                return;
+            }
+        }
+        public static bool DeleteStaff(int staffId)
+        {
+            if (DataProvider.Ins.DB.Staffs.Any(x => x.StaffID == staffId))
+            {
+                Account account = DataProvider.Ins.DB.Accounts.FirstOrDefault(x => x.Staff.StaffID == staffId);
                 DataProvider.Ins.DB.Accounts.Remove(account);
-                Staff staff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.StaffName == name);
+                Staff staff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.StaffID == staffId);
                 DataProvider.Ins.DB.Staffs.Remove(staff);
                 DataProvider.Ins.DB.SaveChanges();
                 return true;
@@ -265,6 +281,16 @@ namespace QLBaiDoXe.DBClasses
         public static List<Timekeep> GetTimekeepForStaff(string name)
         {
             return DataProvider.Ins.DB.Timekeeps.Where(x => x.Staff.StaffName == name).ToList();
+        }
+        public static string GetAccountNameFromStaff(Staff staff)
+        {
+            Staff getStaff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.StaffID == staff.StaffID);
+            if (getStaff == null) return null;
+            else
+            {
+                Account account = DataProvider.Ins.DB.Accounts.FirstOrDefault(x => x.StaffID == getStaff.StaffID);
+                return account.AccountName;
+            }
         }
     }
 }
