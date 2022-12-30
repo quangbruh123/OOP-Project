@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.Windows;
 using System.Xml.Linq;
 
 namespace QLBaiDoXe.DBClasses
@@ -24,87 +25,103 @@ namespace QLBaiDoXe.DBClasses
             return sBuilder.ToString();
         }
 
-        public static bool AddStaffInfo(string name, string civilId, string phoneNumber, string address, DateTime dob, string username, string password)
+        public static void AddStaffInfo(string name, string civilId, string phoneNumber, string address, DateTime dob, string accname, string password)
         {
-            if (!DataProvider.Ins.DB.Staffs.Any(x => x.CivilID == civilId))
+            if (DataProvider.Ins.DB.Staffs.Any(x => x.CivilID == civilId))
             {
-                Staff newStaff = new Staff()
-                {
-                    StaffName = name,
-                    CivilID = civilId,
-                    RoleID = 0,
-                    PhoneNumber = phoneNumber,
-                    StaffAddress = address,
-                    DateOfBirth = dob
-                };
-                DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 1).Staffs.Add(newStaff);
-                DataProvider.Ins.DB.SaveChanges();
-                AddStaffAccount(username, password);
-                DataProvider.Ins.DB.SaveChanges();
-                return true;
-            }
-            return false;
-        }
-
-        public static bool AddAdminInfo(string name, string civilId, string phoneNumber, string address, DateTime dob, string username, string password)
-        {
-            if (!DataProvider.Ins.DB.Staffs.Any(x => x.CivilID == civilId))
-            {
-                Staff newStaff = new Staff()
-                {
-                    StaffName = name,
-                    CivilID = civilId,
-                    RoleID = 1,
-                    PhoneNumber = phoneNumber,
-                    StaffAddress = address,
-                    DateOfBirth = dob
-                };
-                DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 1).Staffs.Add(newStaff);
-                DataProvider.Ins.DB.SaveChanges();
-                return true;
-            }
-            return false;
-        }
-
-        public static bool AddStaffAccount(string name, string password)
-        {
-            if (!DataProvider.Ins.DB.Accounts.Any(x => x.AccountName == name))
-            {
-                SHA256 sha256hash = SHA256.Create();
-                string passwordhash = GetHash(sha256hash, password);
-                Account staffAccount = new Account()
-                {
-                    AccountName = name,
-                    AccountPassword = passwordhash,
-                    RoleID = 0
-                };
-                DataProvider.Ins.DB.SaveChanges();
-                return true;
+                MessageBox.Show("Tồn tại nhân viên có số căn cước công dân bạn đã nhập!");
+                return;
             }
             else
-                return false;
+            {
+                if (DataProvider.Ins.DB.Accounts.Any(x => x.AccountName == name))
+                {
+                    MessageBox.Show("Tồn tại tài khoản có cùng tên đăng nhập mà bạn đã nhập!");
+                    return;
+                }
+            }
+            Role role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 1);
+            Staff newStaff = new Staff()
+            {
+                StaffName = name,
+                CivilID = civilId,
+                RoleID = role.RoleID,
+                PhoneNumber = phoneNumber,
+                StaffAddress = address,
+                DateOfBirth = dob,
+                Role = role
+            };
+            DataProvider.Ins.DB.Staffs.Add(newStaff);
+            role.Staffs.Add(newStaff);
+            DataProvider.Ins.DB.SaveChanges();
+
+            Staff admin = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.CivilID == civilId);
+            SHA256 sha256hash = SHA256.Create();
+            string passwordhash = GetHash(sha256hash, password);
+            Account adminAccount = new Account()
+            {
+                AccountName = accname,
+                AccountPassword = passwordhash,
+                RoleID = 1,
+                StaffID = admin.StaffID,
+                Staff = admin,
+                Role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 2)
+            };
+            admin.Accounts.Add(adminAccount);
+            role.Accounts.Add(adminAccount);
+            DataProvider.Ins.DB.Accounts.Add(adminAccount);
+            DataProvider.Ins.DB.SaveChanges();
         }
 
-        public static bool AddAdminAccount(string name, string password)
+        public static void AddAdminInfo(string name, string civilId, string phoneNumber, string address, DateTime dob, string accname, string password)
         {
-            if (!DataProvider.Ins.DB.Accounts.Any(x => x.AccountName == name))
+            if (DataProvider.Ins.DB.Staffs.Any(x => x.CivilID == civilId))
             {
-                SHA256 sha256hash = SHA256.Create();
-                string passwordhash = GetHash(sha256hash, password);
-                Account staffAccount = new Account()
-                {
-                    AccountName = name,
-                    AccountPassword = passwordhash,
-                    RoleID = 1
-                };
-                DataProvider.Ins.DB.SaveChanges();
-                return true;
+                MessageBox.Show("Tồn tại nhân viên có số căn cước công dân bạn đã nhập!");
+                return;
             }
             else
-                return false;
+            {
+                if (DataProvider.Ins.DB.Accounts.Any(x => x.AccountName == name))
+                {
+                    MessageBox.Show("Tồn tại tài khoản có cùng tên đăng nhập mà bạn đã nhập!");
+                    return;
+                }
+            }
+            Role role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 2);
+            Staff newStaff = new Staff()
+            {
+                StaffName = name,
+                CivilID = civilId,
+                RoleID = role.RoleID,
+                PhoneNumber = phoneNumber,
+                StaffAddress = address,
+                DateOfBirth = dob,
+                Role = role
+            };
+            DataProvider.Ins.DB.Staffs.Add(newStaff);
+            role.Staffs.Add(newStaff);
+            DataProvider.Ins.DB.SaveChanges();
+
+            Staff admin = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.CivilID == civilId);
+            SHA256 sha256hash = SHA256.Create();
+            string passwordhash = GetHash(sha256hash, password);
+            Account adminAccount = new Account()
+            {
+                AccountName = accname,
+                AccountPassword = passwordhash,
+                RoleID = 2,
+                StaffID = admin.StaffID,
+                Staff = admin,
+                Role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 2)
+            };
+            admin.Accounts.Add(adminAccount);
+            role.Accounts.Add(adminAccount);
+            DataProvider.Ins.DB.Accounts.Add(adminAccount);
+            DataProvider.Ins.DB.SaveChanges();
         }
 
-        public static bool ChangeStaffInfo(string staffName, string staffNewName, string civilId, string role, string phoneNumber, string address, DateTime dob, string accountName, string passsword)
+        public static bool ChangeStaffInfo(string staffName, string staffNewName, string civilId, string role, string phoneNumber, string address, DateTime dob)
         {
             if (DataProvider.Ins.DB.Staffs.Any(x => x.StaffName == staffName))
             {

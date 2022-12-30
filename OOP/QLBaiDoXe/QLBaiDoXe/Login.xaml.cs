@@ -46,13 +46,23 @@ namespace QLBaiDoXe
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             currentUser = Staffing.LogIn(UsernameTextbox.Text, PasswordTextbox.Password);
-            Debug.WriteLine("ID: " + currentUser.AccountID.ToString() + "\nUsername: " + currentUser.AccountName);
+            Debug.WriteLine("ID: " + currentUser.AccountID.ToString() + "\nUsername: " + currentUser.AccountName
+                            + "\nRoleID: " + currentUser.RoleID.ToString() + "\nRole: " + currentUser.Role.RoleName);
             if (currentUser != null)
             {
                 MessageBox.Show("Đăng nhập thành công", "Thông báo");
-                Homepage1 homepage = new Homepage1();
-                homepage.Show();
-                this.Hide();
+                if (currentUser.RoleID == 2)
+                {
+                    admin adminWindow = new admin();
+                    adminWindow.Show();
+                    this.Close();
+                }
+                else
+                {
+                    Homepage1 homepage = new Homepage1();
+                    homepage.Show();
+                    this.Close();
+                }
             }
             else
             {

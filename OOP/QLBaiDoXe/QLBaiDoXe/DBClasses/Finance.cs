@@ -55,9 +55,10 @@ namespace QLBaiDoXe.DBClasses
             return DataProvider.Ins.DB.Receipts.Where(x => x.FinancialReportID == financialReportId).ToList();
         }
 
-        public static List<FinancialReport> GetFinancialReportForYear(int year)
+        public static FinancialReport GetFinancialReportForDate(int month, int year)
         {
-            return DataProvider.Ins.DB.FinancialReports.Where(x => x.FinancialReportDate.Year == year).ToList();
+            return DataProvider.Ins.DB.FinancialReports.FirstOrDefault(x => x.FinancialReportDate.Month == month
+                                                                         && x.FinancialReportDate.Year == year);
         }
 
         public static List<FinancialReport> GetAllFinancialReports()

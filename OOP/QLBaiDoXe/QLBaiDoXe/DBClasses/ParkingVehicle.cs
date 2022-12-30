@@ -49,7 +49,8 @@ namespace QLBaiDoXe.DBClasses
                 ParkingCard card = DataProvider.Ins.DB.ParkingCards.FirstOrDefault(x => x.ParkingCardID == cardId);
                 card.CardState = 0;
 
-                FinancialReport financialReport = DataProvider.Ins.DB.FinancialReports.FirstOrDefault(x => x.FinancialReportDate.Month == DateTime.Now.Month);
+                FinancialReport financialReport = DataProvider.Ins.DB.FinancialReports
+                    .FirstOrDefault(x => x.FinancialReportDate.Month == DateTime.Now.Month && x.FinancialReportDate.Year == DateTime.Now.Year);
                 if (financialReport != null)
                 {
                     Receipt receipt = new Receipt()

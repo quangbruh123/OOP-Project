@@ -38,6 +38,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>..\..\..\..\..\AForge\Release\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>..\..\..\..\..\AForge\Release\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>..\..\..\..\..\AForge\Release\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.4.3.0\lib\net462\ControlzEx.dll</HintPath>
     </Reference>
@@ -90,6 +99,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
     </Reference>
@@ -197,11 +207,12 @@
     <Compile Include="ViewModel\DSNhanVienViewModel.cs" />
     <Compile Include="ViewModel\HomePage1ViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+	<Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\NotifyErrorInfoViewModel.cs" />
     <Compile Include="ViewModel\NotifyErrorVewModel1.cs" />
-    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\NotifyErrorViewModel2.cs" />    
     <Compile Include="ViewUserControl\SwitchViewClass\SwitchViewBangChamCong.cs" />
-    <Compile Include="ViewUserControl\SwitchViewClass\SwitchViewBaoCaoDoanhThu.cs" />
+	<Compile Include="ViewUserControl\SwitchViewClass\SwitchViewBaoCaoDoanhThu.cs" />
     <Compile Include="ViewUserControl\SwitchViewClass\SwitchViewDS_NhanVien.cs" />
     <Compile Include="ViewModel\NotifyErrorViewModel2.cs" />
     <Page Include="admin.xaml">
