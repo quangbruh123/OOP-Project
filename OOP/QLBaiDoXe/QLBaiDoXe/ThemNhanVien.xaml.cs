@@ -46,7 +46,6 @@ namespace QLBaiDoXe
                     Staffing.AddStaffInfo(txbName.Text, txbCivilID.Text, txbPhoneNumb.Text, txbAddress.Text, DateTime.Parse(DatePicker.Text), txbAccName.Text, txbPassword.Text);
                 MessageBox.Show("Thêm nhân viên thành công!");
             }
-            this.ClearValue;
         }
 
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
