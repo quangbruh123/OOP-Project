@@ -19,16 +19,17 @@
             <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="70.243,346.862,0,0" TextWrapping="Wrap" Text="Doanh thu" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="Black" FontSize="17"/>
             <TextBlock HorizontalAlignment="Left" Height="22.334" Margin="20.343,273.48,0,0" TextWrapping="Wrap" Text="Thống kê và Thay đổi" VerticalAlignment="Top" Width="159.6" RenderTransformOrigin="0.505,0.341" Foreground="#7F000000" FontWeight="SemiBold" FontSize="14"/>
             <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="70.243,303.776,0,0" TextWrapping="Wrap" Text="Giá gửi xe" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="Black" FontSize="17"/>
-            <Button x:Name="DanhSachBtn" Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,99,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17" Padding="0,4">
+            <Button Tag="NhanVien"  Command="{Binding SelectViewCommand}" CommandParameter="{Binding ElementName=DanhSachBtn}" x:Name="DanhSachBtn" Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,99,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17" Padding="0,4">
                 <materialDesign:PackIcon Kind="FormatListBulletedType" Height="29.6" Width="32.067" Foreground="Black" Margin="0,0,148,0"/>
             </Button>
-            <Button x:Name="ChamCongBtn" Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,143,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17" Padding="0.4">
+            
+            <Button Tag="ChamCong" Command="{Binding SelectViewCommand}"  CommandParameter="{Binding ElementName=ChamCongBtn}" x:Name="ChamCongBtn" Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,143,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17" Padding="0.4">
                 <materialDesign:PackIcon Kind="NotebookCheck" Height="29.6" Width="32.067" Foreground="Black" Margin="0,0,148,0"/>
             </Button>
-            <Button x:Name="DoanhThuBtn" Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,338.197,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17" Padding="0.4">
+            <Button Tag="DoanhThu" x:Name="btnDoanhThu" Command="{Binding SelectViewCommand}"  CommandParameter="{Binding ElementName=btnDoanhThu}" Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,338.197,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17" Padding="0.4">
                 <materialDesign:PackIcon Kind="ChartLine" Height="29.6" Width="32.067" Foreground="Black" Margin="0,0,148,0"/>
             </Button>
-            <Button Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,296.113,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17" Padding="0,4">
+            <Button Tag="GiaThuXe" x:Name="btnGiaThuXe" Command="{Binding SelectViewCommand}"  CommandParameter="{Binding ElementName=btnGiaThuXe}" Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,296.113,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17" Padding="0,4">
                 <materialDesign:PackIcon Kind="Cash" Height="29.6" Width="32.067" Foreground="Black" Margin="0,0,148,0"/>
             </Button>
             <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="70.243,398.759,0,0" TextWrapping="Wrap" Text="Đăng xuất" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="#FFFF6363" FontSize="17"/>
@@ -38,11 +39,11 @@
             </Button>
             <materialDesign:PackIcon Kind="Account" HorizontalAlignment="Left" Height="40" Margin="28.8,18.6,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.35,0.5"/>
             <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="70.243,194,0,0" TextWrapping="Wrap" Text="Thẻ" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="Black" FontSize="17"/>
-            <Button Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,187,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17" Padding="0.4">
+            <Button Tag="The" x:Name="btnThe" Command="{Binding SelectViewCommand}"  CommandParameter="{Binding ElementName=btnThe}" Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,187,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17" Padding="0.4">
                 <materialDesign:PackIcon Kind="CardBulletedSettings" Height="29.6" Width="32.067" Foreground="Black" Margin="0,0,148,0"/>
             </Button>
             <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="70.243,235.624,0,0" TextWrapping="Wrap" Text="Xe" VerticalAlignment="Top" Width="126.8" RenderTransformOrigin="0.505,0.341" Foreground="Black" FontSize="17"/>
-            <Button Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,228.624,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17" Padding="0.4">
+            <Button Tag="Xe" x:Name="btnXe" Command="{Binding SelectViewCommand}"  CommandParameter="{Binding ElementName=btnXe}" Style="{StaticResource MaterialDesignFlatLightButton}"  HorizontalAlignment="Left" Height="41.624" Margin="20.343,228.624,0,0" VerticalAlignment="Top" Width="200.9" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="17" Padding="0.4">
                 <materialDesign:PackIcon Kind="Car" Height="29.6" Width="32.067" Foreground="Black" Margin="0,0,148,0"/>
             </Button>
         </Grid>

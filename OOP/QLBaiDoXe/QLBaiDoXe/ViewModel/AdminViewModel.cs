@@ -36,7 +36,7 @@ namespace QLBaiDoXe.ViewModel
 
                 switch (tag)
                 {
-                    case "DanhSach":
+                    case "NhanVien":
                         {
                             SelectedViewModel = new SwitchViewDS_NhanVien();
                             break;
@@ -51,10 +51,24 @@ namespace QLBaiDoXe.ViewModel
                             SelectedViewModel = new SwitchViewBaoCaoDoanhThu();
                             break;
                         }
+                    case "GiaThuXe":
+                        {
+                            SelectedViewModel = new SwitchViewGiaGuiXe();
+                            break;
+                        }
+                    case "The":
+                        {
+                            SelectedViewModel = new SwitchViewThe();
+                            break;
+                        }
+                    case "Xe":
+                        {
+                            SelectedViewModel = new SwichViewXe();
+                            break;
+                        }
                     default:
                         break;
                 }
-
             }
         }
     }

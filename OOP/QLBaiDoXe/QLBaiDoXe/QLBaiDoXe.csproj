@@ -214,9 +214,12 @@
     <Compile Include="ViewModel\NotifyErrorInfoViewModel.cs" />
     <Compile Include="ViewModel\NotifyErrorVewModel1.cs" />
     <Compile Include="ViewModel\NotifyErrorViewModel2.cs" />
+    <Compile Include="ViewUserControl\SwitchViewClass\SwichViewXe.cs" />
     <Compile Include="ViewUserControl\SwitchViewClass\SwitchViewBangChamCong.cs" />
     <Compile Include="ViewUserControl\SwitchViewClass\SwitchViewBaoCaoDoanhThu.cs" />
     <Compile Include="ViewUserControl\SwitchViewClass\SwitchViewDS_NhanVien.cs" />
+    <Compile Include="ViewUserControl\SwitchViewClass\SwitchViewGiaGuiXe.cs" />
+    <Compile Include="ViewUserControl\SwitchViewClass\SwitchViewThe.cs" />
     <Page Include="admin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

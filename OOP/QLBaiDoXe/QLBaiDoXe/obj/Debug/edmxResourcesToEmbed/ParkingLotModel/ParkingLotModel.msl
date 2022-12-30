@@ -34,6 +34,7 @@
         <MappingFragment StoreEntitySet="Receipts">
           <ScalarProperty Name="ReceiptID" ColumnName="ReceiptID" />
           <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="FinancialReportID" ColumnName="FinancialReportID" />
           <ScalarProperty Name="StaffID" ColumnName="StaffID" />
           <ScalarProperty Name="TimePaid" ColumnName="TimePaid" />
           <ScalarProperty Name="ParkingFee" ColumnName="ParkingFee" />

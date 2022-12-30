@@ -14,6 +14,17 @@
     <DataTemplate DataType="{x:Type switchview:SwitchViewBaoCaoDoanhThu}">
         <view:BaoCaoDoanhThu></view:BaoCaoDoanhThu>
     </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type switchview:SwichViewXe}">
+        <view:TraCuuXe></view:TraCuuXe>
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type switchview:SwitchViewGiaGuiXe}">
+        <view:GiaGuiXe></view:GiaGuiXe>
+    </DataTemplate>
 
+    <DataTemplate DataType="{x:Type switchview:SwitchViewThe}">
+        <view:DSThe></view:DSThe>
+    </DataTemplate>
 
 </ResourceDictionary>
