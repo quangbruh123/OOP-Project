@@ -50,7 +50,8 @@ namespace QLBaiDoXe.DBClasses
                 StaffAddress = address,
                 DateOfBirth = dob,
                 Role = role
-            };
+            };            
+            DataProvider.Ins.DB.Staffs.Add(newStaff);
             role.Staffs.Add(newStaff);
             DataProvider.Ins.DB.SaveChanges();
 
@@ -99,6 +100,8 @@ namespace QLBaiDoXe.DBClasses
                 DateOfBirth = dob,
                 Role = role
             };
+            DataProvider.Ins.DB.Staffs.Add(newStaff);
+            role.Staffs.Add(newStaff);
             DataProvider.Ins.DB.SaveChanges();
 
             Staff admin = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.CivilID == civilId);
