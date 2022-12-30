@@ -12,12 +12,13 @@
     <Grid Background="#80FFA03F">
         <Grid Margin="10,110,16.4,510">
             <Rectangle Fill="White" HorizontalAlignment="Left" Height="100" Margin="2.8,-6.4,-2.8,0" VerticalAlignment="Top" Width="1012.6" RadiusX="20" RadiusY="20"/>
-            <TextBox materialDesign:HintAssist.Hint="Tìm kiếm nhân viên" HorizontalAlignment="Left" Height="39.946" Margin="51.413,24.654,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="461.387" FontSize="20"/>
+            <TextBox materialDesign:HintAssist.Hint="Tìm kiếm nhân viên" HorizontalAlignment="Left" Height="39.946" Margin="34.913,24.654,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="336.587" FontSize="20"/>
             <materialDesign:PackIcon
                 Kind="Search"
-                Opacity=".56" Margin="471,24.654,0,0" Height="32.946" Width="32.946" />
-            <DatePicker materialDesign:HintAssist.Hint="Từ ngày" HorizontalAlignment="Left" Height="39.946" Margin="562.134,24.654,0,0" VerticalAlignment="Top" Width="185.07" RenderTransformOrigin="0.651,0.512" FontSize="20" Focusable="False"/>
-            <DatePicker materialDesign:HintAssist.Hint="Đến ngày" HorizontalAlignment="Left" Height="39.946" Margin="795.73,24.654,0,0" VerticalAlignment="Top" Width="185.07" RenderTransformOrigin="0.651,0.512" FontSize="20" Focusable="False"/>
+                Opacity=".56" Margin="341.006,24.654,0,0" Height="32.946" Width="24.035" />
+            <DatePicker materialDesign:HintAssist.Hint="Từ ngày" HorizontalAlignment="Left" Height="39.946" Margin="397.634,24.654,0,0" VerticalAlignment="Top" Width="185.07" RenderTransformOrigin="0.651,0.512" FontSize="20" Focusable="False"/>
+            <DatePicker materialDesign:HintAssist.Hint="Đến ngày" HorizontalAlignment="Left" Height="39.946" Margin="631.23,24.654,0,0" VerticalAlignment="Top" Width="185.07" RenderTransformOrigin="0.651,0.512" FontSize="20" Focusable="False"/>
+            <Button Content="Tìm kiếm" HorizontalAlignment="Left" Height="Auto" Margin="854.9,27.968,0,39.086" Width="131.2" Foreground="White"/>
 
         </Grid>
         <Grid Margin="10,236,16.4,31.332">

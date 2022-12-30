@@ -184,6 +184,9 @@
     <Compile Include="ThemNhanVien.xaml.cs">
       <DependentUpon>ThemNhanVien.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ThemThe.xaml.cs">
+      <DependentUpon>ThemThe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TraCuuXe.xaml.cs">
       <DependentUpon>TraCuuXe.xaml</DependentUpon>
     </Compile>
@@ -260,6 +263,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ThemThe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TraCuuXe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -325,6 +332,7 @@
     <Folder Include="ViewUserControl\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Image1.png" />
     <Content Include="ParkingLotModel\ParkingLotModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ParkingLotModel.edmx</DependentUpon>

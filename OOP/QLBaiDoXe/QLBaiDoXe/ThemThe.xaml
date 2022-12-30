@@ -1,0 +1,46 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QLBaiDoXe"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="QLBaiDoXe.ThemThe"
+        mc:Ignorable="d"
+        Title="ThemThe" Height="192" Width="422">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="51*"/>
+            <ColumnDefinition Width="53*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="26*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="Source" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="102*"/>
+                <ColumnDefinition Width="37*"/>
+                <ColumnDefinition Width="69*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Left" Height="44.8" Margin="6.8,55.472,0,0" TextWrapping="Wrap" Text="Hãy quét thẻ vào để thêm:" VerticalAlignment="Top" Width="259.2" FontSize="22" RenderTransformOrigin="0.522,0.429" Grid.ColumnSpan="2"/>
+            <materialDesign:PackIcon Kind="CreditCardSwipeOutline" HorizontalAlignment="Left" Height="53.6" Margin="30.161,46.672,0,0" VerticalAlignment="Top" Width="53.6" RenderTransformOrigin="0.91,0.164" Grid.Column="2"/>
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" Height="44.8" Margin="10,12.156,0,-4.828" TextWrapping="Wrap" FontWeight="Light" Text="Hoặc nhập trực tiếp ở đây:" VerticalAlignment="Top" Width="213.775" FontSize="16" RenderTransformOrigin="0.522,0.429" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <TextBox materialDesign:HintAssist.Hint="Nhập mã thẻ" HorizontalAlignment="Left" Height="39.946" Margin="0,8.156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152.092" FontSize="16" Grid.Column="1" Grid.Row="1" Foreground="#FFE27200"/>
+        <Button
+          Content="{materialDesign:PackIcon Kind=Check}"
+          ToolTip="Icon"
+          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="166.792,12.155,12.934,7.972" Grid.Column="1" Grid.Row="1" Padding="0" Foreground="White" />
+        <TextBlock HorizontalAlignment="Left" Height="24.933" Margin="10,10,0,0" TextWrapping="Wrap" Text="Huỷ nhập thẻ" VerticalAlignment="Top" Width="86.667" TextDecorations="Underline" Foreground="#FFFFA03F"/>
+        <Grid x:Name="Failed" Grid.ColumnSpan="2" d:IsHidden="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="102*"/>
+                <ColumnDefinition Width="37*"/>
+                <ColumnDefinition Width="69*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Left" Height="44.8" Margin="6.8,55.472,0,0" TextWrapping="Wrap" Text="Thẻ không nhận, xin thử lại:" VerticalAlignment="Top" Width="259.2" FontSize="21" RenderTransformOrigin="0.522,0.429" Grid.ColumnSpan="2"/>
+            <materialDesign:PackIcon Kind="CardRemoveOutline" HorizontalAlignment="Left" Height="53.6" Margin="30.161,46.672,0,0" VerticalAlignment="Top" Width="53.6" RenderTransformOrigin="0.91,0.164" Grid.Column="2"/>
+        </Grid>
+
+    </Grid>
+</Window>
