@@ -12,22 +12,29 @@
     <Grid Background="#80FFA03F">
         <Grid Margin="10,110,16.4,510">
             <Rectangle Fill="White" HorizontalAlignment="Left" Height="100" Margin="2.8,-6.4,-2.8,0" VerticalAlignment="Top" Width="1012.6" RadiusX="20" RadiusY="20"/>
-            <TextBox materialDesign:HintAssist.Hint="Tìm kiếm nhân viên" HorizontalAlignment="Left" Height="39.946" Margin="51.413,24.654,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="461.387" FontSize="20"/>
+            <TextBox x:Name="StaffNameTxb" materialDesign:HintAssist.Hint="Tìm kiếm nhân viên" HorizontalAlignment="Left" Height="39.946" Margin="51.413,24.654,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="461.387" FontSize="20" TextChanged="StaffNameTxb_TextChanged"/>
             <materialDesign:PackIcon
                 Kind="Search"
                 Opacity=".56" Margin="471,24.654,0,0" Height="32.946" Width="32.946" />
-            <DatePicker materialDesign:HintAssist.Hint="Từ ngày" HorizontalAlignment="Left" Height="39.946" Margin="562.134,24.654,0,0" VerticalAlignment="Top" Width="185.07" RenderTransformOrigin="0.651,0.512" FontSize="20" Focusable="False"/>
-            <DatePicker materialDesign:HintAssist.Hint="Đến ngày" HorizontalAlignment="Left" Height="39.946" Margin="795.73,24.654,0,0" VerticalAlignment="Top" Width="185.07" RenderTransformOrigin="0.651,0.512" FontSize="20" Focusable="False"/>
+            <DatePicker x:Name="StartDateDP" materialDesign:HintAssist.Hint="Từ ngày" HorizontalAlignment="Left" Height="39.946" Margin="562.134,24.654,0,0" VerticalAlignment="Top" Width="185.07" RenderTransformOrigin="0.651,0.512" FontSize="20" Focusable="False"/>
+            <DatePicker x:Name="EndDateDP" materialDesign:HintAssist.Hint="Đến ngày" HorizontalAlignment="Left" Height="39.946" Margin="795.73,24.654,0,0" VerticalAlignment="Top" Width="185.07" RenderTransformOrigin="0.651,0.512" FontSize="20" Focusable="False"/>
 
         </Grid>
         <Grid Margin="10,236,16.4,31.332">
             <Rectangle Fill="White" HorizontalAlignment="Left" Height="452.668" Margin="1.5,-9,-1.5,0" VerticalAlignment="Top" Width="1012.6" RadiusX="20" RadiusY="20"/>
-            <DataGrid HorizontalAlignment="Left" Height="431.068" VerticalAlignment="Top" Width="1012.6" Margin="1.5,0,-1.5,0"/>
+            <ListView x:Name="TimekeepLV" HorizontalAlignment="Left" Height="431.068" VerticalAlignment="Top" Width="1012.6" Margin="1.5,0,-1.5,0">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Mã nhân viên" DisplayMemberBinding="{Binding Staff.StaffID}"/>
+                        <GridViewColumn Header="Tên nhân viên" DisplayMemberBinding="{Binding Staff.StaffName}"/>
+                        <GridViewColumn Header="Giờ đăng nhập" DisplayMemberBinding="{Binding LoginTime}"/>
+                        <GridViewColumn Header="Giờ đăng xuất" DisplayMemberBinding="{Binding LogoutTime}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
 
         </Grid>
         <TextBlock FontWeight="Bold" HorizontalAlignment="Left" Height="80" Margin="35,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="485" FontSize="42" Text="Bảng chấm công"/>
-        <Button
-            Style="{StaticResource MaterialDesignToolButton}"/>
         <Image Margin="940.52,2.8,3.813,620.4" Source="Image4.png" Stretch="Fill"/>
         <TextBlock Text="CÔNG TY THNM BÃI ĐỖ XE THÔNG MINH KYPS" HorizontalAlignment="Left" Height="18.8" Margin="661.853,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273.667" FontWeight="Bold" FontFamily="Segoe UI"/>
         <TextBlock HorizontalAlignment="Left" Height="31.05" Margin="663.353,43.8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="268.667" TextAlignment="Right" FontSize="10"><Run Text="Điện thoại: (094).8423.014"/><LineBreak/><Run Text="Email: 20521868@gm.uit.edu.vn"/><LineBreak/></TextBlock>

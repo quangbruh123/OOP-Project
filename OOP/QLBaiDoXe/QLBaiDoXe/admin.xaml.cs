@@ -20,10 +20,22 @@ namespace QLBaiDoXe
     /// </summary>
     public partial class admin : Window
     {
+        public static DateTime LoginTime = new DateTime();
+        public static DateTime LogoutTime = new DateTime();
         public admin()
         {
             InitializeComponent();
             this.DataContext = new AdminViewModel();
+            LoginTime = DateTime.Now;
+        }
+
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            Staffing.LogOut(MainWindow.currentUser.AccountName);
+            MainWindow.currentUser = null;
+            MainWindow loginWindow = new MainWindow();
+            loginWindow.Show();
+            this.Close();
         }
     }
 }

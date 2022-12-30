@@ -14,7 +14,9 @@
             <ListView x:Name="lvNhanVien" HorizontalAlignment="Left" Height="461" VerticalAlignment="Center" Width="1013" Grid.ColumnSpan="2">
                 <ListView.View>
                     <GridView>
+                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding StaffID}"/>
                         <GridViewColumn Header="Tên" DisplayMemberBinding="{Binding StaffName}"/>
+                        <GridViewColumn Header="Chức vụ" DisplayMemberBinding="{Binding Role.RoleName}"/>
                         <GridViewColumn Header="Số CCCD" DisplayMemberBinding="{Binding CivilID}"/>
                         <GridViewColumn Header="Số điện thoại"  DisplayMemberBinding="{Binding PhoneNumber}"/>
                         <GridViewColumn Header="Địa chỉ nhà"  DisplayMemberBinding="{Binding StaffAddress}"/>
@@ -41,7 +43,7 @@
         <Image Margin="961.587,2.8,3.813,620.4" Source="Image4.png" Stretch="Fill"/>
         <TextBlock Text="CÔNG TY THNM BÃI ĐỖ XE THÔNG MINH KYPS" HorizontalAlignment="Left" Height="18.8" Margin="692.92,20.15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273.667" FontWeight="Bold" FontFamily="Segoe UI"/>
         <TextBlock HorizontalAlignment="Left" Height="31.05" Margin="694.42,38.95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="268.667" TextAlignment="Right" FontSize="10"><Run Text="Điện thoại: (094).8423.014"/><LineBreak/><Run Text="Email: 20521868@gm.uit.edu.vn"/><LineBreak/></TextBlock>
-        <Button Content="Cập nhật" HorizontalAlignment="Left" Height="36" Margin="854,250,0,0" VerticalAlignment="Top" Width="131" Foreground="White" FontSize="16" Click="btnUpdate_Click"/>
+        <Button Content="Làm mới" HorizontalAlignment="Left" Height="36" Margin="854,250,0,0" VerticalAlignment="Top" Width="131" Foreground="White" FontSize="16" Click="btnUpdate_Click"/>
 
     </Grid>
 </UserControl>

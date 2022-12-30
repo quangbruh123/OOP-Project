@@ -65,7 +65,7 @@ namespace QLBaiDoXe.DBClasses
                 RoleID = 1,
                 StaffID = admin.StaffID,
                 Staff = admin,
-                Role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 2)
+                Role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 1)
             };
             //admin.Accounts.Add(adminAccount);
             //role.Accounts.Add(adminAccount);
@@ -197,17 +197,7 @@ namespace QLBaiDoXe.DBClasses
                 Debug.WriteLine(passwordhash);
                 Account account = DataProvider.Ins.DB.Accounts.FirstOrDefault(x => x.AccountName == username);
                 if (account.AccountPassword == passwordhash)
-                {
-                    Timekeep timekeep = new Timekeep()
-                    {
-                        StaffID = account.StaffID,
-                        LoginTime = DateTime.Now,
-                        Staff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.StaffID == account.StaffID)
-                    };
-                    DataProvider.Ins.DB.Timekeeps.Add(timekeep);
-                    DataProvider.Ins.DB.SaveChanges();
                     return account;
-                }
                 else
                     return null;
             }
@@ -220,8 +210,14 @@ namespace QLBaiDoXe.DBClasses
             if (DataProvider.Ins.DB.Accounts.Any(x => x.AccountName == username))
             {
                 Account account = DataProvider.Ins.DB.Accounts.FirstOrDefault(x => x.AccountName == username);
-                Timekeep timekeep = DataProvider.Ins.DB.Timekeeps.FirstOrDefault(x => x.StaffID == account.StaffID);
-                timekeep.LogoutTime = DateTime.Now;
+                Timekeep timekeep = new Timekeep()
+                {
+                    StaffID = account.StaffID,
+                    LoginTime = admin.LoginTime,
+                    LogoutTime = DateTime.Now,
+                    Staff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.StaffID == account.StaffID)
+                };
+                DataProvider.Ins.DB.Timekeeps.Add(timekeep);
                 DataProvider.Ins.DB.SaveChanges();
                 return true;
             }
@@ -281,10 +277,27 @@ namespace QLBaiDoXe.DBClasses
             return DataProvider.Ins.DB.Staffs.Where(x => x.StaffAddress == StaffAddress).ToList();
         }
 
+        public static List<Timekeep> GetAllTimekeeps()
+        {
+            return DataProvider.Ins.DB.Timekeeps.ToList();
+        }
+
+        public static List<Timekeep> GetTimekeepForMonth(int month)
+        {
+            return DataProvider.Ins.DB.Timekeeps.Where(x => x.LoginTime.Month == month).ToList();
+        }
+
         public static List<Timekeep> GetTimekeepForStaff(string name)
         {
-            return DataProvider.Ins.DB.Timekeeps.Where(x => x.Staff.StaffName == name).ToList();
+            return DataProvider.Ins.DB.Timekeeps.Where(x => x.Staff.StaffName.Contains(name)).ToList();
         }
+
+        public static List<Timekeep> GetSpecificTimekeeps(string name, DateTime startDate, DateTime endDate)
+        {
+            return DataProvider.Ins.DB.Timekeeps.Where(x => x.Staff.StaffName.Contains(name)
+                                                    && x.LoginTime >= startDate && x.LogoutTime <= endDate).ToList();
+        }
+
         public static string GetAccountNameFromStaff(Staff staff)
         {
             Staff getStaff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.StaffID == staff.StaffID);
