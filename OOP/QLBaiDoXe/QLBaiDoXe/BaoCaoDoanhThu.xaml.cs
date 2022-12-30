@@ -10,10 +10,14 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LiveCharts;
+using LiveCharts.Helpers;
 using LiveCharts.Wpf;
+using QLBaiDoXe.DBClasses;
+using QLBaiDoXe.ParkingLotModel;
 
 namespace QLBaiDoXe
 {
@@ -22,11 +26,15 @@ namespace QLBaiDoXe
     /// </summary>
     public partial class BaoCaoDoanhThu : UserControl
     {
+        public SeriesCollection SeriesCollection { get; set; }
+        public string[] Labels { get; set; }
+        public Func<double, string> YFormatter { get; set; }
+
         public BaoCaoDoanhThu()
         {
             InitializeComponent();
             SeriesCollection = new SeriesCollection
-            { 
+            {
                 new LineSeries
                 {
                     Title = "Xe máy",
@@ -40,11 +48,11 @@ namespace QLBaiDoXe
                 new LineSeries
                 {
                     Title = "Xe đạp",
-                    Values = new ChartValues<double> {4 ,2 ,7 ,2 ,7 },
+                    Values = new ChartValues<double> { 4 ,2 ,7 ,2 ,7 },
                 }
             };
 
-            Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May" };
+            Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
             YFormatter = value => value + "";
 
             //modifying the series collection will animate and update the chart
@@ -64,10 +72,64 @@ namespace QLBaiDoXe
             DataContext = this;
         }
 
-        public SeriesCollection SeriesCollection { get; set; }
-        public string[] Labels { get; set; }
-        public Func<double, string> YFormatter { get; set; }
-    }
-         
+        private void YearTextbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            bool isNumber = int.TryParse(YearTextbox.Text, out int year);
+            if (isNumber)
+            {
+                FinancialReport financialReport;
+                List<VehicleType> vehicleTypes = Regulation.GetAllVehicleTypes();
+                List<LineSeries> lineSeries = new List<LineSeries>();
+                int total = 0;
+                for (int i = 0; i < vehicleTypes.Count; i++)
+                {
+                    lineSeries.Add(new LineSeries()
+                    {
+                        Title = vehicleTypes[i].VehicleTypeName,
+                        Values = new ChartValues<int>()
+                    });
+                }
+                for (int m = 1; m <= 12; m++)
+                {
+                    financialReport = Finance.GetFinancialReportForDate(m, year);
+                    if (financialReport == null)
+                    {
+                        for (int j = 0; j < lineSeries.Count; j++)
+                        {
+                            lineSeries[j].Values.Add(0);
+                        }
+                    }
+                    else
+                    {
+                        for (int j = 0; j < lineSeries.Count; j++)
+                        {
+                            int income = 0;
+                            List<Receipt> receipts = financialReport.Receipts.ToList();
+                            for (int k = 0; k < financialReport.Receipts.Count; k++)
+                            {
+                                if (lineSeries[j].Title == receipts[k].Vehicle.VehicleType.VehicleTypeName)
+                                {
+                                    income += receipts[k].ParkingFee;
+                                }
+                                lineSeries[j].Values.Add(income);
+                                total += income;
+                            }
+                        }
+                    }
+                }
+                IncomeTextbox.Text = total.ToString() + " đồng";
+                SeriesCollection.Clear();
+                SeriesCollection.AddRange(lineSeries);
+            }
+            else
+            {
+                return;
+            }
+        }
 
+        private void GetReportButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+    }
 }

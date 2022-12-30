@@ -13,10 +13,10 @@
     <Grid Background="#80FFA03F">
         <Grid Margin="10,110,16.4,510">
             <Rectangle Fill="White" HorizontalAlignment="Left" Height="100" Margin="2.8,-6.4,-2.8,0" VerticalAlignment="Top" Width="1012.6" RadiusX="20" RadiusY="20"/>
-            <TextBox materialDesign:HintAssist.Hint="Năm" HorizontalAlignment="Left" Height="39.946" Margin="165,24.654,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="20" RenderTransformOrigin="0.2,0.509"/>
-            <TextBlock HorizontalAlignment="Left" Height="39.946" Margin="60,28.654,0,0" TextWrapping="Wrap" Text="Lọc theo:" VerticalAlignment="Top" Width="145.254" FontSize="20"/>
+            <TextBox x:Name="YearTextbox" materialDesign:HintAssist.Hint="Năm" HorizontalAlignment="Left" Height="39.946" Margin="165,24.654,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="20" RenderTransformOrigin="0.2,0.509" TextChanged="YearTextbox_TextChanged"/>
+            <TextBlock x:Name="YearTextBlock" HorizontalAlignment="Left" Height="39.946" Margin="60,28.654,0,0" TextWrapping="Wrap" Text="Lọc theo:" VerticalAlignment="Top" Width="145.254" FontSize="20"/>
             <TextBlock HorizontalAlignment="Left" Height="39.946" Margin="629.746,28.654,0,0" TextWrapping="Wrap" Text="Doanh thu:" VerticalAlignment="Top" Width="145.254" FontSize="20"/>
-            <TextBlock HorizontalAlignment="Left" Height="39.946" Margin="745,28.654,0,0" TextWrapping="Wrap" Text="0 đồng" VerticalAlignment="Top" Width="210.254" FontSize="20" TextAlignment="Right"/>
+            <TextBlock x:Name="IncomeTextbox" HorizontalAlignment="Left" Height="39.946" Margin="745,28.654,0,0" TextWrapping="Wrap" Text="0 đồng" VerticalAlignment="Top" Width="210.254" FontSize="20" TextAlignment="Right"/>
 
         </Grid>
         <Grid Margin="10,236,16.4,31.332">
@@ -35,7 +35,7 @@
         <Image Margin="940.52,2.8,3.813,620.4" Source="Image4.png" Stretch="Fill"/>
         <TextBlock Text="CÔNG TY THNM BÃI ĐỖ XE THÔNG MINH KYPS" HorizontalAlignment="Left" Height="18.8" Margin="661.853,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273.667" FontWeight="Bold" FontFamily="Segoe UI"/>
         <TextBlock HorizontalAlignment="Left" Height="31.05" Margin="663.353,43.8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="268.667" TextAlignment="Right" FontSize="10"><Run Text="Điện thoại: (094).8423.014"/><LineBreak/><Run Text="Email: 20521868@gm.uit.edu.vn"/><LineBreak/></TextBlock>
-        <Button Content="Xuất báo cáo" HorizontalAlignment="Left" Height="28.066" Margin="865,630,0,0" VerticalAlignment="Top" Width="125.733" Foreground="White"/>
+        <Button x:Name="GetReportButton" Content="Xuất báo cáo" HorizontalAlignment="Left" Height="28.066" Margin="865,630,0,0" VerticalAlignment="Top" Width="125.733" Foreground="White" Click="GetReportButton_Click"/>
 
     </Grid>
 </UserControl>
