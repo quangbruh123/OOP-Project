@@ -43,7 +43,7 @@
                 <ComboBoxItem Content="Quản trị viên"/>
                 <ComboBoxItem Content="Nhân viên"/>
             </ComboBox>
-            <DatePicker x:Name="DatePicker" HorizontalAlignment="Left" Height="29.6" Margin="0.001,41.6,0,0" VerticalAlignment="Top" Width="173.6" RenderTransformOrigin="0.651,0.512" Grid.Column="1" FontSize="16"/>
+            <DatePicker x:Name="DatePicker" HorizontalAlignment="Left" Height="29.6" Margin="0.001,41.6,0,0" VerticalAlignment="Top" Width="173.6" RenderTransformOrigin="0.651,0.512" Grid.Column="1" FontSize="16" Focusable="False"/>
             <Button Content="Thêm" Grid.Column="2" HorizontalAlignment="Left" Height="32.433" Margin="102.8,50.834,0,0" Grid.Row="2" VerticalAlignment="Top" Width="94.4" Foreground="White" Command="{Binding SubmitCommand}" Click="ButtonAdd_Click"/>
             <Button Click="ButtonCancel_Click" Content="Huỷ" Grid.Column="1" HorizontalAlignment="Left" Height="32.433" Margin="234.8,50.834,0,0" Grid.Row="2" VerticalAlignment="Top" Width="94.4" Foreground="#FFFFA03F" Grid.ColumnSpan="2" Background="White"/>
         </Grid>

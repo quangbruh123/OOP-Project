@@ -1,0 +1,48 @@
+﻿<UserControl
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QLBaiDoXe"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             
+        xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="QLBaiDoXe.GiaGuiXe"
+             
+        mc:Ignorable="d"
+         Background="{DynamicResource MaterialDesignPaper}"    
+        Height="720" Width="1039" >
+    <Grid Background="#80FFA03F">
+        <Grid Margin="10,110,16.4,31.332">
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="568.668" Margin="1.5,10,-1.5,0" VerticalAlignment="Top" Width="1012.6" RadiusX="20" RadiusY="20" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
+            <Grid Margin="0,0,0,76.4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="424*"/>
+                    <ColumnDefinition Width="589*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock FontWeight="SemiBold" HorizontalAlignment="Left" Height="53.223" Margin="175.006,82.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238.827" FontSize="32" TextAlignment="Right" Foreground="#FFFF3C4A"><Run Text="Xe máy:"/><LineBreak/><Run/></TextBlock>
+                <TextBlock FontWeight="SemiBold" HorizontalAlignment="Left" Height="53.223" Margin="175.006,82.198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238.827" FontSize="32" TextAlignment="Right" Grid.Row="1" Foreground="#FF76BA00"><Run Text="Xe đạp:"/><LineBreak/><Run/></TextBlock>
+                <TextBlock FontWeight="SemiBold" HorizontalAlignment="Left" Height="53.223" Margin="175.006,82.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238.827" FontSize="32" TextAlignment="Right" Grid.Row="2" Foreground="#FFD47E46"><Run Text="Xe ô tô:"/><LineBreak/><Run/></TextBlock>
+                <TextBox HorizontalAlignment="Left" Height="62.4" Margin="42.973,83.023,0,0" TextWrapping="Wrap" Text="3,000" VerticalAlignment="Top" Width="174" FontSize="30" Grid.Column="1"/>
+                <TextBox HorizontalAlignment="Left" Height="62.4" Margin="42.973,83.022,0,0" TextWrapping="Wrap" Text="2,000" VerticalAlignment="Top" Width="174" FontSize="30" Grid.Column="1" Grid.Row="1"/>
+                <TextBox HorizontalAlignment="Left" Height="62.4" Margin="42.973,83.023,0,0" TextWrapping="Wrap" Text="4,000" VerticalAlignment="Top" Width="174" FontSize="30" Grid.Column="1" Grid.Row="2"/>
+                <TextBlock HorizontalAlignment="Left" Height="53.223" Margin="238.773,82.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238.827" FontSize="32" Grid.Column="1"><Run Text="Đồng"/><LineBreak/><Run/></TextBlock>
+                <TextBlock HorizontalAlignment="Left" Height="53.223" Margin="238.773,82.199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238.827" FontSize="32" Grid.Column="1" Grid.Row="1"><Run Text="Đồng"/><LineBreak/><Run/></TextBlock>
+                <TextBlock HorizontalAlignment="Left" Height="53.223" Margin="238.773,82.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238.827" FontSize="32" Grid.Column="1" Grid.Row="2"><Run Text="Đồng"/><LineBreak/><Run/></TextBlock>
+
+            </Grid>
+            <Button Content="Lưu" HorizontalAlignment="Left" Height="42" Margin="819.5,509.5,0,0" VerticalAlignment="Top" Width="147.6" FontSize="20" Foreground="White"/>
+
+
+        </Grid>
+        <TextBlock FontWeight="Bold" HorizontalAlignment="Left" Height="80" Margin="35,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="485" FontSize="42" Text="Giá gửi xe"/>
+        <Image Margin="940.52,2.8,3.813,620.4" Source="Image4.png" Stretch="Fill"/>
+        <TextBlock Text="CÔNG TY THNM BÃI ĐỖ XE THÔNG MINH KYPS" HorizontalAlignment="Left" Height="18.8" Margin="661.853,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273.667" FontWeight="Bold" FontFamily="Segoe UI"/>
+        <TextBlock HorizontalAlignment="Left" Height="31.05" Margin="663.353,43.8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="268.667" TextAlignment="Right" FontSize="10"><Run Text="Điện thoại: (094).8423.014"/><LineBreak/><Run Text="Email: 20521868@gm.uit.edu.vn"/><LineBreak/></TextBlock>
+
+    </Grid>
+</UserControl>
