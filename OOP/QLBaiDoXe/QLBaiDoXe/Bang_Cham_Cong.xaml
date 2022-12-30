@@ -25,7 +25,7 @@
             <ListView x:Name="TimekeepLV" HorizontalAlignment="Left" Height="431.068" VerticalAlignment="Top" Width="1012.6" Margin="1.5,0,-1.5,0">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Mã nhân viên" DisplayMemberBinding="{Binding Staff.StaffID}"/>
+                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Staff.StaffID}"/>
                         <GridViewColumn Header="Tên nhân viên" DisplayMemberBinding="{Binding Staff.StaffName}"/>
                         <GridViewColumn Header="Giờ đăng nhập" DisplayMemberBinding="{Binding LoginTime}"/>
                         <GridViewColumn Header="Giờ đăng xuất" DisplayMemberBinding="{Binding LogoutTime}"/>

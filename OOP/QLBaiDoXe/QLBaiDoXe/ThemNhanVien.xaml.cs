@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Globalization;
 using QLBaiDoXe.DBClasses;
-using HandyControl.Tools.Extension;
 
 namespace QLBaiDoXe
 {
@@ -32,7 +31,7 @@ namespace QLBaiDoXe
             string mintime = "1/1/1800";
             if (cbxRole.Text == "Quản trị viên")
             {
-                if (DatePicker.Text.IsNullOrEmpty())
+                if (string.IsNullOrEmpty(DatePicker.Text))
                     Staffing.AddAdminInfo(txbName.Text, txbCivilID.Text, txbPhoneNumb.Text, txbAddress.Text, DateTime.Parse(mintime), txbAccName.Text, txbPassword.Text);
                 else
                     Staffing.AddAdminInfo(txbName.Text, txbCivilID.Text, txbPhoneNumb.Text, txbAddress.Text, DateTime.Parse(DatePicker.Text), txbAccName.Text, txbPassword.Text);
@@ -40,7 +39,7 @@ namespace QLBaiDoXe
             }
             else
             {
-                if (DatePicker.Text.IsNullOrEmpty())
+                if (string.IsNullOrEmpty(DatePicker.Text))
                     Staffing.AddStaffInfo(txbName.Text, txbCivilID.Text, txbPhoneNumb.Text, txbAddress.Text, DateTime.Parse(mintime), txbAccName.Text, txbPassword.Text);
                 else
                     Staffing.AddStaffInfo(txbName.Text, txbCivilID.Text, txbPhoneNumb.Text, txbAddress.Text, DateTime.Parse(DatePicker.Text), txbAccName.Text, txbPassword.Text);

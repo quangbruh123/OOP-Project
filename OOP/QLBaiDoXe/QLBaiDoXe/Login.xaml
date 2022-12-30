@@ -30,19 +30,19 @@
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
-    <Window.Triggers>
+    <!--<Window.Triggers>
         <EventTrigger RoutedEvent="UIElement.MouseDown" SourceName="textBlock">
             <BeginStoryboard Storyboard="{StaticResource CW_LoToFo}"/>
         </EventTrigger>
         <EventTrigger RoutedEvent="UIElement.MouseDown" SourceName="textBlock1">
             <BeginStoryboard Storyboard="{StaticResource CW_FoToLo}"/>
         </EventTrigger>
-    </Window.Triggers>
+    </Window.Triggers>-->
     <Grid Margin="0,0,0,0">
         <Grid x:Name="Login" HorizontalAlignment="Left" Margin="-37,0,0,0" VerticalAlignment="Center" Width="601" Visibility="Visible">
             <Rectangle HorizontalAlignment="Left" Height="420.4" VerticalAlignment="Center" Width="292.2" Fill="#FFFFA03F" Opacity="0.5" RadiusX="10" RadiusY="10"/>
             <TextBlock HorizontalAlignment="Left" Height="72" Text="Login" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" FontSize="40" Foreground="#FFFFA03F" Margin="335,65,0,0"/>
-            <CheckBox Content="Ghi nhớ tài khoản" HorizontalAlignment="Left" Height="21" Width="130" Margin="337,255,0,0" VerticalAlignment="Top"/>
+            <!--<CheckBox Content="Ghi nhớ tài khoản" HorizontalAlignment="Left" Height="21" Width="130" Margin="337,255,0,0" VerticalAlignment="Top"/>
             <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="23" Text="Quên mật khẩu?" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" Margin="509,257,0,0" Foreground="#FFFFA03F" FontWeight="SemiBold">
                 <TextBlock.Style>
                     <Style TargetType="{x:Type TextBlock}">
@@ -57,9 +57,9 @@
                         </Style.Triggers>
                     </Style>
                 </TextBlock.Style>
-            </TextBlock>
+            </TextBlock>-->
             <Button x:Name="LoginButton" Margin="337,313,0,0"
-                Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Width="261" BorderBrush="{x:Null}" Background="#FFFFA03F" Foreground="White" FontSize="14" Height="42"/>
+                Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Width="261" BorderBrush="{x:Null}" Background="#FFFFA03F" Foreground="White" FontSize="14" Height="42" Click="LoginButton_Click"/>
             <TextBox x:Name="UsernameTextbox" materialDesign:HintAssist.Hint="Tên đăng nhập" HorizontalAlignment="Left" Height="36" Margin="337.8,146.8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253.2" FontSize="16"/>
             <PasswordBox x:Name="PasswordTextbox" Style="{StaticResource MaterialDesignRevealPasswordBox}" materialDesign:TextFieldAssist.HasClearButton="True" materialDesign:HintAssist.Hint="Mật khẩu" HorizontalAlignment="Left" Height="36" Margin="337.8,201.733,0,0" VerticalAlignment="Top" Width="253.2" FontSize="16"/>
 

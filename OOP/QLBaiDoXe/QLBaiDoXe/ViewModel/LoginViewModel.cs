@@ -1,5 +1,4 @@
-﻿using HandyControl.Tools.Command;
-using QLBaiDoXe.ViewModel;
+﻿using QLBaiDoXe.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
