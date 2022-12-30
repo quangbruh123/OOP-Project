@@ -42,10 +42,10 @@ namespace QLBaiDoXe.DBClasses
 
         public static bool VehicleOut(long cardId, int staffId)
         {
-            if (DataProvider.Ins.DB.Vehicles.Any(x => x.ParkingCardID == cardId && x.ParkingCard.CardState == 1))
+            if (DataProvider.Ins.DB.Vehicles.Any(x => x.ParkingCardID == cardId && x.VehicleState == 1))
             {
                 Vehicle vehicle = DataProvider.Ins.DB.Vehicles.FirstOrDefault(x => x.ParkingCardID == cardId &&
-                                    x.ParkingCard.CardState == 1);
+                                    x.VehicleState == 1);
                 vehicle.VehicleState = 0;
                 vehicle.TimeEndedParking = DateTime.Now;
                 ParkingCard card = DataProvider.Ins.DB.ParkingCards.FirstOrDefault(x => x.ParkingCardID == cardId);
