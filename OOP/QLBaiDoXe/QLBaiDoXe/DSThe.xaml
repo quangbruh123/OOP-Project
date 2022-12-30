@@ -11,7 +11,14 @@
     <Grid Background="#80FFA03F">
         <Grid Margin="10,245,10,14.332">
             <Rectangle Fill="White" HorizontalAlignment="Left" Height="464.068" Margin="0.4,-3.4,0,0" VerticalAlignment="Top" Width="1012.6" RadiusX="20" RadiusY="20"/>
-            <DataGrid HorizontalAlignment="Left" Height="389.068" VerticalAlignment="Top" Width="1012.6" Margin="0.4,10,0,0"/>
+            <ListView HorizontalAlignment="Left" Height="389.068" VerticalAlignment="Top" Width="1012.6" Margin="0.4,10,0,0">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Mã thẻ" DisplayMemberBinding="{Binding ParkingCardID}"/>
+                        <GridViewColumn Header="Tình trạng" DisplayMemberBinding="{Binding CardState}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
             <Button Content="Xoá" HorizontalAlignment="Left" Height="35.474" Margin="829,415.194,0,0" VerticalAlignment="Top" Width="127.6" Foreground="White" FontSize="16" Background="#FFFF3F3F"/>
 
 
