@@ -40,7 +40,7 @@ namespace QLBaiDoXe.DBClasses
                     return;
                 }
             }
-            Role role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 0);
+            Role role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 1);
             Staff newStaff = new Staff()
             {
                 StaffName = name,
@@ -55,8 +55,7 @@ namespace QLBaiDoXe.DBClasses
             role.Staffs.Add(newStaff);
             DataProvider.Ins.DB.SaveChanges();
 
-            Staff staff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.CivilID == civilId);
-            
+            Staff staff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.CivilID == civilId);            
             SHA256 sha256hash = SHA256.Create();
             string passwordhash = GetHash(sha256hash, password);
             Account staffAccount = new Account()
@@ -89,7 +88,7 @@ namespace QLBaiDoXe.DBClasses
                     return;
                 }
             }
-            Role role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 1);
+            Role role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 2);
             Staff newStaff = new Staff()
             {
                 StaffName = name,
@@ -114,7 +113,7 @@ namespace QLBaiDoXe.DBClasses
                 RoleID = 1,
                 StaffID = admin.StaffID,
                 Staff = admin,
-                Role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 1)
+                Role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 2)
             };
             admin.Accounts.Add(adminAccount);
             role.Accounts.Add(adminAccount);
