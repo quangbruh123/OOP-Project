@@ -40,19 +40,21 @@ namespace QLBaiDoXe.DBClasses
                     return;
                 }
             }
+            Role role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 0);
             Staff newStaff = new Staff()
             {
                 StaffName = name,
                 CivilID = civilId,
-                RoleID = 0,
+                RoleID = role.RoleID,
                 PhoneNumber = phoneNumber,
                 StaffAddress = address,
                 DateOfBirth = dob
             };
-            DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 1).Staffs.Add(newStaff);
+            role.Staffs.Add(newStaff);
             DataProvider.Ins.DB.SaveChanges();
 
             Staff staff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.CivilID == civilId);
+            
             SHA256 sha256hash = SHA256.Create();
             string passwordhash = GetHash(sha256hash, password);
             Account staffAccount = new Account()
@@ -61,8 +63,11 @@ namespace QLBaiDoXe.DBClasses
                 AccountPassword = passwordhash,
                 RoleID = 0,
                 StaffID = staff.StaffID,
-                Staff = staff
+                Staff = staff,
+                Role = role
             };
+            staff.Accounts.Add(staffAccount);
+            role.Accounts.Add(staffAccount);
             DataProvider.Ins.DB.Accounts.Add(staffAccount);
             DataProvider.Ins.DB.SaveChanges();
         }
@@ -82,32 +87,37 @@ namespace QLBaiDoXe.DBClasses
                     return;
                 }
             }
+            Role role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 1);
             Staff newStaff = new Staff()
             {
                 StaffName = name,
                 CivilID = civilId,
-                RoleID = 1,
+                RoleID = role.RoleID,
                 PhoneNumber = phoneNumber,
                 StaffAddress = address,
-                DateOfBirth = dob
+                DateOfBirth = dob,
+                Role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 1)
             };
-            DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 1).Staffs.Add(newStaff);
             DataProvider.Ins.DB.SaveChanges();
 
             Staff admin = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.CivilID == civilId);
             SHA256 sha256hash = SHA256.Create();
             string passwordhash = GetHash(sha256hash, password);
-            Account staffAccount = new Account()
+            Account adminAccount = new Account()
             {
                 AccountName = accname,
                 AccountPassword = passwordhash,
                 RoleID = 1,
                 StaffID = admin.StaffID,
-                Staff = admin
+                Staff = admin,
+                Role = DataProvider.Ins.DB.Roles.FirstOrDefault(x => x.RoleID == 1)
             };
-            DataProvider.Ins.DB.Accounts.Add(staffAccount);
+            admin.Accounts.Add(adminAccount);
+            role.Accounts.Add(adminAccount);
+            DataProvider.Ins.DB.Accounts.Add(adminAccount);
             DataProvider.Ins.DB.SaveChanges();
         }
+
         public static bool ChangeStaffInfo(string staffName, string staffNewName, string civilId, string role, string phoneNumber, string address, DateTime dob)
         {
             if (DataProvider.Ins.DB.Staffs.Any(x => x.StaffName == staffName))
