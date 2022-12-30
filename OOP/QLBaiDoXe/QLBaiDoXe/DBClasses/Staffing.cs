@@ -124,10 +124,13 @@ namespace QLBaiDoXe.DBClasses
         public static void ChangeStaffInfo(int staffId, string staffNewName, string civilId, string role, string phoneNumber, string address, DateTime dob, string accname, string password)
         {
             Staff checkStaff = DataProvider.Ins.DB.Staffs.FirstOrDefault(x => x.CivilID == civilId);
-            if (checkStaff.StaffID != staffId)
+            if (checkStaff != null)
             {
-                MessageBox.Show("Tồn tại nhân viên có số căn cước công dân bạn đã nhập!");
-                return;
+                if (checkStaff.StaffID != staffId)
+                {
+                    MessageBox.Show("Tồn tại nhân viên có số căn cước công dân bạn đã nhập!");
+                    return;
+                }
             }
             if (DataProvider.Ins.DB.Staffs.Any(x => x.StaffID == staffId))
             {
