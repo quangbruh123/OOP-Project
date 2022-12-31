@@ -39,5 +39,15 @@ namespace QLBaiDoXe
             loginWindow.Show();
             this.Close();
         }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F2)
+            {
+                Homepage1 add = new Homepage1();
+                add.Show();
+                this.Close();
+            }
+        }
     }
 }

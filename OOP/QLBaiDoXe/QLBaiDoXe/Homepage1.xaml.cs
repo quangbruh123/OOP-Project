@@ -23,6 +23,7 @@ using QLBaiDoXe.Classes;
 using AForge.Video;
 using AForge.Video.DirectShow;
 using QLBaiDoXe.ParkingLotModel;
+using QLBaiDoXe.DBClasses;
 
 namespace QLBaiDoXe
 {
@@ -275,7 +276,22 @@ namespace QLBaiDoXe
                     Dispatcher.BeginInvoke(new Action(() => vehiclePlate_Copy.Text = "Xe máy"));
                 }
             }
+            if (e.Key == Key.F2 && MainWindow.currentUser.RoleID == 2)
+            {
+                admin add = new admin();
+                add.Show();
+                this.Close();
+            }
         }
         #endregion
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Staffing.LogOut(MainWindow.currentUser.AccountName);
+            MainWindow.currentUser = null;
+            MainWindow loginWindow = new MainWindow();
+            loginWindow.Show();
+            this.Close();
+        }
     }
 }

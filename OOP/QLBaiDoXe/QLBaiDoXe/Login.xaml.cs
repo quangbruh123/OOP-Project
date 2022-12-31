@@ -69,5 +69,35 @@ namespace QLBaiDoXe
                 MessageBox.Show("Sai thông tin đăng nhập", "Thông báo");
             }
         }
+
+        private void LoginWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                currentUser = Staffing.LogIn(UsernameTextbox.Text, PasswordTextbox.Password);
+                Debug.WriteLine("ID: " + currentUser.AccountID.ToString() + "\nUsername: " + currentUser.AccountName
+                                + "\nRoleID: " + currentUser.RoleID.ToString() + "\nRole: " + currentUser.Role.RoleName);
+                if (currentUser != null)
+                {
+                    MessageBox.Show("Đăng nhập thành công", "Thông báo");
+                    if (currentUser.RoleID == 2)
+                    {
+                        admin adminWindow = new admin();
+                        adminWindow.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        Homepage1 homepage = new Homepage1();
+                        homepage.Show();
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Sai thông tin đăng nhập", "Thông báo");
+                }
+            }
+        }
     }
 }

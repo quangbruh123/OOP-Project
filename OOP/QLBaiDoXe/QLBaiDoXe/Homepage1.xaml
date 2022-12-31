@@ -73,12 +73,12 @@
         <Image Margin="1205.6,611.2,0.8,10" Source="Image4.png" Stretch="Fill"/>
         <TextBlock Text="CÔNG TY THNM BÃI ĐỖ XE THÔNG MINH KYPS" HorizontalAlignment="Left" Height="18.8" Margin="926.933,628.55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273.667" FontWeight="Bold" FontFamily="Segoe UI"/>
         <TextBlock HorizontalAlignment="Left" Height="31.05" Margin="928.433,647.35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="268.667" TextAlignment="Right" FontSize="10"><Run Text="Điện thoại: (094).8423.014"/><LineBreak/><Run Text="Email: 20521868@gm.uit.edu.vn"/><LineBreak/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="22.4" Margin="43.2,18.7,0,0" TextWrapping="Wrap" Text="F1 - Đổi loại xe làn vào" VerticalAlignment="Top" Width="165.667" FontSize="22" FontWeight="Medium"/>
-        <TextBlock HorizontalAlignment="Left" Height="31.2" Margin="507.6,18.7,0,0" TextWrapping="Wrap" Foreground="black" Text="F2 - Mở bảng tìm kiếm" VerticalAlignment="Top" Width="232.867" FontSize="22" FontWeight="Medium"/>
+        <TextBlock HorizontalAlignment="Left" Height="32" Margin="43,19,0,0" TextWrapping="Wrap" Text="F1 - Đổi loại xe làn vào" VerticalAlignment="Top" Width="233" FontSize="22" FontWeight="Medium"/>
+        <TextBlock x:Name="AdminWindows" HorizontalAlignment="Left" Height="31.2" Margin="507.6,18.7,0,0" TextWrapping="Wrap" Foreground="black" Text="F2 - Màn hình quản lý" VerticalAlignment="Top" Width="232.867" FontSize="22" FontWeight="Medium"/>
         <Button
           Style="{StaticResource MaterialDesignFloatingActionLightButton}"
           ToolTip="MaterialDesignFloatingActionLightButton"
-          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Margin="-14.134,616.2,1206.667,-8.866" Height="Auto" Width="Auto">
+          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Margin="-14.134,616.2,1206.667,-8.866" Height="Auto" Width="Auto" Click="Button_Click">
             <materialDesign:PackIcon
             Kind="LogoutVariant" Height="33.6" Width="36.4"
          />
