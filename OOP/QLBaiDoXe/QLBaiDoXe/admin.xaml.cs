@@ -49,5 +49,10 @@ namespace QLBaiDoXe
                 this.Close();
             }
         }
+
+        private void Window_KeyDown_1(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }

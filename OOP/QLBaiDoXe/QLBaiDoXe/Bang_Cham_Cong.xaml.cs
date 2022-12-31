@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using QLBaiDoXe.DBClasses;
+﻿using QLBaiDoXe.DBClasses;
 using QLBaiDoXe.ViewModel;
+using System;
+using System.Windows.Controls;
 
 namespace QLBaiDoXe
 {
@@ -32,9 +21,23 @@ namespace QLBaiDoXe
         {
             if (string.IsNullOrEmpty(StartDateDP.Text) || string.IsNullOrEmpty(EndDateDP.Text))
                 TimekeepLV.ItemsSource = Staffing.GetTimekeepForStaff(StaffNameTxb.Text);
-            else 
-                TimekeepLV.ItemsSource = Staffing.GetSpecificTimekeeps(StaffNameTxb.Text,
-                                        DateTime.Parse(StartDateDP.Text), DateTime.Parse(EndDateDP.Text));
+            else
+            {
+                string sdDay = StartDateDP.Text.Split('/')[0];
+                string sdMonth = StartDateDP.Text.Split('/')[1];
+                string sdYear = StartDateDP.Text.Split('/')[2];
+                string edDay = EndDateDP.Text.Split('/')[0];
+                string edMonth = EndDateDP.Text.Split('/')[1];
+                string edYear = EndDateDP.Text.Split('/')[2];
+                if (int.TryParse(sdYear, out int sdYearNum) && int.TryParse(sdMonth, out int sdMonthNum) && int.TryParse(sdDay, out int sdDayNum)
+                    && int.TryParse(edYear, out int edYearNum) && int.TryParse(edMonth, out int edMonthNum) && int.TryParse(sdDay, out int edDayNum))
+                {
+                    DateTime startDate = new DateTime(sdYearNum, sdMonthNum, sdDayNum, 0, 0, 0);
+                    DateTime endDate = new DateTime(edYearNum, edMonthNum, edDayNum, 0, 0, 0);
+                    TimekeepLV.ItemsSource = Staffing.GetSpecificTimekeeps(StaffNameTxb.Text, startDate, endDate);
+                }
+                
+            }
         }
     }
 }

@@ -42,8 +42,10 @@ namespace QLBaiDoXe
             else
             {
                 var selectedItems = (dynamic)ListThe.SelectedItems[0];
-                Cards.DeleteCard(selectedItems.ParkingCardID);
+                Cards.DeleteCard((long)selectedItems.ParkingCardID);
                 MessageBox.Show("Đã xóa thẻ thành công!");
+                ListThe.ItemsSource = null;
+                ListThe.ItemsSource = Cards.GetAllParkingCards();
             }
         }
 

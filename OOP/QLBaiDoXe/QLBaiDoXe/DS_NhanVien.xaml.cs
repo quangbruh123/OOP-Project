@@ -36,6 +36,7 @@ namespace QLBaiDoXe
         {
             ThemNhanVien add = new ThemNhanVien();
             add.ShowDialog();
+            lvNhanVien.ItemsSource = Staffing.GetAllStaff();
         }
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {

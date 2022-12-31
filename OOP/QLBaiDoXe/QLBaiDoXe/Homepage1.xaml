@@ -59,7 +59,7 @@
             </Border>
             <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="30" Margin="48,353,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" TextChanged="textBox2_TextChanged"/>
         </Grid>
-        <Grid Margin="148.8,635.4,0,-19.8">
+        <Grid Margin="149,625,0,-23">
             <Rectangle Fill="White" HorizontalAlignment="Left" Height="72.8" RadiusY="15" RadiusX="15" VerticalAlignment="Top" Width="554.933"/>
 
             <TextBlock x:Name="dateIn_Copy1" HorizontalAlignment="Left" Height="18.8" Margin="30.4,23.7,0,0" TextWrapping="Wrap" Text="Số lượt xe vào: " VerticalAlignment="Top" Width="127.067" FontSize="16"/>
@@ -78,7 +78,7 @@
         <Button
           Style="{StaticResource MaterialDesignFloatingActionLightButton}"
           ToolTip="MaterialDesignFloatingActionLightButton"
-          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Margin="-14.134,616.2,1206.667,-8.866" Height="Auto" Width="Auto" Click="Button_Click">
+          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Margin="0,616.2,1206.667,0" Height="Auto" Width="Auto" Click="Button_Click">
             <materialDesign:PackIcon
             Kind="LogoutVariant" Height="33.6" Width="36.4"
          />

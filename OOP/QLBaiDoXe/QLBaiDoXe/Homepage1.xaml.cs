@@ -167,46 +167,59 @@ namespace QLBaiDoXe
             if (textBox1.Text.Length == 10)
             {
                 string ID = (textBox1.Text).Trim();
-                if (DBClasses.Cards.CheckCardState(long.Parse(ID)) == 1)
+                long ID_temp = long.Parse(ID);
+                if (DataProvider.Ins.DB.ParkingCards.Any(x => x.ParkingCardID == ID_temp))
                 {
-                    Dispatcher.BeginInvoke
-                        (
-                        new Action(() => MessageBox.Show("Thẻ đã được sử dụng", "Lưu ý", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.ServiceNotification)),
-                        DispatcherPriority.ApplicationIdle
-                        );
-                    textBox1.Clear();
+                    if (DBClasses.Cards.CheckCardState(long.Parse(ID)) == 1)
+                    {
+                        Dispatcher.BeginInvoke
+                            (
+                            new Action(() => MessageBox.Show("Thẻ đã được sử dụng", "Lưu ý",
+                            MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.ServiceNotification)), DispatcherPriority.ApplicationIdle
+                            );
+                        textBox1.Clear();
+                    }
+                    else
+                    {
+                        try
+                        {
+                            textBox1.Clear();
+
+                            image1.Source = videoPlayer.Source;
+                            BitmapImage temp = (BitmapImage)image1.Source;
+                            Bitmap temp1 = BitmapImageConvert.BitmapImage2Bitmap(temp);
+
+                            dateIn.Text = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+                            timeIn.Text = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString(); dateOut_Copy.Text = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+                            dateOut_Copy.Text = "--/--/----";
+                            timeOut_Copy.Text = "00:00:00";
+                            dateIn_Copy.Text = "--/--/----";
+                            timeIn_Copy.Text = "00:00:00";
+                            vehiclePlate_Copy2.Text = "------";
+                            priceTag_Copy.Text = "------" + " đồng";
+
+                            string path = @"C:\Users\Quang\Pictures\test\" + DateTime.Now.ToString().Replace(':', '_').Replace('/', '_') + ".jpg";
+                            DBClasses.ParkingVehicle.VehicleIn(vehiclePlate_Copy.Text.ToString().Trim(), long.Parse(ID), path);
+                            temp1.Save(path);
+
+                            VehicleIn_num.Text = DBClasses.ParkingVehicle.GetVehicleInNumber(date).ToString();
+                            VehicleParked_num.Text = DBClasses.ParkingVehicle.GetParkedVehicleNumber().ToString();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Phần mềm bị lỗi: " + ex.Message + " Vui lòng liên hệ nhân viên bảo trì để biết thêm chi tiết", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.ServiceNotification);
+                        }
+                    }
                 }
                 else
                 {
-                    try
-                    {
-                        textBox1.Clear();
-
-                        image1.Source = videoPlayer.Source;
-                        BitmapImage temp = (BitmapImage)image1.Source;
-                        Bitmap temp1 = BitmapImageConvert.BitmapImage2Bitmap(temp);
-
-                        dateIn.Text = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
-                        timeIn.Text = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString(); dateOut_Copy.Text = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
-                        dateOut_Copy.Text = "--/--/----";
-                        timeOut_Copy.Text = "00:00:00";
-                        dateIn_Copy.Text = "--/--/----";
-                        timeIn_Copy.Text = "00:00:00";
-                        vehiclePlate_Copy2.Text = "------";
-                        priceTag_Copy.Text = "------" + " đồng";
-
-                        string path = @"C:\Users\Quang\Pictures\test\" + DateTime.Now.ToString().Replace(':', '_').Replace('/', '_') + ".jpg";
-                        DBClasses.ParkingVehicle.VehicleIn(vehiclePlate_Copy.Text.ToString().Trim(), long.Parse(ID), path);
-                        temp1.Save(path);
-
-                        VehicleIn_num.Text = DBClasses.ParkingVehicle.GetVehicleInNumber(date).ToString();
-                        VehicleParked_num.Text = DBClasses.ParkingVehicle.GetParkedVehicleNumber().ToString();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Phần mềm bị lỗi: " + ex.Message + " Vui lòng liên hệ nhân viên bảo trì để biết thêm chi tiết", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.ServiceNotification);
-                    }
+                    Dispatcher.BeginInvoke
+                            (
+                            new Action(() => MessageBox.Show("Thẻ không tồn tại"))
+                            );
+                    textBox1.Clear();
                 }
+
             }
         }
 
@@ -283,8 +296,6 @@ namespace QLBaiDoXe
                 this.Close();
             }
         }
-        #endregion
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Staffing.LogOut(MainWindow.currentUser.AccountName);
@@ -293,5 +304,7 @@ namespace QLBaiDoXe
             loginWindow.Show();
             this.Close();
         }
+        #endregion
+
     }
 }

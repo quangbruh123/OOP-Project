@@ -28,7 +28,7 @@ namespace QLBaiDoXe.DBClasses
 
         public static bool DeleteCard(long cardId)
         {
-            if (!DataProvider.Ins.DB.ParkingCards.Any(x => x.ParkingCardID == cardId))
+            if (DataProvider.Ins.DB.ParkingCards.Any(x => x.ParkingCardID == cardId))
             {
                 DataProvider.Ins.DB.ParkingCards.Remove(DataProvider.Ins.DB.ParkingCards.FirstOrDefault(x => x.ParkingCardID == cardId));
                 DataProvider.Ins.DB.SaveChanges();
@@ -52,7 +52,12 @@ namespace QLBaiDoXe.DBClasses
         /// </returns>
         public static int CheckCardState(long cardId)
         {
-            return DataProvider.Ins.DB.ParkingCards.FirstOrDefault(x => x.ParkingCardID == cardId).CardState;
+            if (DataProvider.Ins.DB.ParkingCards.Any(x => x.ParkingCardID == cardId))
+            {
+                return DataProvider.Ins.DB.ParkingCards.FirstOrDefault(x => x.ParkingCardID == cardId).CardState;
+            }
+            else
+                return 2;
         }
 
         public static List<ParkingCard> GetCardsFromId(long cardId)

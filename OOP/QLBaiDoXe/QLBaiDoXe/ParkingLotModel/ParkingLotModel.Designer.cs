@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'E:\Year 3\OOP Software Developing Methodology\Main Project\Main 2\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\ParkingLotModel\ParkingLotModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Quang\Desktop\Final2\OOP-Project\OOP\QLBaiDoXe\QLBaiDoXe\ParkingLotModel\ParkingLotModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

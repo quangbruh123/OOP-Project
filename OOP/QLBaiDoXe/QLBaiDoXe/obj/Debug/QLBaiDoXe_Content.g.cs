@@ -8,6 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("aforge%20lib/aforge.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("aforge%20lib/aforge.video.directshow.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("aforge%20lib/aforge.video.dll")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("parkinglotmodel/parkinglotmodel.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("parkinglotmodel/parkinglotmodel.tt")]
 
